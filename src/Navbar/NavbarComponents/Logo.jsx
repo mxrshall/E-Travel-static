@@ -1,7 +1,7 @@
 function Logo() {
 
     return (
-      <div className="w-[] h-[10vh] bg-red-600">
+      <div className="w-1/12">
 
       </div>
     )

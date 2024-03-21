@@ -1,5 +1,5 @@
 import Homepage from "./Homepage/Homepage";
-import Lokacia from "./Lokacia/Lokacia";
+import Lokacie from "./Lokacie";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="/home" element={<Homepage />} />
-        <Route path="/lokacia" element={<Lokacia />} />
+        <Route path="/lokacie" element={<Lokacie />} />
       </Routes>
     </BrowserRouter>
   );

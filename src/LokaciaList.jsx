@@ -1,4 +1,6 @@
-function LocationList() {
+import Lokacia from "./Lokacia"
+
+function LokaciaList() {
     const list = [
         {
             id: 1,
@@ -24,8 +26,9 @@ function LocationList() {
 
     return (
         <>
+            <Lokacia list={list}/>
         </>
     )
   }
   
-  export default LocationList
+  export default LokaciaList

@@ -2,11 +2,13 @@ import header3 from "../images/header/header3.jpg"
 import HomepageTitle from "./HomepageComponents/HomepageTitle"
 import HomepageDescription from "./HomepageComponents/HomepageDescription"
 import HomepageButton from "./HomepageComponents/HomepageButton"
+import Navbar from "../Navbar/Navbar"
 
 function Homepage() {
 
     return (
         <>
+            <Navbar/>
             <div className="w-9/12 h-[100vh] pt-[10%] pl-[5%] flex flex-col absolute z-10">
                 <HomepageTitle/>
                 <HomepageDescription/>

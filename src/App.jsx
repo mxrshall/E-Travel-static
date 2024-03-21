@@ -1,14 +1,17 @@
-import Navbar from "./Navbar/Navbar"
-import Homepage from "./Homepage/Homepage"
+import Homepage from "./Homepage/Homepage";
+import Lokacia from "./Lokacia";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
-    <>
-      <Navbar/>
-      <Homepage/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="/home" element={<Homepage />} />
+        <Route path="/lokacia" element={<Lokacia />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

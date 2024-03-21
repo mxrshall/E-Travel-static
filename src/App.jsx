@@ -1,5 +1,5 @@
-import Homepage from "./Homepage/Homepage";
-import Lokacie from "./Lokacie";
+import Homepage from "./Stranky/Homepage";
+import Lokacie from "./Stranky/Lokacie";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {

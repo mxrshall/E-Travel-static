@@ -1,5 +1,5 @@
 import Navbar from "./Navbar/Navbar"
-import Homepage from "./Homepage"
+import Homepage from "./Homepage/Homepage"
 
 function App() {
 

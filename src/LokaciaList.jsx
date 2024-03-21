@@ -1,4 +1,4 @@
-import Lokacia from "./Lokacia"
+import Lokacia from "./Lokacia/Lokacia"
 
 function LokaciaList() {
     const list = [

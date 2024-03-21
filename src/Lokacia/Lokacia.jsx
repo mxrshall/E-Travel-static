@@ -1,6 +1,6 @@
 import header1 from "./images/header/header1.jpg";
 
-function Lokacia() {
+function Lokacia({list}) {
 
     return (
       <>

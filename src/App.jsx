@@ -1,5 +1,5 @@
 import Homepage from "./Homepage/Homepage";
-import Lokacia from "./Lokacia";
+import Lokacia from "./Lokacia/Lokacia";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {

@@ -9,7 +9,7 @@ function Homepage() {
     return (
         <>
             <Navbar/>
-            <div className="w-9/12 h-[100vh] pt-[10%] pl-[5%] flex flex-col absolute z-10">
+            <div className="w-9/12 h-[100vh] pt-[12%] pl-[5%] flex flex-col absolute z-10">
                 <HomepageTitle/>
                 <HomepageDescription/>
                 <HomepageButton/>

@@ -6,7 +6,7 @@ function HomepageButton() {
         <div className="w-full flex pt-[3%]">
             <Button text="O nás"/>
             <Button text="Prejsť na katalóg"/>
-            <Button text="Zobraziť lokácie"/>
+            <Button text="Zobraziť lokácie" link="lokacie"/>
         </div>
     )
   }

@@ -2,7 +2,7 @@ function HomepageTitle() {
 
     return (
         <>
-            <span className="text-8xl text-white font-bold font-mont">
+            <span className="text-7xl text-white font-bold font-mont">
                 Cestovná kancelária
                 <br/>
                 E-Travel

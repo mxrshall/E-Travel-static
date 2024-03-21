@@ -1,13 +1,16 @@
 function HomepageDescription() {
 
     return (
-        <>
-            <span className="text-base text-white font-normal font-mont pt-[2%]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+        <div className="w-8/12 pt-[4%]">
+            <span className="text-base text-white font-normal font-mont">
+                Sme cestovná kancelária, ktorá sa zameriava na poskytovanie nezabudnuteľných zážitkov a dobrodružstiev pre našich klientov po celom svete. 
+                S našou vášňou pre cestovanie a odborným know-howom sme pripravení vám pomôcť plniť vaše cestovateľské sny. 
                 <br/>
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br/>
+                V našom cestovnom katalógu nájdete širokú škálu destinácií, zájazdov a dobrodružstiev, ktoré spĺňajú rôzne záujmy a preferencie.
+                Od exotických pláží a dobrodružných expedícií až po kultúrne výlety a romantické úniky, máme niečo pre každého.
             </span>
-        </>
+        </div>
     )
   }
   

@@ -46,15 +46,19 @@ function Info() {
     return (
         <>
             <Navbar/>
-            {list.map((list) => (
-            <Lokacia
-                key={list.id}
-                title={list.title}
-                description={list.description}
-                background={list.background}
-                flag={list.flag}
-            />
-            ))}
+            {list.map((item) => {
+                if (item.id % 2 === 1) {
+                    return (
+                        <Lokacia
+                            key={item.id}
+                            title={item.title}
+                            description={item.description}
+                            background={item.background}
+                            flag={item.flag}
+                        />
+                    );
+                }
+            })}
         </>
     )
   }

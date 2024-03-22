@@ -1,4 +1,4 @@
-import Lokacia from "../Lokacia/Lokacia"
+import Lokacia from "../LokacieComponents/Lokacia"
 import Navbar from "../Navbar/Navbar"
 
 import header1 from "../images/header/header1.jpg"

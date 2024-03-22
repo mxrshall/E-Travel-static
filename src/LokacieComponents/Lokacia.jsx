@@ -1,6 +1,6 @@
-import LokaciaButton from "./LokaciaComponents/LokaciaButton";
-import LokaciaDescription from "./LokaciaComponents/LokaciaDescription";
-import LokaciaTitle from "./LokaciaComponents/LokaciaTitle";
+import LokaciaButton from "./LokaciaButton";
+import LokaciaDescription from "./LokaciaDescription";
+import LokaciaTitle from "./LokaciaTitle";
 
 function Lokacia({title, description, background}) {
 

@@ -1,7 +1,7 @@
 import header3 from "../images/header/header3.jpg"
-import HomepageTitle from "../Homepage/HomepageComponents/HomepageTitle"
-import HomepageDescription from "../Homepage/HomepageComponents/HomepageDescription"
-import HomepageButton from "../Homepage/HomepageComponents/HomepageButton"
+import HomepageTitle from "../HomepageComponents/HomepageTitle"
+import HomepageDescription from "../HomepageComponents/HomepageDescription"
+import HomepageButton from "../HomepageComponents/HomepageButton"
 import Navbar from "../Navbar/Navbar"
 
 function Homepage() {

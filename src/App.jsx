@@ -1,5 +1,4 @@
 import Homepage from "./Stranky/Homepage";
-import Lokacie from "./InfoComponents/Lokacia";
 import Info from "./Stranky/Info";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 

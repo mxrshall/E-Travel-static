@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar"
-import Lokacia from "../InfoComponents/Lokacia"
+import LokaciaRight from "../InfoComponents/LokaciaRight"
+import LokaciaLeft from "../InfoComponents/LokaciaLeft"
 
 import header1 from "../images/header/header1.jpg"
 import header2 from "../images/header/header2.jpg"
@@ -49,7 +50,17 @@ function Info() {
             {list.map((item) => {
                 if (item.id % 2 === 1) {
                     return (
-                        <Lokacia
+                        <LokaciaRight
+                            key={item.id}
+                            title={item.title}
+                            description={item.description}
+                            background={item.background}
+                            flag={item.flag}
+                        />
+                    );
+                }else{
+                    return (
+                        <LokaciaLeft
                             key={item.id}
                             title={item.title}
                             description={item.description}

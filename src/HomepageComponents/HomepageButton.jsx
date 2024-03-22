@@ -1,12 +1,12 @@
 import Button from "../Button"
 
-function HomepageButton() {
+function HomepageButton({link}) {
 
     return (
         <div className="w-full flex pt-[3%]">
             <Button text="O nás"/>
             <Button text="Prejsť na katalóg"/>
-            <Button text="Zobraziť lokácie" link="lokacie"/>
+            <Button text="Zobraziť lokácie" link={link}/>
         </div>
     )
   }

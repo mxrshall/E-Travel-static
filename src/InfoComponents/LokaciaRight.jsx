@@ -6,8 +6,8 @@ import InfoFlag from "./InfoFlag"
 function LokaciaRight({title, description, background, flag}) {
     
     return (
-      <div>
-        <div className="w-7/12 h-[100vh] pt-[8%] pl-[5%] flex flex-col bg-black absolute z-10">
+      <div className="w-full h-[100vh]">
+        <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black absolute z-10">
           <div className="flex">
             <InfoTitle title={title}/>
             <InfoFlag flag={flag}/>

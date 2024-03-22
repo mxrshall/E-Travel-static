@@ -7,10 +7,10 @@ function LokaciaLeft({title, description, background, flag}) {
     
     return (
       <div className="w-full h-[100vh] flex justify-end">
-        <div className="w-7/12 h-[100vh] pt-[8%] pl-[5%] flex flex-col bg-black absolute z-10">
+        <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black absolute z-10">
           <div className="flex">
-            <InfoFlag flag={flag}/>
             <InfoTitle title={title}/>
+            <InfoFlag flag={flag}/>
           </div>
             <InfoDescription description={description}/>
             <InfoButton/>

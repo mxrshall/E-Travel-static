@@ -3,6 +3,7 @@ import InfoDescription from "./InfoDescription"
 import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
 import Card from "../Card"
+import Slider from "../Slider"
 
 function LokaciaRight({title, description, background, flag}) {
     
@@ -18,7 +19,7 @@ function LokaciaRight({title, description, background, flag}) {
             <InfoButton/>
           </div>
           <div className="w-5/12 h-[100vh] flex justify-center items-center">
-            <Card title="Seoul"/>
+            <Slider/>
           </div>
         </div>
         <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>

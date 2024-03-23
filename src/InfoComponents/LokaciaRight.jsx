@@ -2,7 +2,6 @@ import InfoTitle from "./InfoTitle"
 import InfoDescription from "./InfoDescription"
 import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
-import Card from "../Card"
 import Slider from "../Slider"
 
 function LokaciaRight({title, description, background, flag}) {

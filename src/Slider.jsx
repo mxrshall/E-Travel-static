@@ -71,45 +71,31 @@ const Slider = () => {
     };
 
     return (
-        <div className="slider">
+        <div className="w-5/12 h-[50vh] flex">
             <motion.button
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: 100, opacity: 0 }}
                 transition={{ delay: 0.8 }}
                 onClick={prev}
+                className="w-1/12"
             >
                 ᐊ
             </motion.button>
-            <div className="slider__container">
+            <div className="w-full h-[50vh] bg-cover">
                 <a href={sliderimages[index].link} target="_blank">
                     <motion.div
-                        animate={{ scale: [0, 1], opacity: [0, 1] }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                        className="slider__background"
+                        className="w-full h-[50vh] bg-blue-600 rounded-xl bg-cover px-5 py-3 text-xl text-white font-bold font-mont"
+                        variants={slidersettings}
+                        animate="animate"
+                        initial="initial"
+                        exit="exit"
+                        key={sliderimages[index].logo}
+                        custom={direction}
+                        style={{
+                            backgroundImage: `url(${sliderimages[index].logo})`,
+                        }}
                     >
-                        <motion.div
-                            className="clenovia__fotka"
-                            variants={slidersettings}
-                            animate="animate"
-                            initial="initial"
-                            exit="exit"
-                            key={sliderimages[index].logo}
-                            custom={direction}
-                            style={{
-                                backgroundImage: `url(${sliderimages[index].logo})`,
-                            }}
-                        ></motion.div>
-                        <motion.div
-                            variants={slidersettings}
-                            animate="animate"
-                            initial="initial"
-                            exit="exit"
-                            key={sliderimages[index].title}
-                            custom={direction}
-                            className="slider__title"
-                        >
-                            {sliderimages[index].title}
-                        </motion.div>
+                        {sliderimages[index].title}
                     </motion.div>
                 </a>
             </div>
@@ -118,6 +104,7 @@ const Slider = () => {
                 initial={{ x: -100, opacity: 0 }}
                 transition={{ delay: 0.8 }}
                 onClick={next}
+                className="w-1/12"
             >
                 ᐅ
             </motion.button>

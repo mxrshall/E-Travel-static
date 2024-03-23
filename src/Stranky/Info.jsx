@@ -1,6 +1,5 @@
 import Navbar from "../Navbar/Navbar"
-import LokaciaRight from "../InfoComponents/Lokacia"
-import LokaciaLeft from "../InfoComponents/LokaciaLeft"
+import Lokacia from "../InfoComponents/Lokacia"
 
 import header1 from "../images/header/header1.jpg"
 import header2 from "../images/header/header2.jpg"
@@ -86,6 +85,7 @@ function Info() {
             {list.map((item) => (
                 <Lokacia
                     key={item.id}
+                    id={item.id}
                     title={item.title}
                     description={item.description}
                     background={item.background}

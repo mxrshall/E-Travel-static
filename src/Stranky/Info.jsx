@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar"
-import LokaciaRight from "../InfoComponents/LokaciaRight"
+import LokaciaRight from "../InfoComponents/Lokacia"
 import LokaciaLeft from "../InfoComponents/LokaciaLeft"
 
 import header1 from "../images/header/header1.jpg"
@@ -83,30 +83,16 @@ function Info() {
     return (
         <>
             <Navbar/>
-            {list.map((item) => {
-                if (item.id % 2 === 1) {
-                    return (
-                        <LokaciaRight
-                            key={item.id}
-                            title={item.title}
-                            description={item.description}
-                            background={item.background}
-                            flag={item.flag}
-                            slider={slider[item.id]}
-                        />
-                    );
-                }else{
-                    return (
-                        <LokaciaLeft
-                            key={item.id}
-                            title={item.title}
-                            description={item.description}
-                            background={item.background}
-                            flag={item.flag}
-                        />
-                    );
-                }
-            })}
+            {list.map((item) => (
+                <Lokacia
+                    key={item.id}
+                    title={item.title}
+                    description={item.description}
+                    background={item.background}
+                    flag={item.flag}
+                    slider={slider[item.id]}
+                />
+            ))}
         </>
     )
   }

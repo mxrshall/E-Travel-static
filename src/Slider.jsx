@@ -1,27 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import Seoul from "./images/photos/Seoul.jpg"
-import BukchonHanokVillage from "./images/photos/BukchonHanokVillage.jpg"
-import Gyeongju from "./images/photos/Gyeongju.png"
-
-const sliderimages = [
-    {
-        title: "Seoul",
-        background: Seoul,
-        link: "#",
-    },
-    {
-        title: "Bukchon Hanok Village",
-        background: BukchonHanokVillage,
-        link: "#",
-    },
-    {
-        title: "Gyeongju",
-        background: Gyeongju,
-        link: "#",
-    },
-];
 
 const slidersettings = {
     initial: (direction) => {
@@ -42,26 +20,18 @@ const slidersettings = {
     },
 };
 
-const Slider = () => {
+const Slider = ({slider}) => {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
     const next = () => {
         setDirection(1);
-        if (index === sliderimages.length - 1) {
-            setIndex(0);
-            return;
-        }
-        setIndex(index + 1);
+        setIndex((index + 1) % slider.title.length);
     };
 
     const prev = () => {
         setDirection(-1);
-        if (index === 0) {
-            setIndex(sliderimages.length - 1);
-            return;
-        }
-        setIndex(index - 1);
+        setIndex((index - 1 + slider.title.length) % slider.title.length);
     };
 
     return (
@@ -76,22 +46,20 @@ const Slider = () => {
                 ᐊ
             </motion.button>
             <div className="w-full h-[50vh] bg-cover">
-                <a href={sliderimages[index].link} target="_blank">
                     <motion.div
                         className="w-full h-[50vh] rounded-xl bg-cover pl-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
                         variants={slidersettings}
                         animate="animate"
                         initial="initial"
                         exit="exit"
-                        key={sliderimages[index].background}
+                        key={slider.background[index]}
                         custom={direction}
                         style={{
-                            backgroundImage: `url(${sliderimages[index].background})`,
+                            backgroundImage: `url(${slider.background[index]})`,
                         }}
                     >
-                        {sliderimages[index].title}
+                        {slider.title[index]}
                     </motion.div>
-                </a>
             </div>
             <motion.button
                 animate={{ x: 0, opacity: 1 }}

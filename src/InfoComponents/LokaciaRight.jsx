@@ -4,8 +4,8 @@ import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
 
-function LokaciaRight({title, description, background, flag}) {
-    
+function LokaciaRight({title, description, background, flag, slider}) {
+  
     return (
       <div className="w-full h-[100vh] flex">
         <div className="flex absolute z-10">
@@ -18,7 +18,7 @@ function LokaciaRight({title, description, background, flag}) {
             <InfoButton/>
           </div>
           <div className="w-5/12 h-[100vh] flex justify-center items-center">
-            <Slider/>
+            <Slider slider={slider}/>
           </div>
         </div>
         <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>

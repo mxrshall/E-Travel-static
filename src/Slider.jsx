@@ -27,20 +27,30 @@ const Slider = ({slider}) => {
     const [direction, setDirection] = useState(0);
     const [hovered, setHovered] = useState(false);
 
-    const next = () => {
-        setDirection(1);
-        setIndex((index + 1) % slider.title.length);
-    };
-
-    const prev = () => {
-        setDirection(-1);
-        setIndex((index - 1 + slider.title.length) % slider.title.length);
-    };
-
     const [data, setData] = useState({
         title: slider.title[index],
         background: slider.background[index],
     });
+
+    const next = () => {
+        setDirection(1);
+        const nextIndex = (index + 1) % slider.title.length;
+        setIndex(nextIndex);
+        setData({
+            title: slider.title[nextIndex],
+            background: slider.background[nextIndex],
+        });
+    };
+
+    const prev = () => {
+        setDirection(-1);
+        const prevIndex = (index - 1 + slider.title.length) % slider.title.length;
+        setIndex(prevIndex);
+        setData({
+            title: slider.title[prevIndex],
+            background: slider.background[prevIndex],
+        });
+    };
 
     return (
         <div className="w-5/12 h-[50vh] flex">
@@ -53,8 +63,8 @@ const Slider = ({slider}) => {
             >
                 ᐊ
             </motion.button>
-            <Link to="/pamiatka" state={{ data: data }}>
             <div className="w-full h-[50vh] bg-cover">
+                <Link to="/pamiatka" state={{ data: data }}>
                     <motion.div
                         className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
                         variants={slidersettings}
@@ -78,8 +88,8 @@ const Slider = ({slider}) => {
                             </div>
                         )}
                     </motion.div>
+                </Link>
             </div>
-            </Link>
             <motion.button
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: -100, opacity: 0 }}

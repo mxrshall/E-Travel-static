@@ -30,6 +30,7 @@ const Slider = ({slider}) => {
     const [data, setData] = useState({
         title: slider.title[index],
         background: slider.background[index],
+        photo: slider.photo[index],
     });
 
     const next = () => {
@@ -39,6 +40,7 @@ const Slider = ({slider}) => {
         setData({
             title: slider.title[nextIndex],
             background: slider.background[nextIndex],
+            photo: slider.photo[nextIndex],
         });
     };
 
@@ -49,6 +51,7 @@ const Slider = ({slider}) => {
         setData({
             title: slider.title[prevIndex],
             background: slider.background[prevIndex],
+            photo: slider.photo[prevIndex],
         });
     };
 

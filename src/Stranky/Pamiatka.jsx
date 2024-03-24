@@ -19,7 +19,7 @@ function Pamiatka() {
             <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
             <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${data.background})`}}></div>
             <div className="w-full h-[100vh] flex justify-center items-center bg-black absolute z-20">
-                <PamiatkaInfo description={description}/>
+                <PamiatkaInfo description={description} photo={data.photo}/>
             </div>
         </>
     )

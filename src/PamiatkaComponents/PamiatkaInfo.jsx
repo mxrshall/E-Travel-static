@@ -1,9 +1,7 @@
 import Button from "../Button"
 import PamiatkaFotka from "./PamiatkaFotka"
 
-import AbuSimbel from "../images/photos/AbuSimbel.jpg"
-
-function PamiatkaInfo({ description }) {
+function PamiatkaInfo({ description, photo }) {
     const veta = description.split('. ');
 
     const odstavec = [];
@@ -24,9 +22,12 @@ function PamiatkaInfo({ description }) {
                 <Button text="Prejsť na katalóg"/>
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
-                <PamiatkaFotka background={AbuSimbel}/>
-                <PamiatkaFotka background={AbuSimbel}/>
-                <PamiatkaFotka background={AbuSimbel}/>
+                {photo.map((item) => (
+                    <PamiatkaFotka
+                        key={item}
+                        background={item}
+                    />
+                ))}
             </div>
         </div>
     )

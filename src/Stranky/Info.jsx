@@ -12,7 +12,11 @@ import kanada from "../images/flags/canada.png"
 import afrika from "../images/flags/africa.png"
 
 //Južná Kórea
-import Seoul from "../images/photos/Seoul.jpg"
+import Seoul from "../images/photos/Seoul/Seoul.jpg"
+import Seoul1 from "../images/photos/Seoul/Seoul1.jpg"
+import Seoul2 from "../images/photos/Seoul/Seoul2.jpg"
+import Seoul3 from "../images/photos/Seoul/Seoul3.jpg"
+
 import BukchonHanokVillage from "../images/photos/BukchonHanokVillage.jpg"
 import Gyeongju from "../images/photos/Gyeongju.png"
 //Švajčiarsko
@@ -64,18 +68,22 @@ function Info() {
         {
             title: ["Seoul", "Bukchon Hanok Village", "Gyeongju"],
             background: [Seoul, BukchonHanokVillage, Gyeongju],
+            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [Seoul1, Seoul2, Seoul3], 2: [Seoul1, Seoul2, Seoul3] },
         },
         {
             title: ["Chateau de Chillon", "The Matterhorn", "Rhine Falls"],
             background: [ChateaudeChillon, TheMatterhorn, RhineFalls],
+            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [Seoul1, Seoul2, Seoul3], 2: [Seoul1, Seoul2, Seoul3] },
         },
         {
             title: ["Torngat Mountains", "Quebec City", "Joffre Lakes Park"],
             background: [TorngatMountains, QuebecCity, JoffreLakesPark],
+            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [Seoul1, Seoul2, Seoul3], 2: [Seoul1, Seoul2, Seoul3] },
         },
         {
             title: ["Blyde River Canyon", "Victoria Falls", "Abu Simbel"],
             background: [BlydeRiverCanyon, VictoriaFalls, AbuSimbel],
+            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [Seoul1, Seoul2, Seoul3], 2: [Seoul1, Seoul2, Seoul3] },
         },
     ];
 

@@ -16,9 +16,14 @@ import Seoul from "../images/photos/Seoul/Seoul.jpg"
 import Seoul1 from "../images/photos/Seoul/Seoul1.jpg"
 import Seoul2 from "../images/photos/Seoul/Seoul2.jpg"
 import Seoul3 from "../images/photos/Seoul/Seoul3.jpg"
-
-import BukchonHanokVillage from "../images/photos/BukchonHanokVillage.jpg"
-import Gyeongju from "../images/photos/Gyeongju.png"
+import BukchonHanokVillage from "../images/photos/BukchonHanokVillage/BukchonHanokVillage.jpg"
+import BukchonHanokVillage1 from "../images/photos/BukchonHanokVillage/BukchonHanokVillage1.jpg"
+import BukchonHanokVillage2 from "../images/photos/BukchonHanokVillage/BukchonHanokVillage2.webp"
+import BukchonHanokVillage3 from "../images/photos/BukchonHanokVillage/BukchonHanokVillage3.png"
+import Gyeongju from "../images/photos/Gyeongju/Gyeongju.png"
+import Gyeongju1 from "../images/photos/Gyeongju/Gyeongju1.jpg"
+import Gyeongju2 from "../images/photos/Gyeongju/Gyeongju2.jpg"
+import Gyeongju3 from "../images/photos/Gyeongju/Gyeongju3.jpg"
 //Švajčiarsko
 import ChateaudeChillon from "../images/photos/ChateaudeChillon.jpg"
 import TheMatterhorn from "../images/photos/TheMatterhorn.jpg"
@@ -68,7 +73,7 @@ function Info() {
         {
             title: ["Seoul", "Bukchon Hanok Village", "Gyeongju"],
             background: [Seoul, BukchonHanokVillage, Gyeongju],
-            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [Seoul1, Seoul2, Seoul3], 2: [Seoul1, Seoul2, Seoul3] },
+            photo: {0: [Seoul1, Seoul2, Seoul3], 1: [BukchonHanokVillage1, BukchonHanokVillage2, BukchonHanokVillage3], 2: [Gyeongju1, Gyeongju2, Gyeongju3] },
         },
         {
             title: ["Chateau de Chillon", "The Matterhorn", "Rhine Falls"],

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import arrow from "./images/icons/arrow_up.svg";
 
 const slidersettings = {
     initial: (direction) => {
@@ -23,6 +24,7 @@ const slidersettings = {
 const Slider = ({slider}) => {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
+    const [hovered, setHovered] = useState(false);
 
     const next = () => {
         setDirection(1);
@@ -47,7 +49,7 @@ const Slider = ({slider}) => {
             </motion.button>
             <div className="w-full h-[50vh] bg-cover">
                     <motion.div
-                        className="w-full h-[50vh] rounded-xl bg-cover pl-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
+                        className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
                         variants={slidersettings}
                         animate="animate"
                         initial="initial"
@@ -57,8 +59,17 @@ const Slider = ({slider}) => {
                         style={{
                             backgroundImage: `url(${slider.background[index]})`,
                         }}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
                     >
-                        {slider.title[index]}
+                        <div className="w-full h-1/2">
+                            {slider.title[index]}
+                        </div>
+                        {hovered && (
+                            <div className="w-full h-1/2 flex justify-end items-end hover:none">
+                                <img src={arrow} className="w-[1.5rem]"></img>
+                            </div>
+                        )}
                     </motion.div>
             </div>
             <motion.button

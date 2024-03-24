@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import arrow from "./images/icons/arrow_up.svg";
+import { Link } from "react-router-dom";
 
 const slidersettings = {
     initial: (direction) => {
@@ -36,6 +37,11 @@ const Slider = ({slider}) => {
         setIndex((index - 1 + slider.title.length) % slider.title.length);
     };
 
+    const [data, setData] = useState({
+        title: slider.title[index],
+        background: slider.background[index],
+    });
+
     return (
         <div className="w-5/12 h-[50vh] flex">
             <motion.button
@@ -47,6 +53,7 @@ const Slider = ({slider}) => {
             >
                 ᐊ
             </motion.button>
+            <Link to="/pamiatka" state={{ data: data }}>
             <div className="w-full h-[50vh] bg-cover">
                     <motion.div
                         className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
@@ -72,6 +79,7 @@ const Slider = ({slider}) => {
                         )}
                     </motion.div>
             </div>
+            </Link>
             <motion.button
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: -100, opacity: 0 }}

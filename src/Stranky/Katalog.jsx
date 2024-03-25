@@ -1,7 +1,7 @@
 import Karta from "../KatalogComponents/Karta"
 import Navbar from "../Navbar/Navbar"
 
-function Katalog() {
+function Katalog({slider, list}) {
 
     return (
         <>

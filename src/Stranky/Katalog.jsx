@@ -1,3 +1,4 @@
+import Karta from "../KatalogComponents/Karta"
 import Navbar from "../Navbar/Navbar"
 
 function Katalog() {
@@ -5,13 +6,20 @@ function Katalog() {
     return (
         <>
             <Navbar/>
-            <div className="w-full h-[100vh] flex justify-center items-center absolute z-10">
-                
-            </div>
-            <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
-            <div className="w-full h-[100vh] bg-cover bg-center"></div>
-            <div className="w-full h-[100vh] flex justify-center items-center bg-black absolute z-20">
-                
+            <div className="w-full h-[100vh] bg-black absolute">
+                <div className="f-full h-1/4 bg-red-600"></div>
+                <div className="bg-black flex flex-wrap">
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                    <Karta/>
+                </div>
             </div>
         </>
     )

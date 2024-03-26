@@ -119,6 +119,70 @@ function App() {
     },
   ];
 
+  const karta = [
+    {
+      id: 0,
+      title: "Seoul",
+      background: Seoul,
+    },
+    {
+      id: 1,
+      title: "Bukchon Hanok Village",
+      background: BukchonHanokVillage,
+    },
+    {
+      id: 2,
+      title: "Gyeongju",
+      background: Gyeongju,
+    },
+    {
+      id: 3,
+      title: "Chateaude Chillon",
+      background: ChateaudeChillon,
+    },
+    {
+      id: 4,
+      title: "The Matterhorn",
+      background: TheMatterhorn,
+    },
+    {
+      id: 5,
+      title: "Rhine Falls",
+      background: RhineFalls,
+    },
+    {
+      id: 6,
+      title: "Torngat Mountains",
+      background: TorngatMountains,
+    },
+    {
+      id: 7,
+      title: "Quebec City",
+      background: QuebecCity,
+    },
+    {
+      id: 8,
+      title: "Joffre Lakes Park",
+      background: JoffreLakesPark,
+    },
+    {
+      id: 9,
+      title: "Blyde River Canyon",
+      background: BlydeRiverCanyon,
+    },
+    {
+      id: 10,
+      title: "Victoria Falls",
+      background: VictoriaFalls,
+    },
+    {
+      id: 11,
+      title: "Abu Simbel",
+      background: AbuSimbel,
+    },
+
+  ]
+
   return (
     <BrowserRouter>
       <Routes>
@@ -126,7 +190,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/info" element={<Info slider={slider} list={list} />} />
         <Route path="/pamiatka" element={<Pamiatka />} /> 
-        <Route path="/katalog" element={<Katalog slider={slider} list={list}/>} />
+        <Route path="/katalog" element={<Katalog karta={karta}/>} />
       </Routes>
     </BrowserRouter>
   );

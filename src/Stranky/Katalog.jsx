@@ -2,7 +2,7 @@ import Karta from "../KatalogComponents/Karta"
 import Vyhladavanie from "../KatalogComponents/Vyhladavanie"
 import Navbar from "../Navbar/Navbar"
 
-function Katalog({karta, slider}) {
+function Katalog({slider}) {
 
     return (
         <>
@@ -12,13 +12,19 @@ function Katalog({karta, slider}) {
                     <Vyhladavanie/>
                 </div>
                 <div className="bg-black flex flex-wrap">
-                    {karta.map((item) => (
-                    <Karta
-                        key={item.id}
-                        title={item.title}
-                        background={item.background}
-                    />
-                    ))}
+                {slider.map((item, index) => (
+                    <div key={index}>
+                        {item.title.map((title, innerIndex) => (
+                            <Karta
+                                key={innerIndex}
+                                title={title}
+                                background={item.background[innerIndex]}
+                                description={item.description[innerIndex]}
+                                photo={item.photo[innerIndex]}
+                            />
+                        ))}
+                    </div>
+                ))}
                 </div>
             </div>
         </>

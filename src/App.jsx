@@ -124,26 +124,31 @@ function App() {
       id: 0,
       title: "Seoul",
       background: Seoul,
+      tag: ["korea", "mesto"]
     },
     {
       id: 1,
       title: "Bukchon Hanok Village",
       background: BukchonHanokVillage,
+      tag: ["korea", "pamiatka"]
     },
     {
       id: 2,
       title: "Gyeongju",
       background: Gyeongju,
+      tag: ["korea", "pamiatka", "priroda"]
     },
     {
       id: 3,
       title: "Chateaude Chillon",
       background: ChateaudeChillon,
+      tag: ["svajciarsko", "pamiatka", "priroda"]
     },
     {
       id: 4,
       title: "The Matterhorn",
       background: TheMatterhorn,
+      tag: ["svajciarsko", "pamiatka", "priroda"]
     },
     {
       id: 5,

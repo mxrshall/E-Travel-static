@@ -12,8 +12,8 @@ function Katalog({slider}) {
                     <Vyhladavanie/>
                 </div>
                 <div className="bg-black flex flex-wrap">
-                {slider.map((item, index) => (
-                    <div key={index}>
+                {slider.map((item) => (
+                    <>
                         {item.title.map((title, innerIndex) => (
                             <Karta
                                 key={innerIndex}
@@ -23,7 +23,7 @@ function Katalog({slider}) {
                                 photo={item.photo[innerIndex]}
                             />
                         ))}
-                    </div>
+                    </>
                 ))}
                 </div>
             </div>

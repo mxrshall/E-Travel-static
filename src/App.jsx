@@ -190,7 +190,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/info" element={<Info slider={slider} list={list} />} />
         <Route path="/pamiatka" element={<Pamiatka />} /> 
-        <Route path="/katalog" element={<Katalog karta={karta}/>} />
+        <Route path="/katalog" element={<Katalog karta={karta} slider={slider}/>} />
       </Routes>
     </BrowserRouter>
   );

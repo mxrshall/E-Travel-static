@@ -98,95 +98,30 @@ function App() {
         background: [Seoul, BukchonHanokVillage, Gyeongju],
         description: ["Seoul je pulzujúce mesto, ktoré spája bohatú históriu s modernou urbanitou. Ako hlavné mesto Južnej Kórey, je to dych berúca metropola, ktorá ponúka nespočetné množstvo zážitkov pre návštevníkov z celého sveta. Seoul je domovom bohatej kórejskej kultúry a umenia. Choďte na tradičný kórejsky čaj v jednej z mnohých čajovní alebo si vyskúšajte tradičné kórejské jedlo ako kimchi, bulgogi alebo bibimbap v miestnych reštauráciách. Okrem toho môžete navštíviť nádherné divadlá a galérie, ktoré ponúkajú pohľad na bohaté kultúrne dedičstvo.", "Bukchon Hanok Village je fascinujúca historická štvrť v centre mesta Seoul v Južnej Kórei, ktorá ponúka jedinečný pohľad na tradičnú kórejskú architektúru a životný štýl. Pre turistov a návštevníkov je to miesto plné kultúrneho bohatstva a historických zážitkov. Prechádzka uličkami Bukchon Hanok Village vás vtiahne do minulosti. Môžete vidieť miestnych obyvateľov, ktorí sa stále držia tradičných kórejských zvykov a remesiel. Niektoré z domov dokonca ponúkajú možnosť navštíviť vnútro a spoznať viac o tradičnom kórejskom živote.", "Gyeongju je nádherné historické mesto v Južnej Kórei, ktoré je pokladnicou bohatých kultúrnych a historických pokladov. Pre turistov a návštevníkov je to fascinujúce miesto, kde môžu objavovať staroveké pamiatky, krásne prírodné scenérie a jedinečnú kórejskú kultúru. Okrem svojho historického bohatstva ponúka Gyeongju aj nádherné prírodné scenérie. Navštívte úchvatný útes Toham až ktorému sa dá dostať pomocou lanovky a očarí vás panoramatickými výhľadmi na pobrežie. Ďalej môžete navštíviť národný park Namsan s nádhernou prírodou a historickými pamiatkami."],
         photo: {0: [Seoul1, Seoul2, Seoul3], 1: [BukchonHanokVillage1, BukchonHanokVillage2, BukchonHanokVillage3], 2: [Gyeongju1, Gyeongju2, Gyeongju3] },
+        tag: {0: ["korea", "mesto"], 1: ["korea", "pamiatka"], 2: ["korea", "pamiatka", "priroda"] },
     },
     {
         title: ["Chateau de Chillon", "The Matterhorn", "Rhine Falls"],
         background: [ChateaudeChillon, TheMatterhorn, RhineFalls],
         description: ["Château de Chillon je nádherný hrad nachádzajúci sa na brehu Ženevského jazera v blízkosti mesta Montreux vo Švajčiarsku. Pre turistov a návštevníkov je to fascinujúca historická pamiatka, ktorá ponúka jedinečný pohľad do minulosti a nádherné scenérie Alp. Château de Chillon ponúka úchvatné výhľady na Ženevské jazero a okolité Alpy. Turisti si môžu vychutnať krásne panoramatické pohľady z hradných okien a veží, čo robí návštevu tohto hradu ešte nezabudnuteľnejšou.", "Matterhorn je majestátny vrchol nachádzajúci sa v Alpách na pomedzí Švajčiarska a Talianska, a je jedným z najznámejších a najikonickejších vrcholov na svete. Pre turistov a návštevníkov je Matterhorn fascinujúcou destináciou, ktorá ponúka nádherné prírodné scenérie, turistiku a zážitky. Okrem svojej prírodnej krásy je Matterhorn aj súčasťou bohatej kultúrnej dedičstva alpského regiónu. Návštevníci môžu objavovať tradičné horské dediny, miestne festivaly a kultúrne podujatia, ktoré odrážajú život a tradície obyvateľov Alp.", "Rheinfall, známy aj ako Rhine Falls, je najväčší vodopád v Európe nachádzajúci sa na rieke Rýn v blízkosti mesta Schaffhausen v Švajčiarsku. Pre turistov a návštevníkov je Rheinfall jednou z najpopulárnejších prírodných atrakcií v krajine, ktorá ponúka úchvatné scenérie a nezabudnuteľné zážitky. Rheinfall je ohromujúci pohľad na silné vodné toky padajúce zo skaly do priepasti s hukotom a obklopené úchvatnou prírodou. Jeho impozantná veľkosť a síla robia z Rheinfall nezabudnuteľnú pamiatku pre všetkých návštevníkov."],
         photo: {0: [ChateaudeChillon1, ChateaudeChillon2, ChateaudeChillon3], 1: [TheMatterhorn1, TheMatterhorn2, TheMatterhorn3], 2: [RhineFalls, RhineFalls1, RhineFalls2] },
+        tag: {0: ["svajciarsko", "pamiatka", "priroda"], 1: ["svajciarsko", "pamiatka", "priroda"], 2: ["svajciarsko", "pamiatka", "priroda"] },
     },
     {
         title: ["Torngat Mountains", "Quebec City", "Joffre Lakes Park"],
         background: [TorngatMountains, QuebecCity, JoffreLakesPark],
         description: ["Torngat Mountains sú národným parkom v severovýchodnej Kanade, ktorý sa nachádza na Labradorskom poloostrove a na ostrove Newfoundland a Labrador. Tento odľahlý a divoký park je domovom nádherných prírodných scenérií, divokých zvierat a kultúrnej dedičstva pôvodných obyvateľov. Pre turistov a návštevníkov je Torngat Mountains zážitkom, ktorý ponúka pohľad do divočiny a nezabudnuteľné prírodné a kultúrne zážitky. Torngat Mountains ponúkajú úchvatné scenérie vrátane strmých skalnatých útesov, mohutných ľadovcov, jazier, vodopádov a divokých riek. Tento odľahlý park je domovom niektorých najpozoruhodnejších prírodných krás v Kanade, ktoré návštevníkom ponúkajú možnosť objaviť jedinečnú a nedotknutú divočinu.", "Québec City je jedným z najcharakteristickejších a najkrajších historických miest v Severnej Amerike. Nachádza sa na brehu rieky sv. Vavrinca v kanadskej provincii Québec. Pre turistov a návštevníkov je to fascinujúce mesto s bohatou kultúrnou dedičstvom, úchvatnou architektúrou a jedinečnou atmosférou. Okrem svojej bohatej kultúrnej dedičstva ponúka Quebec City aj úchvatné prírodné krásy. Návštevníci môžu prejsť krásnymi parkami, ako je Plains of Abraham, alebo sa vybrať na výlet na blízke ostrovy Île d'Orléans a Île d'Orléans, kde nájdu malebné vidiecke krajiny a vinice.", "Joffre Lakes Provincial Park je nádherný prírodný park v pohorí Coast Mountains v Britskej Kolumbii, Kanada. Pre turistov a návštevníkov je to fascinujúca destinácia, ktorá ponúka úchvatné scenérie, turistiku, rybolov a príležitosti na relaxáciu v prírode. Hlavnou atrakciou Joffre Lakes Park sú trojica jazier s názvami Lower, Middle a Upper Joffre Lake. Tieto jazerá sú známe svojou jasnou tyrkysovou farbou, ktorá je spôsobená jemnými časticami piesku z ľadovca. Návštevníci môžu vychutnať krásne výhľady na hladinu jazier a okolité horské scenérie."],
         photo: {0: [Seoul1, Seoul2, Seoul3], 1: [QuebecCity1, QuebecCity2, QuebecCity3], 2: [JoffreLakesPark, JoffreLakesPark1, JoffreLakesPark] },
+        tag: {0: ["kanada", "mesto"], 1: ["kanada", "pamiatka"], 2: ["kanada", "pamiatka", "priroda"] },
     },
     {
         title: ["Blyde River Canyon", "Victoria Falls", "Abu Simbel"],
         background: [BlydeRiverCanyon, VictoriaFalls, AbuSimbel],
         description: ["Blyde River Canyon je jedným z najkrajších prírodných útvarov v Južnej Afrike a jedným z najväčších kaňonov na svete. Pre turistov a návštevníkov je to fascinujúce miesto, ktoré ponúka úchvatné scenérie, prírodnú krásu a množstvo zážitkov. Blyde River Canyon je ideálnym miestom pre milovníkov aktívneho odpočinku v prírode. Turisti si môžu vychutnať turistiku po rôznych chodníkoch a stezkách, ktoré vedú okolo kaňonu a ponúkajú príležitosti na pozorovanie divokej fauny a flóry. Ďalej môžu návštevníci využiť možnosti rybolovu, raftingu na rieke Blyde River a horských bicyklových výletov.", "Victoria Falls, známe aj ako Dymy Vodopády, sú jednými z najimpresívnejších prírodných divov na svete. Tieto obrovské vodopády sa nachádzajú na rieke Zambezi na hranici medzi Zambiou a Zimbabwe. Pre turistov a návštevníkov sú Victoria Falls fascinujúcou destináciou, ktorá ponúka úchvatné scenérie, dobrodružstvo a jedinečné zážitky. Pre dobrodružne založených návštevníkov ponúkajú Victoria Falls množstvo adrenalínových aktivít. Medzi najobľúbenejšie patria zipline cez kaňon, bungee jumping zo zábradlia mosta Victoria Falls Bridge a plavba na člne po divokej rieke Zambezi.", "Abu Simbel je archeologická lokalita v Egypte, známa predovšetkým svojimi monumentálnymi skalnými chrámami, ktoré sú považované za jedny z najznamenitejších pamiatok starovekého Egypta. Pre turistov a návštevníkov je Abu Simbel fascinujúcou destináciou, ktorá ponúka pohľad do bohatých dejín egyptského kráľovstva a impozantnú architektúru. Hlavnou atrakciou Abu Simbel sú dva veľkolepé chrámy vytesané do skál pri brehoch jazera Nasser. Chrám boha Rá a chrám boha Ptah sú oba vysoké až 30 metrov a zdobené obrovskými sochami faraóna Ramesesa II., bohov a faraónskymi postavami."],
         photo: {0: [BlydeRiverCanyon, BlydeRiverCanyon1, BlydeRiverCanyon2], 1: [VictoriaFalls1, VictoriaFalls2, VictoriaFalls3], 2: [AbuSimbel1, AbuSimbel2, AbuSimbel3] },
+        tag: {0: ["afrika", "mesto"], 1: ["afrika", "pamiatka"], 2: ["afrika", "pamiatka", "priroda"] },
     },
   ];
-
-  const karta = [
-    {
-      id: 0,
-      title: "Seoul",
-      background: Seoul,
-      tag: ["korea", "mesto"]
-    },
-    {
-      id: 1,
-      title: "Bukchon Hanok Village",
-      background: BukchonHanokVillage,
-      tag: ["korea", "pamiatka"]
-    },
-    {
-      id: 2,
-      title: "Gyeongju",
-      background: Gyeongju,
-      tag: ["korea", "pamiatka", "priroda"]
-    },
-    {
-      id: 3,
-      title: "Chateaude Chillon",
-      background: ChateaudeChillon,
-      tag: ["svajciarsko", "pamiatka", "priroda"]
-    },
-    {
-      id: 4,
-      title: "The Matterhorn",
-      background: TheMatterhorn,
-      tag: ["svajciarsko", "pamiatka", "priroda"]
-    },
-    {
-      id: 5,
-      title: "Rhine Falls",
-      background: RhineFalls,
-    },
-    {
-      id: 6,
-      title: "Torngat Mountains",
-      background: TorngatMountains,
-    },
-    {
-      id: 7,
-      title: "Quebec City",
-      background: QuebecCity,
-    },
-    {
-      id: 8,
-      title: "Joffre Lakes Park",
-      background: JoffreLakesPark,
-    },
-    {
-      id: 9,
-      title: "Blyde River Canyon",
-      background: BlydeRiverCanyon,
-    },
-    {
-      id: 10,
-      title: "Victoria Falls",
-      background: VictoriaFalls,
-    },
-    {
-      id: 11,
-      title: "Abu Simbel",
-      background: AbuSimbel,
-    },
-
-  ]
 
   return (
     <BrowserRouter>
@@ -195,7 +130,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/info" element={<Info slider={slider} list={list} />} />
         <Route path="/pamiatka" element={<Pamiatka />} /> 
-        <Route path="/katalog" element={<Katalog karta={karta} slider={slider}/>} />
+        <Route path="/katalog" element={<Katalog slider={slider}/>} />
       </Routes>
     </BrowserRouter>
   );

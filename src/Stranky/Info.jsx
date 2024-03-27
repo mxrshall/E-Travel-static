@@ -14,7 +14,8 @@ function Info({slider, list}) {
                     description={item.description}
                     background={item.background}
                     flag={item.flag}
-                    slider={slider[item.id]}
+                    tag={item.tag}
+                    slider={slider}
                 />
             ))}
         </>

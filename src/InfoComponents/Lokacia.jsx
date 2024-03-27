@@ -6,7 +6,7 @@ import Slider from "../Slider"
 
 import { useState } from "react"
 
-function Lokacia({id, title, description, background, flag, slider}) {
+function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
   
     return (
@@ -23,14 +23,14 @@ function Lokacia({id, title, description, background, flag, slider}) {
               <InfoButton/>
             </div>
             <div className="w-5/12 h-[100vh] flex justify-center items-center">
-              <Slider slider={slider}/>
+              <Slider slider={slider} tag={tag}/>
             </div>
           </>
         )}
         {!left && (
           <>
             <div className="w-5/12 h-[100vh] flex justify-center items-center">
-              <Slider slider={slider}/>
+              <Slider slider={slider} tag={tag}/>
             </div>
             <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
               <div className="flex">

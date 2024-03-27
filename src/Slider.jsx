@@ -22,39 +22,48 @@ const slidersettings = {
     },
 };
 
-const Slider = ({slider}) => {
+const Slider = ({slider, tag}) => {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [hovered, setHovered] = useState(false);
 
+    const filteredSlider = slider.filter(item => {
+        for (let key in item.tag) {
+            if (item.tag[key].includes(tag)) {
+                return true;
+            }
+        }
+        return false;
+    });
+
     const [data, setData] = useState({
-        title: slider.title[index],
-        background: slider.background[index],
-        description: slider.description[index],
-        photo: slider.photo[index],
+        title: filteredSlider[index].title,
+        background: filteredSlider[index].background,
+        description: filteredSlider[index].description,
+        photo: filteredSlider[index].photo,
     });
 
     const next = () => {
         setDirection(1);
-        const nextIndex = (index + 1) % slider.title.length;
+        const nextIndex = (index + 1) % filteredSlider.length;
         setIndex(nextIndex);
         setData({
-            title: slider.title[nextIndex],
-            background: slider.background[nextIndex],
-            description: slider.description[nextIndex],
-            photo: slider.photo[nextIndex],
+            title: filteredSlider[nextIndex].title,
+            background: filteredSlider[nextIndex].background,
+            description: filteredSlider[nextIndex].description,
+            photo: filteredSlider[nextIndex].photo,
         });
     };
-
+    
     const prev = () => {
         setDirection(-1);
-        const prevIndex = (index - 1 + slider.title.length) % slider.title.length;
+        const prevIndex = (index - 1 + filteredSlider.length) % filteredSlider.length;
         setIndex(prevIndex);
         setData({
-            title: slider.title[prevIndex],
-            background: slider.background[prevIndex],
-            description: slider.description[prevIndex],
-            photo: slider.photo[prevIndex],
+            title: filteredSlider[prevIndex].title,
+            background: filteredSlider[prevIndex].background,
+            description: filteredSlider[prevIndex].description,
+            photo: filteredSlider[prevIndex].photo,
         });
     };
 
@@ -77,16 +86,16 @@ const Slider = ({slider}) => {
                         animate="animate"
                         initial="initial"
                         exit="exit"
-                        key={slider.background[index]}
+                        key={filteredSlider[index].background}
                         custom={direction}
                         style={{
-                            backgroundImage: `url(${slider.background[index]})`,
+                            backgroundImage: `url(${filteredSlider[index].background})`,
                         }}
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
                     >
                         <div className="w-full h-1/2">
-                            {slider.title[index]}
+                            {filteredSlider[index].title}
                         </div>
                         {hovered && (
                             <div className="w-full h-1/2 flex justify-end items-end hover:none">

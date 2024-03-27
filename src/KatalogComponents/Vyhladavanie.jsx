@@ -1,24 +1,31 @@
+import { useState } from "react";
+
 function Vyhladavanie() {
+    const [koreaChecked, setkoreaChecked] = useState(false);
+
+    const handleChange = () => {
+        setkoreaChecked(!koreaChecked);
+    };
 
     return (
         <form>
-            <input type="checkbox"/>
+            <input name="korea" type="checkbox" onChange={handleChange}/>
             <label>Južná Kórea</label>
-            <input type="checkbox"/>
+            <input name="svajciarsko" type="checkbox"/>
             <label>Švajčiarsko</label>
-            <input type="checkbox"/>
+            <input name="kanada" type="checkbox"/>
             <label>Kanada</label>
-            <input type="checkbox"/>
+            <input name="afrika" type="checkbox"/>
             <label>Afrika</label>
-            <input type="checkbox"/>
+            <input name="tropicka" type="checkbox"/>
             <label>Tropické</label>
-            <input type="checkbox"/>
+            <input name="studena" type="checkbox"/>
             <label>Studené</label>
-            <input type="checkbox"/>
+            <input name="priroda" type="checkbox"/>
             <label>Príroda</label>
-            <input type="checkbox"/>
+            <input name="pamiatka" type="checkbox"/>
             <label>Pamiatky</label>
-            <input type="checkbox"/>
+            <input name="mesto" type="checkbox"/>
             <label>Mesto</label>
         </form>
     )

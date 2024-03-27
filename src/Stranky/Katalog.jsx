@@ -4,6 +4,7 @@ import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
 import Navbar from "../Navbar/Navbar";
 
 function Katalog({ slider }) {
+    
     const filteredSlider = slider.filter(item => {
         for (let key in item.tag) {
             if (item.tag[key].includes("priroda")) {

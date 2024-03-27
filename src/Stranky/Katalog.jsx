@@ -4,6 +4,15 @@ import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
 import Navbar from "../Navbar/Navbar";
 
 function Katalog({ slider }) {
+    const filteredSlider = slider.filter(item => {
+        for (let key in item.tag) {
+            if (item.tag[key].includes("priroda")) {
+                return true;
+            }
+        }
+        return false;
+    });
+
     return (
         <>
             <Navbar />
@@ -12,32 +21,17 @@ function Katalog({ slider }) {
                     <Vyhladavanie />
                 </div>
                 <div className="bg-black flex flex-wrap">
-                    {slider.map((item, index) => (
+                    {filteredSlider.map((item, index) => (
                         <React.Fragment key={index}>
-                            {item.title.map((title, innerIndex) => {
-                                if (item.tag[innerIndex] === 1) {
-                                    return (
-                                        <Karta
-                                            key={innerIndex}
-                                            title={title}
-                                            background={item.background[innerIndex]}
-                                            description={item.description[innerIndex]}
-                                            photo={item.photo[innerIndex]}
-                                        />
-                                    );
-                                }
-                                else {
-                                    return (
-                                        <Karta
-                                            key={innerIndex}
-                                            title={title}
-                                            background={item.background[innerIndex]}
-                                            description={item.description[innerIndex]}
-                                            photo={item.photo[innerIndex]}
-                                        />
-                                    );
-                                }
-                            })}
+                            {item.title.map((title, innerIndex) => (
+                                <Karta
+                                    key={innerIndex}
+                                    title={title}
+                                    background={item.background[innerIndex]}
+                                    description={item.description[innerIndex]}
+                                    photo={item.photo[innerIndex]}
+                                />
+                            ))}
                         </React.Fragment>
                     ))}
                 </div>

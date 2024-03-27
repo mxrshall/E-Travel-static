@@ -1,13 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Karta from "../KatalogComponents/Karta";
 import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
 import Navbar from "../Navbar/Navbar";
 
 function Katalog({ slider }) {
+    const [filter, setFilter] = useState("all");
     
     const filteredSlider = slider.filter(item => {
         for (let key in item.tag) {
-            if (item.tag[key].includes("priroda")) {
+            if (item.tag[key].includes(filter)) {
                 return true;
             }
         }
@@ -23,17 +24,13 @@ function Katalog({ slider }) {
                 </div>
                 <div className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
-                        <React.Fragment key={index}>
-                            {item.title.map((title, innerIndex) => (
-                                <Karta
-                                    key={innerIndex}
-                                    title={title}
-                                    background={item.background[innerIndex]}
-                                    description={item.description[innerIndex]}
-                                    photo={item.photo[innerIndex]}
-                                />
-                            ))}
-                        </React.Fragment>
+                        <Karta
+                            key={index}
+                            title={item.title}
+                            background={item.background}
+                            description={item.description}
+                            photo={item.photo}
+                        />
                     ))}
                 </div>
             </div>

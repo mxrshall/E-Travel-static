@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 
 function Vyhladavanie({ sendData }) {
-    const [checkedItems, setCheckedItems] = useState({});
+    const [selectedNames, setSelectedNames] = useState([]);
 
-    const handleCheckboxChange = (event) => {
-        const { name, checked } = event.target;
-        // Update checked state for the checkbox
-        setCheckedItems({ ...checkedItems, [name]: checked });
-        // Pass only the name of the checkbox that is checked
-        if (checked) {
-            sendData(name);
+    const handleCheckboxChange = (e) => {
+        const name = e.target.name;
+        if (e.target.checked) {
+            setSelectedNames([...selectedNames, name]); //pridat
+        } else {
+            setSelectedNames(selectedNames.filter(item => item !== name)); //odstranit
         }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        sendData(selectedNames);
+    };
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input name="korea" type="checkbox" onChange={handleCheckboxChange} />
             <label>Južná Kórea</label>
             <input name="svajciarsko" type="checkbox" onChange={handleCheckboxChange} />
@@ -33,6 +37,7 @@ function Vyhladavanie({ sendData }) {
             <label>Pamiatky</label>
             <input name="mesto" type="checkbox" onChange={handleCheckboxChange} />
             <label>Mesto</label>
+            <input type="submit" value="Submit" />
         </form>
     );
 }

@@ -1,10 +1,10 @@
 import Button from "../Button"
 
-function InfoButton() {
+function InfoButton({link}) {
 
     return (
         <div className="w-full flex pt-[3%]">
-            <Button text="Prejsť na katalóg"/>
+            <Button text="Prejsť na katalóg" link={link}/>
         </div>
     )
   }

@@ -5,6 +5,7 @@ import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
 
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
@@ -20,7 +21,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <InfoFlag flag={flag}/>
               </div>
               <InfoDescription description={description}/>
-              <InfoButton/>
+              <InfoButton link="katalog"/>
             </div>
             <div className="w-5/12 h-[100vh] flex justify-center items-center">
               <Slider slider={slider} tag={tag}/>
@@ -38,7 +39,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <InfoFlag flag={flag}/>
               </div>
               <InfoDescription description={description}/>
-              <InfoButton/>
+              <InfoButton link="katalog"/>
             </div>
           </>
         )}

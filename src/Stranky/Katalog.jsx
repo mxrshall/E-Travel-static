@@ -7,8 +7,12 @@ function Katalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
 
     const sendData = (data) => {
-        console.log(data);
-        setFilter(data);
+        if (data.length === 0) {
+            setFilter(["all"]);
+        } else {
+            console.log(data);
+            setFilter(data);
+        }
     };
 
     const filteredSlider = slider.filter(item => {

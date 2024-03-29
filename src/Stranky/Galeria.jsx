@@ -1,6 +1,7 @@
 import React from "react";
 import GaleriaFotka from "../GaleriaComponents/GaleriaFotka";
 import Navbar from "../Navbar/Navbar";
+import OverlayFotka from "../GaleriaComponents/OverlayFotka";
 
 function Galeria({ slider }) {
 
@@ -24,6 +25,7 @@ function Galeria({ slider }) {
                     ))}
                 </div>
             </div>
+            <OverlayFotka/>
         </>
     );
 }

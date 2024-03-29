@@ -4,7 +4,7 @@ import Navigacia from "./NavbarComponents/Navigacia"
 function Navbar() {
 
     return (
-      <div className="w-full h-[12vh] flex absolute z-10">
+      <div className="w-full h-[12vh] flex absolute z-50">
         <Logo/>
         <Navigacia/>
       </div>

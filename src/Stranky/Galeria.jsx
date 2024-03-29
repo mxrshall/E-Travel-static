@@ -3,6 +3,8 @@ import GaleriaFotka from "../GaleriaComponents/GaleriaFotka";
 import Navbar from "../Navbar/Navbar";
 import OverlayFotka from "../GaleriaComponents/OverlayFotka";
 
+import fotka from "../images/photos/Seoul/Seoul1.jpg";
+
 function Galeria({ slider }) {
 
     return (
@@ -25,7 +27,7 @@ function Galeria({ slider }) {
                     ))}
                 </div>
             </div>
-            <OverlayFotka/>
+            <OverlayFotka fotka={fotka}/>
         </>
     );
 }

@@ -7,7 +7,7 @@ function Navigacia() {
         <Link to="/onas" className="mx-6">O nás</Link>
         <Link to="/info" className="mx-6">Lokácie</Link>
         <Link to="/katalog" className="mx-6">Katalóg</Link>
-        <p className="mx-6">Galéria</p>
+        <Link to="/galeria" className="mx-6">Galéria</Link>
       </div>
     )
   }

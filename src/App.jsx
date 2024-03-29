@@ -3,6 +3,7 @@ import Info from "./Stranky/Info";
 import Katalog from "./Stranky/Katalog";
 import Pamiatka from "./Stranky/Pamiatka";
 import Onas from "./Stranky/Onas";
+import Galeria from "./Stranky/Galeria";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import header1 from "./images/header/header1.jpg"
@@ -193,6 +194,7 @@ function App() {
         <Route path="/info" element={<Info slider={slider} list={list} />} />
         <Route path="/pamiatka" element={<Pamiatka />} /> 
         <Route path="/katalog" element={<Katalog slider={slider}/>} />
+        <Route path="/galeria" element={<Galeria slider={slider}/>} />
       </Routes>
     </BrowserRouter>
   );

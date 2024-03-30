@@ -1,11 +1,18 @@
 import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"
+import ButtonContainer from "../UniversalComponents/ButtonContainer"
 
-import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
 
 import { useState } from "react"
+
+const link = [
+  {
+      title: "Prejsť na katalóg",
+      link: "katalog",
+  },
+]
 
 function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
@@ -21,7 +28,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <InfoFlag flag={flag}/>
               </div>
               <Description description={description}/>
-              <InfoButton link="katalog"/>
+              <ButtonContainer link={link}/>
             </div>
             <div className="w-5/12 h-[100vh] flex justify-center items-center">
               <Slider slider={slider} tag={tag}/>
@@ -39,7 +46,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <InfoFlag flag={flag}/>
               </div>
               <Description description={description}/>
-              <InfoButton link="katalog"/>
+              <ButtonContainer link={link}/>
             </div>
           </>
         )}

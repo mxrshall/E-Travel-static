@@ -1,4 +1,4 @@
-function PamiatkaHeader({title}) {
+function Title({title}) {
 
     return (
         <div className="text-7xl text-white font-bold font-mont">
@@ -7,4 +7,4 @@ function PamiatkaHeader({title}) {
     )
   }
   
-  export default PamiatkaHeader
+  export default Title

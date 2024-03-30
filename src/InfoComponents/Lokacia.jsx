@@ -1,11 +1,10 @@
-import InfoTitle from "./InfoTitle"
+import Title from "../UniversalComponents/Title"
 import InfoDescription from "./InfoDescription"
 import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
 
 import { useState } from "react"
-import { Link } from "react-router-dom"
 
 function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
@@ -17,7 +16,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
           <>
             <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
               <div className="flex">
-                <InfoTitle title={title}/>
+                <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
               <InfoDescription description={description}/>
@@ -35,7 +34,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
             </div>
             <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
               <div className="flex">
-                <InfoTitle title={title}/>
+                <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
               <InfoDescription description={description}/>

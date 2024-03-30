@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import GaleriaFotka from "../GaleriaComponents/GaleriaFotka";
 import Navbar from "../Navbar/Navbar";
 import OverlayFotka from "../GaleriaComponents/OverlayFotka";
@@ -6,6 +7,15 @@ import OverlayFotka from "../GaleriaComponents/OverlayFotka";
 import fotka from "../images/photos/Seoul/Seoul1.jpg";
 
 function Galeria({ slider }) {
+    const [open, setOpen] = useState(true);
+
+    const sendDataClose = (data) => {
+        setOpen(data);
+    };
+
+    const sendDataOpen = (data) => {
+        setOpen(data);
+    };
 
     return (
         <>
@@ -21,13 +31,16 @@ function Galeria({ slider }) {
                                 <GaleriaFotka
                                     key={photoIndex}
                                     background={photo}
+                                    sendDataOpen={sendDataOpen}
                                 />
                             ))}
                         </React.Fragment>
                     ))}
                 </div>
             </div>
-            <OverlayFotka fotka={fotka}/>
+            {open && (
+                <OverlayFotka fotka={fotka} sendDataClose={sendDataClose}/>
+            )}
         </>
     );
 }

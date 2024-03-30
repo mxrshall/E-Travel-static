@@ -1,7 +1,11 @@
-function GaleriaFotka({background}) {
+function GaleriaFotka({background, sendDataOpen}) {
+    const handleClick = () => {
+        sendDataOpen(true);
+      };
+
     return (
         <>
-            <div className="w-[18%] h-[25vh] bg-contain bg-no-repeat bg-center my-1 mx-[1%]" style={{ backgroundImage: `url(${background})`}}></div>
+            <div className="w-[18%] h-[25vh] bg-contain bg-no-repeat bg-center my-1 mx-[1%]" style={{ backgroundImage: `url(${background})`}} onClick={handleClick}></div>
         </>
     )
   }

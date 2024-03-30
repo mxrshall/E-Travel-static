@@ -1,11 +1,15 @@
-function OverlayFotka({fotka}) {
+import React from 'react';
 
-    return (
-        <div className="w-full h-full bg-black bg-opacity-80 fixed z-50 flex justify-center items-center">
-            <img className="w-1/2 bg-contain bg-no-repeat bg-center" src={fotka}/>
-        </div>
-    )
-  }
-  
-  export default OverlayFotka
-  
+function OverlayFotka({ fotka, sendDataClose }) {
+  const handleClick = () => {
+    sendDataClose(false);
+  };
+
+  return (
+    <div className="w-full h-full bg-black bg-opacity-80 fixed z-50 flex justify-center items-center" onClick={handleClick}>
+      <img className="w-1/2 bg-contain bg-no-repeat bg-center" src={fotka} alt="Fotka" />
+    </div>
+  );
+}
+
+export default OverlayFotka;

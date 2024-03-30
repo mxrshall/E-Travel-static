@@ -19,7 +19,7 @@ function PamiatkaInfo({ description, photo }) {
                         <br/>
                     </span>
                 ))}
-                <Button text="Prejsť na katalóg"/>
+                <Button text="Prejsť na katalóg" link="katalog"/>
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
                 {photo.map((item) => (

@@ -17,50 +17,51 @@ import kanada from "./images/flags/canada.png"
 import afrika from "./images/flags/africa.png"
 
 //Južná Kórea
-import Seoul from "./images/photos/Seoul/Seoul.jpg"
-import Seoul1 from "./images/photos/Seoul/Seoul1.jpg"
-import Seoul2 from "./images/photos/Seoul/Seoul2.jpg"
-import Seoul3 from "./images/photos/Seoul/Seoul3.jpg"
-import BukchonHanokVillage from "./images/photos/BukchonHanokVillage/BukchonHanokVillage.jpg"
-import BukchonHanokVillage1 from "./images/photos/BukchonHanokVillage/BukchonHanokVillage1.jpg"
+import Seoul from "./images/photos/Seoul/Seoul.webp"
+import Seoul1 from "./images/photos/Seoul/Seoul1.webp"
+import Seoul2 from "./images/photos/Seoul/Seoul2.webp"
+import Seoul3 from "./images/photos/Seoul/Seoul3.webp"
+import BukchonHanokVillage from "./images/photos/BukchonHanokVillage/BukchonHanokVillage.webp"
 import BukchonHanokVillage2 from "./images/photos/BukchonHanokVillage/BukchonHanokVillage2.webp"
-import BukchonHanokVillage3 from "./images/photos/BukchonHanokVillage/BukchonHanokVillage3.png"
-import Gyeongju from "./images/photos/Gyeongju/Gyeongju.png"
-import Gyeongju1 from "./images/photos/Gyeongju/Gyeongju1.jpg"
-import Gyeongju2 from "./images/photos/Gyeongju/Gyeongju2.jpg"
-import Gyeongju3 from "./images/photos/Gyeongju/Gyeongju3.jpg"
+import BukchonHanokVillage3 from "./images/photos/BukchonHanokVillage/BukchonHanokVillage3.webp"
+import Gyeongju from "./images/photos/Gyeongju/Gyeongju.webp"
+import Gyeongju1 from "./images/photos/Gyeongju/Gyeongju1.webp"
+import Gyeongju2 from "./images/photos/Gyeongju/Gyeongju2.webp"
 //Švajčiarsko
-import ChateaudeChillon from "./images/photos/ChateaudeChillon/ChateaudeChillon.jpg"
-import ChateaudeChillon1 from "./images/photos/ChateaudeChillon/ChateaudeChillon1.jpg"
-import ChateaudeChillon2 from "./images/photos/ChateaudeChillon/ChateaudeChillon2.jpg"
-import ChateaudeChillon3 from "./images/photos/ChateaudeChillon/ChateaudeChillon3.jpg"
-import TheMatterhorn from "./images/photos/TheMatterhorn/TheMatterhorn.jpg"
-import TheMatterhorn1 from "./images/photos/TheMatterhorn/TheMatterhorn1.jpg"
+import ChateaudeChillon from "./images/photos/ChateaudeChillon/ChateaudeChillon.webp"
+import ChateaudeChillon1 from "./images/photos/ChateaudeChillon/ChateaudeChillon1.webp"
+import ChateaudeChillon2 from "./images/photos/ChateaudeChillon/ChateaudeChillon2.webp"
+import ChateaudeChillon3 from "./images/photos/ChateaudeChillon/ChateaudeChillon3.webp"
+import TheMatterhorn from "./images/photos/TheMatterhorn/TheMatterhorn.webp"
+import TheMatterhorn1 from "./images/photos/TheMatterhorn/TheMatterhorn1.webp"
 import TheMatterhorn2 from "./images/photos/TheMatterhorn/TheMatterhorn2.webp"
-import TheMatterhorn3 from "./images/photos/TheMatterhorn/TheMatterhorn3.jpg"
-import RhineFalls from "./images/photos/RhineFalls/RhineFalls.jpg"
-import RhineFalls1 from "./images/photos/RhineFalls/RhineFalls1.jpg"
-import RhineFalls2 from "./images/photos/RhineFalls/RhineFalls2.jpg"
+import TheMatterhorn3 from "./images/photos/TheMatterhorn/TheMatterhorn3.webp"
+import RhineFalls from "./images/photos/RhineFalls/RhineFalls.webp"
+import RhineFalls1 from "./images/photos/RhineFalls/RhineFalls1.webp"
+import RhineFalls2 from "./images/photos/RhineFalls/RhineFalls2.webp"
 //Kanada
-import TorngatMountains from "./images/photos/TorngatMountains/TorngatMountains.jpg"
-import QuebecCity from "./images/photos/QuebecCity/QuebecCity.jpg"
-import QuebecCity1 from "./images/photos/QuebecCity/QuebecCity1.jpg"
-import QuebecCity2 from "./images/photos/QuebecCity/QuebecCity2.jpg"
-import QuebecCity3 from "./images/photos/QuebecCity/QuebecCity3.jpg"
-import JoffreLakesPark from "./images/photos/JoffreLakesPark/JoffreLakesPark.png"
-import JoffreLakesPark1 from "./images/photos/JoffreLakesPark/JoffreLakesPark1.jpg"
+import TorngatMountains from "./images/photos/TorngatMountains/TorngatMountains.webp"
+import TorngatMountains1 from "./images/photos/TorngatMountains/TorngatMountains1.webp"
+import TorngatMountains2 from "./images/photos/TorngatMountains/TorngatMountains2.webp"
+import QuebecCity from "./images/photos/QuebecCity/QuebecCity.webp"
+import QuebecCity1 from "./images/photos/QuebecCity/QuebecCity1.webp"
+import QuebecCity2 from "./images/photos/QuebecCity/QuebecCity2.webp"
+import QuebecCity3 from "./images/photos/QuebecCity/QuebecCity3.webp"
+import JoffreLakesPark from "./images/photos/JoffreLakesPark/JoffreLakesPark.webp"
+import JoffreLakesPark1 from "./images/photos/JoffreLakesPark/JoffreLakesPark1.webp"
+import JoffreLakesPark2 from "./images/photos/JoffreLakesPark/JoffreLakesPark1.webp"
 //Afrika
-import BlydeRiverCanyon from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon.jpg"
-import BlydeRiverCanyon1 from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.jpg"
-import BlydeRiverCanyon2 from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon2.jpg"
-import VictoriaFalls from "./images/photos/VictoriaFalls/VictoriaFalls.jpg"
-import VictoriaFalls1 from "./images/photos/VictoriaFalls/VictoriaFalls1.jpg"
-import VictoriaFalls2 from "./images/photos/VictoriaFalls/VictoriaFalls2.jpg"
-import VictoriaFalls3 from "./images/photos/VictoriaFalls/VictoriaFalls3.jpg"
-import AbuSimbel from "./images/photos/AbuSimbel/AbuSimbel.jpg"
-import AbuSimbel1 from "./images/photos/AbuSimbel/AbuSimbel1.jpg"
-import AbuSimbel2 from "./images/photos/AbuSimbel/AbuSimbel2.jpg"
-import AbuSimbel3 from "./images/photos/AbuSimbel/AbuSimbel3.jpg"
+import BlydeRiverCanyon from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon.webp"
+import BlydeRiverCanyon1 from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp"
+import BlydeRiverCanyon2 from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon2.webp"
+import VictoriaFalls from "./images/photos/VictoriaFalls/VictoriaFalls.webp"
+import VictoriaFalls1 from "./images/photos/VictoriaFalls/VictoriaFalls1.webp"
+import VictoriaFalls2 from "./images/photos/VictoriaFalls/VictoriaFalls2.webp"
+import VictoriaFalls3 from "./images/photos/VictoriaFalls/VictoriaFalls3.webp"
+import AbuSimbel from "./images/photos/AbuSimbel/AbuSimbel.webp"
+import AbuSimbel1 from "./images/photos/AbuSimbel/AbuSimbel1.webp"
+import AbuSimbel2 from "./images/photos/AbuSimbel/AbuSimbel2.webp"
+import AbuSimbel3 from "./images/photos/AbuSimbel/AbuSimbel3.webp"
 
 function App() {
   const list = [
@@ -110,14 +111,14 @@ function App() {
       title: "Gyeongju",
       background: Gyeongju,
       description: "Gyeongju je nádherné historické mesto v Južnej Kórei, ktoré je pokladnicou bohatých kultúrnych a historických pokladov. Pre turistov a návštevníkov je to fascinujúce miesto, kde môžu objavovať staroveké pamiatky, krásne prírodné scenérie a jedinečnú kórejskú kultúru. Okrem svojho historického bohatstva ponúka Gyeongju aj nádherné prírodné scenérie. Navštívte úchvatný útes Toham až ktorému sa dá dostať pomocou lanovky a očarí vás panoramatickými výhľadmi na pobrežie. Ďalej môžete navštíviť národný park Namsan s nádhernou prírodou a historickými pamiatkami.",
-      photo: [Gyeongju1, Gyeongju2, Gyeongju3],
+      photo: [Gyeongju, Gyeongju1, Gyeongju2],
       tag: ["all", "korea", "pamiatka", "priroda"],
     },
     {
       title: "Bukchon Hanok Village",
       background: BukchonHanokVillage,
       description: "Bukchon Hanok Village je fascinujúca historická štvrť v centre mesta Seoul v Južnej Kórei, ktorá ponúka jedinečný pohľad na tradičnú kórejskú architektúru a životný štýl. Pre turistov a návštevníkov je to miesto plné kultúrneho bohatstva a historických zážitkov. Prechádzka uličkami Bukchon Hanok Village vás vtiahne do minulosti. Môžete vidieť miestnych obyvateľov, ktorí sa stále držia tradičných kórejských zvykov a remesiel. Niektoré z domov dokonca ponúkajú možnosť navštíviť vnútro a spoznať viac o tradičnom kórejskom živote.",
-      photo: [BukchonHanokVillage1, BukchonHanokVillage2, BukchonHanokVillage3],
+      photo: [BukchonHanokVillage, BukchonHanokVillage2, BukchonHanokVillage3],
       tag: ["all", "korea", "pamiatka"], 
     },
     {
@@ -145,14 +146,14 @@ function App() {
       title: "Joffre Lakes Park",
       background: JoffreLakesPark,
       description: "Joffre Lakes Provincial Park je nádherný prírodný park v pohorí Coast Mountains v Britskej Kolumbii, Kanada. Pre turistov a návštevníkov je to fascinujúca destinácia, ktorá ponúka úchvatné scenérie, turistiku, rybolov a príležitosti na relaxáciu v prírode. Hlavnou atrakciou Joffre Lakes Park sú trojica jazier s názvami Lower, Middle a Upper Joffre Lake. Tieto jazerá sú známe svojou jasnou tyrkysovou farbou, ktorá je spôsobená jemnými časticami piesku z ľadovca. Návštevníci môžu vychutnať krásne výhľady na hladinu jazier a okolité horské scenérie.",
-      photo: [JoffreLakesPark, JoffreLakesPark1, JoffreLakesPark],
+      photo: [JoffreLakesPark, JoffreLakesPark1, JoffreLakesPark2],
       tag: ["all", "kanada", "pamiatka"],
     },
     {
       title: "Torngat Mountains",
       background: TorngatMountains,
       description: "Torngat Mountains sú národným parkom v severovýchodnej Kanade, ktorý sa nachádza na Labradorskom poloostrove a na ostrove Newfoundland a Labrador. Tento odľahlý a divoký park je domovom nádherných prírodných scenérií, divokých zvierat a kultúrnej dedičstva pôvodných obyvateľov. Pre turistov a návštevníkov je Torngat Mountains zážitkom, ktorý ponúka pohľad do divočiny a nezabudnuteľné prírodné a kultúrne zážitky. Torngat Mountains ponúkajú úchvatné scenérie vrátane strmých skalnatých útesov, mohutných ľadovcov, jazier, vodopádov a divokých riek. Tento odľahlý park je domovom niektorých najpozoruhodnejších prírodných krás v Kanade, ktoré návštevníkom ponúkajú možnosť objaviť jedinečnú a nedotknutú divočinu.",
-      photo: [Seoul1, Seoul2, Seoul3],
+      photo: [TorngatMountains, TorngatMountains1, TorngatMountains2],
       tag: ["all", "kanada", "mesto"],
     },
     {

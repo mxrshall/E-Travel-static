@@ -1,8 +1,8 @@
 import React from 'react';
 
-function OverlayFotka({ fotka, sendDataClose }) {
+function OverlayFotka({ fotka, sendData }) {
   const handleClick = () => {
-    sendDataClose(false);
+    sendData(false);
   };
 
   return (

@@ -1,4 +1,4 @@
-function InfoDescription({ description }) {
+function Description({ description }) {
     const veta = description.split('. ');
 
     const odstavec = [];
@@ -19,4 +19,4 @@ function InfoDescription({ description }) {
     );
 }
 
-export default InfoDescription;
+export default Description;

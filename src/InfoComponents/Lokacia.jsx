@@ -1,5 +1,6 @@
 import Title from "../UniversalComponents/Title"
-import InfoDescription from "./InfoDescription"
+import Description from "../UniversalComponents/Description"
+
 import InfoButton from "./InfoButton"
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
@@ -19,7 +20,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
-              <InfoDescription description={description}/>
+              <Description description={description}/>
               <InfoButton link="katalog"/>
             </div>
             <div className="w-5/12 h-[100vh] flex justify-center items-center">
@@ -37,7 +38,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
-              <InfoDescription description={description}/>
+              <Description description={description}/>
               <InfoButton link="katalog"/>
             </div>
           </>

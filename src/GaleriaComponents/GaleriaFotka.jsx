@@ -1,6 +1,6 @@
-function GaleriaFotka({background, sendData}) {
+function GaleriaFotka({background, sendFotka}) {
     const handleClick = () => {
-        sendData(true);
+        sendFotka(background);
       };
 
     return (

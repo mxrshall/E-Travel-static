@@ -3,8 +3,8 @@ function HomepageDescription() {
     return (
         <div className="w-7/12 pt-[4%]">
             <span className="text-base text-white font-normal font-mont">
-                Sme cestovná kancelária, ktorá sa zameriava na poskytovanie nezabudnuteľných zážitkov a dobrodružstiev pre našich klientov po celom svete. 
-                S našou vášňou pre cestovanie a odborným know-howom sme pripravení vám pomôcť plniť vaše cestovateľské sny. 
+                Vitajte v Cestovnej agentúre E-Travel Vaša brána do sveta nezabudnuteľných dobrodružstiev a relaxu. Sme tu, aby sme vám pomohli naplniť 
+                vaše cestovateľské sny, či už túžite po dobrodružstve v exotických destináciách alebo po relaxácii na najkrajších horách sveta. 
                 <br/>
                 <br/>
                 V našom cestovnom katalógu nájdete širokú škálu destinácií, zájazdov a dobrodružstiev, ktoré spĺňajú rôzne záujmy a preferencie.

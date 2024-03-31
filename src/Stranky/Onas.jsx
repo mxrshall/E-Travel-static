@@ -22,7 +22,11 @@ function Onas() {
             <Navbar/>
             <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black absolute z-10">
                 <Title title="E-Travel"/>
-                <Description description="Sme cestovná kancelária, ktorá sa zameriava na poskytovanie nezabudnuteľných zážitkov a dobrodružstiev pre našich klientov po celom svete. S našou vášňou pre cestovanie a odborným know-howom sme pripravení vám pomôcť plniť vaše cestovateľské sny. V našom cestovnom katalógu nájdete širokú škálu destinácií, zájazdov a dobrodružstiev, ktoré spĺňajú rôzne záujmy a preferencie. Od exotických pláží a dobrodružných expedícií až po kultúrne výlety a romantické úniky, máme niečo pre každého."/>
+                <Description description="Vitajte v Cestovnej agentúre E-Travel Vaša brána do sveta nezabudnuteľných dobrodružstiev a relaxu. Sme tu, aby sme vám pomohli naplniť vaše cestovateľské sny, či už túžite po dobrodružstve v exotických destináciách alebo po relaxácii na najkrajších horách sveta. Jednoduchosť a pohodlie: S nami môžete jednoducho a rýchlo rezervovať svoju dovolenku z pohodlia vášho domova alebo kancelárie. S našou intuitívnou webovou stránkou a mobilnou aplikáciou je cestovanie jednoduché ako nikdy predtým.
+                    Široká ponuka destinácií: Nech už túžite po dovolenke na pláži, dobrodružnom výlete do prírody, alebo po objavovaní kultúrnych skvostov, ponúkame vám široký výber destinácií po celom svete, aby sme uspokojili vaše cestovateľské túžby.
+                    Skúsení cestovní poradcovia: Naši skúsení a odborní cestovní poradcovia sú tu, aby vám poskytli osobnú podporu a poradenstvo pri plánovaní vašej dovolenky. Sme tu pre vás od začiatku až do konca, aby sme zabezpečili vašu maximálnu spokojnosť.
+                    Výhodné ceny a špeciálne ponuky: Snažíme sa poskytnúť vám najlepšie ceny a špeciálne ponuky, aby ste si mohli užiť svoju dovolenku bez toho, aby ste museli míňať veľa peňazí. Vďaka našim partnerstvám s poprednými leteckými spoločnosťami, hotelmi a zážitkovými organizátormi vám môžeme ponúknuť jedinečné cestovné zážitky za výhodné ceny.
+                    Bezpečnosť a dôvera: Vaša bezpečnosť a spokojnosť sú pre nás prioritou. Sme licencovaní a poistení, a naši partneri sú starostlivo vybraní, aby sme vám poskytli len tie najvyššie štandardy služieb."/>
                 <ButtonContainer link={link}/>
             </div>
             <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>

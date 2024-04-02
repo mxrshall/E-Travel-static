@@ -9,6 +9,7 @@ function ButtonContainer({link}) {
                     key={index}
                     text={item.title}
                     link={item.link}
+                    delay={item.delay}
                 />
             ))}
         </div>

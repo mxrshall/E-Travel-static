@@ -8,14 +8,17 @@ const link = [
     {
         title: "O nás",
         link: "onas",
+        delay: 1.4,
     },
     {
         title: "Prejsť na katalóg",
         link: "katalog",
+        delay: 1.6,
     },
     {
         title: "Zobraziť lokácie",
         link: "info",
+        delay: 1.8,
     },
 ]
 

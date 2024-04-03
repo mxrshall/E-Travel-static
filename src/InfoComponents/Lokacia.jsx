@@ -1,6 +1,7 @@
 import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"
 import ButtonContainer from "../UniversalComponents/ButtonContainer"
+import { motion } from "framer-motion";
 
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
@@ -22,32 +23,32 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
         <div className="flex absolute z-10">
         {left && (
           <>
-            <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
               <div className="flex">
                 <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
               <Description description={description}/>
               <ButtonContainer link={link}/>
-            </div>
-            <div className="w-5/12 h-[100vh] flex justify-center items-center">
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
               <Slider slider={slider} tag={tag}/>
-            </div>
+            </motion.div>
           </>
         )}
         {!left && (
           <>
-            <div className="w-5/12 h-[100vh] flex justify-center items-center">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
               <Slider slider={slider} tag={tag}/>
-            </div>
-            <div className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
               <div className="flex">
                 <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
               <Description description={description}/>
               <ButtonContainer link={link}/>
-            </div>
+            </motion.div>
           </>
         )}
         </div>

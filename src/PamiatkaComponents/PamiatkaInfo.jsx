@@ -1,7 +1,7 @@
 import Button from "../Button"
 import PamiatkaFotka from "./PamiatkaFotka"
 
-function PamiatkaInfo({ description, photo }) {
+function PamiatkaInfo({ description, photo, sendFotka }) {
     const veta = description.split('. ');
 
     const odstavec = [];
@@ -26,6 +26,7 @@ function PamiatkaInfo({ description, photo }) {
                     <PamiatkaFotka
                         key={item}
                         background={item}
+                        sendFotka={sendFotka}
                     />
                 ))}
             </div>

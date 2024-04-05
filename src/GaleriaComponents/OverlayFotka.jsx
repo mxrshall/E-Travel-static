@@ -1,6 +1,7 @@
 import React from 'react';
 
 function OverlayFotka({ fotka, sendData }) {
+
   const handleClick = () => {
     sendData(false);
   };

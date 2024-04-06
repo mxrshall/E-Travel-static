@@ -14,11 +14,13 @@ function Karta({title, background, description, photo}) {
     return (
         <div className="w-[18%] h-[50vh] my-5 mx-[1%] rounded-xl" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
             <Link to="/pamiatka" state={{ data: data }}>
-                <div className="w-full h-full flex bg-cover bg-center rounded-xl p-5" style={{ backgroundImage: `url(${background})`}}>
-                    <p className="text-xl text-white font-bold font-mont">{title}</p>
+                <div className="w-full h-full flex flex-col bg-cover bg-center rounded-xl p-5" style={{ backgroundImage: `url(${background})`}}>
+                    <div className="w-full h-1/2 hover:none">
+                        <p className="text-xl text-white font-bold font-mont">{title}</p>
+                    </div>
                     {hovered && (
                         <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                            <img src={arrow} className="w-[1.5rem]"></img>
+                            <img src={arrow} className="w-[1.7rem]"></img>
                         </div>
                     )}
                 </div>

@@ -13,9 +13,18 @@ function Galeria({ slider }) {
             const photos = slider.reduce((acc, curr) => {
                 return acc.concat(curr.photo);
             }, []);
+            shuffleArray(photos); // Shuffle the array
             setAllPhotos(photos);
         }
     }, [slider]);
+
+    // Fisher-Yates shuffle algorithm
+    const shuffleArray = (array) => {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    };
 
     const sendData = (data) => {
         setOpen(data);

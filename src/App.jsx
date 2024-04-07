@@ -49,7 +49,7 @@ import QuebecCity2 from "./images/photos/QuebecCity/QuebecCity2.webp"
 import QuebecCity3 from "./images/photos/QuebecCity/QuebecCity3.webp"
 import JoffreLakesPark from "./images/photos/JoffreLakesPark/JoffreLakesPark.webp"
 import JoffreLakesPark1 from "./images/photos/JoffreLakesPark/JoffreLakesPark1.webp"
-import JoffreLakesPark2 from "./images/photos/JoffreLakesPark/JoffreLakesPark1.webp"
+import JoffreLakesPark2 from "./images/photos/JoffreLakesPark/JoffreLakesPark2.webp"
 //Afrika
 import BlydeRiverCanyon from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon.webp"
 import BlydeRiverCanyon1 from "./images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp"

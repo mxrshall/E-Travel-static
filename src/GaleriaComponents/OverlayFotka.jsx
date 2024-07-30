@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineClose } from "react-icons/md";
 
 function OverlayFotka({ fotka, sendData }) {
 
@@ -7,8 +8,11 @@ function OverlayFotka({ fotka, sendData }) {
   };
 
   return (
-    <div className="w-full h-full bg-black bg-opacity-80 fixed z-50 flex justify-center items-center" onClick={handleClick}>
-      <img className="w-1/2 bg-contain bg-no-repeat bg-center" src={fotka} alt="Fotka" />
+    <div className="w-full h-screen bg-black bg-opacity-80 z-[60] fixed top-0 left-[50%] translate-x-[-50%] flex justify-center">
+      <div className="absolute top-4 right-4">
+        <MdOutlineClose color="white" size="30" onClick={handleClick} />
+      </div>
+      <img className="w-1/2 bg-contain bg-no-repeat bg-center m-auto" src={fotka} alt="Overlay" />
     </div>
   );
 }

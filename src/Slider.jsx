@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import arrow from "./images/icons/arrow_up.svg";
+import { IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const slidersettings = {
@@ -99,7 +99,7 @@ const Slider = ({slider, tag}) => {
                         </div>
                         {hovered && (
                             <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                                <img src={arrow} className="w-[1.5rem]"></img>
+                                <IoIosArrowUp size="30" color="white"/>
                             </div>
                         )}
                     </motion.div>

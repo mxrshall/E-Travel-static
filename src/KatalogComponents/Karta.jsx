@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import arrow from "../images/icons/arrow_up.svg";
+import { IoIosArrowUp } from "react-icons/io";
 
 function Karta({title, background, description, photo}) {
     const [hovered, setHovered] = useState(false);
@@ -21,7 +21,7 @@ function Karta({title, background, description, photo}) {
                     </div>
                     {hovered && (
                         <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                            <img src={arrow} className="w-[1.7rem]"></img>
+                            <IoIosArrowUp size="30" color="white"/>
                         </div>
                     )}
                 </motion.div>

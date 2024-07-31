@@ -1,4 +1,4 @@
-import header3 from "../images/header/header3.jpg"
+import header3 from "../../public/images/header/header3.jpg"
 import HomepageTitle from "../HomepageComponents/HomepageTitle"
 import HomepageDescription from "../HomepageComponents/HomepageDescription"
 import Navbar from "../Navbar/Navbar"

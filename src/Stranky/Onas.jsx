@@ -1,4 +1,4 @@
-import onas from "../images/header/onas.png"
+import onas from "../../public/images/header/onas.png"
 import Navbar from "../Navbar/Navbar"
 import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"

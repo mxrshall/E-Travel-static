@@ -7,24 +7,3 @@
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
-
-.text-shadow-xl {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.filter {
-  filter: contrast(110%) brightness(110%) saturate(130%);
-}
-
-.mix-blend-screen::before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  background: rgba(243, 106, 188, 0.3);
-}

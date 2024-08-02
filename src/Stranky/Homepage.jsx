@@ -35,7 +35,7 @@ function Homepage() {
             </div>
             <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
             <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${header3})`}}></div>
-            <Test/>
+            <Test link={link}/>
         </>
     )
   }

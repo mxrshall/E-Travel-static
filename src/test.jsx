@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import anime from 'animejs';
 import "./index.css";
+import ButtonContainer from './UniversalComponents/ButtonContainer';
 
 const itemsData = [
     {
-        content: 'Novitates',
+        content: 'Cestovná kancelária E-Travel',
         imgs: [
             'https://picsum.photos/seed/a/700/700',
             'https://picsum.photos/seed/b/700/700',
@@ -12,27 +13,9 @@ const itemsData = [
             'https://picsum.photos/seed/d/700/700',
         ],
     },
-    {
-        content: 'Si spem',
-        imgs: [
-            'https://picsum.photos/seed/e/700/700',
-            'https://picsum.photos/seed/f/700/700',
-            'https://picsum.photos/seed/g/700/700',
-            'https://picsum.photos/seed/h/700/700',
-        ],
-    },
-    {
-        content: 'Adferunt',
-        imgs: [
-            'https://picsum.photos/seed/i/700/700',
-            'https://picsum.photos/seed/j/700/700',
-            'https://picsum.photos/seed/k/700/700',
-            'https://picsum.photos/seed/l/700/700',
-        ],
-    },
 ];
 
-function Test() {
+function Test({link}) {
     const [current, setCurrent] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -45,6 +28,69 @@ function Test() {
                 "<span class='letter'>$&</span>"
             );
         });
+
+        // Initial animation trigger
+        const initialItem = items[0];
+        const initialText = initialItem.querySelectorAll('.content .letter');
+        const initialImgs = initialItem.querySelectorAll('.img');
+
+        const t = 400;
+        const imgOffset = t * 0.8;
+
+        anime.timeline({ easing: 'easeInOutQuint', duration: t })
+            .add({
+                targets: initialText,
+                translateY: ['.75em', 0],
+                opacity: [0, 1],
+                easing: 'easeOutQuint',
+                duration: t * 1.5,
+                delay: (el, i) => 10 * (i + 1),
+            })
+            .add(
+                {
+                    targets: initialImgs[0],
+                    translateY: [600, 0],
+                    translateZ: 0,
+                    rotate: ['15deg', 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutCubic',
+                },
+                '-=' + imgOffset
+            )
+            .add(
+                {
+                    targets: initialImgs[1],
+                    translateY: [600, 0],
+                    translateZ: 0,
+                    rotate: ['-15deg', 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutCubic',
+                },
+                '-=' + imgOffset
+            )
+            .add(
+                {
+                    targets: initialImgs[2],
+                    translateY: [600, 0],
+                    translateZ: 0,
+                    rotate: ['15deg', 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutCubic',
+                },
+                '-=' + imgOffset
+            )
+            .add(
+                {
+                    targets: initialImgs[3],
+                    translateY: [600, 0],
+                    translateZ: 0,
+                    rotate: ['-15deg', 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutCubic',
+                },
+                '-=' + imgOffset
+            );
+
     }, []);
 
     const anim = (currentItem, newItem, callback) => {
@@ -220,15 +266,13 @@ function Test() {
 
     return (
         <div className="slider h-screen w-screen bg-black flex items-center justify-center text-white relative overflow-hidden transition-background-color duration-2000">
-            <div className="nav">
-                <div className="next h-8 w-8 absolute top-1/2 right-8 cursor-pointer z-30 transition-transform duration-300" onClick={next} />
-                <div className="prev h-8 w-8 absolute top-1/2 left-8 cursor-pointer z-30 transition-transform duration-300" onClick={prev} />
-                <div className="explore-btn z-40 absolute bottom-8 left-1/2 transform -translate-x-1/2 w-32 text-center py-4 border-2 border-white bg-transparent text-white transition-background-color duration-300 cursor-pointer hover:bg-white hover:text-black">Explore</div>
+            <div className='bg-red-600 display-flex justify-center'>
+                <ButtonContainer link={link}/>
             </div>
             {itemsData.map((item, index) => (
                 <div key={index} className={`item absolute top-0 left-0 w-full h-full flex items-center justify-center ${index === current ? 'is-active' : 'opacity-0 pointer-events-none'}`}>
                     <div className="content absolute z-20 top-0 left-0 w-full h-full flex items-center justify-center text-8xl font-bold">
-                        <div className="wrap text-center text-shadow-xl w-full max-w-lg">
+                        <div className="wrap text-center text-shadow-xl max-w-lg">
                             {item.content}
                         </div>
                     </div>
@@ -248,4 +292,3 @@ function Test() {
 }
 
 export default Test;
-

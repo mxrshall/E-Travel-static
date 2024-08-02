@@ -3,6 +3,7 @@ import HomepageTitle from "../HomepageComponents/HomepageTitle"
 import HomepageDescription from "../HomepageComponents/HomepageDescription"
 import Navbar from "../Navbar/Navbar"
 import ButtonContainer from "../UniversalComponents/ButtonContainer"
+import Test from "../test";
 
 const link = [
     {
@@ -27,13 +28,14 @@ function Homepage() {
     return (
         <>
             <Navbar/>
-            <div className="w-9/12 h-[100vh] pt-[12%] pl-[5%] flex flex-col absolute z-10">
+            <div className="w-9/12 h-[100vh] pt-[10%] pl-[5%] flex flex-col absolute z-10">
                 <HomepageTitle/>
                 <HomepageDescription/>
                 <ButtonContainer link={link}/>
             </div>
             <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
             <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${header3})`}}></div>
+            <Test/>
         </>
     )
   }

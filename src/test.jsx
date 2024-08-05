@@ -6,7 +6,6 @@ import header1 from "../public/images/header/header1.jpg";
 import header2 from "../public/images/header/header2.jpg";
 import header3 from "../public/images/header/header3.jpg";
 import header4 from "../public/images/header/header4.jpg";
-import Button1 from './Button1';
 
 const itemsData = [
     {
@@ -91,7 +90,7 @@ function Test({ link }) {
             );
     }, []);
 
-    const handleClick = () => {
+    const handleClick = (value) => () => {
         const item = document.querySelector('.item');
         const text = item.querySelectorAll('.content .letter');
         const imgs = item.querySelectorAll('.img');
@@ -153,15 +152,17 @@ function Test({ link }) {
                 '-=' + imgOffset
             )
             .finished.then(() => {
-                window.location.href = "/onas";
+                window.location.href = `/${value}`;
             });
 
     };
 
     return (
         <div className="h-screen w-full bg-black flex items-center justify-center text-white relative overflow-hidden">
-            <div className='bg-red-600 display-flex justify-center mt-[30%] z-40'>
-                <button onClick={handleClick}>Test</button>
+            <div className='display-flex justify-center mt-[30%] z-40'>
+                <button onClick={handleClick("onas")} className="font-mont text-base px-2 text-white border-2 border-white hover:bg-white hover:text-black">O nás</button>
+                <button onClick={handleClick("katalog")} className="font-mont text-base px-2 mx-5 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                <button onClick={handleClick("info")} className="font-mont text-base px-2 text-white border-2 border-white hover:bg-white hover:text-black">Zobraziť lokácie</button>
             </div>
             <div className="item absolute top-0 left-0 w-full h-full flex items-center justify-center">
                 <div className="content absolute z-20 top-0 left-0 w-full h-full flex items-center justify-center text-8xl font-bold">

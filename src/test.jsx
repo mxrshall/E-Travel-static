@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import anime from 'animejs';
-import ButtonContainer from './UniversalComponents/ButtonContainer';
+import { Link } from "react-router-dom";
 import "./index.css";
 import header1 from "../public/images/header/header1.jpg";
 import header2 from "../public/images/header/header2.jpg";
 import header3 from "../public/images/header/header3.jpg";
 import header4 from "../public/images/header/header4.jpg";
+import Button1 from './Button1';
 
 const itemsData = [
     {
@@ -151,64 +152,16 @@ function Test({ link }) {
                 },
                 '-=' + imgOffset
             )
-            .add({
-                targets: text,
-                translateY: ['.75em', 0],
-                opacity: [0, 1],
-                easing: 'easeOutQuint',
-                duration: t * 1.5,
-                delay: (el, i) => 10 * (i + 1),
-            })
-            .add(
-                {
-                    targets: imgs[0],
-                    translateY: [600, 0],
-                    translateZ: 0,
-                    rotate: ['15deg', 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutCubic',
-                },
-                '-=' + imgOffset
-            )
-            .add(
-                {
-                    targets: imgs[1],
-                    translateY: [600, 0],
-                    translateZ: 0,
-                    rotate: ['-15deg', 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutCubic',
-                },
-                '-=' + imgOffset
-            )
-            .add(
-                {
-                    targets: imgs[2],
-                    translateY: [600, 0],
-                    translateZ: 0,
-                    rotate: ['15deg', 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutCubic',
-                },
-                '-=' + imgOffset
-            )
-            .add(
-                {
-                    targets: imgs[3],
-                    translateY: [600, 0],
-                    translateZ: 0,
-                    rotate: ['-15deg', 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutCubic',
-                },
-                '-=' + imgOffset
-            );
+            .finished.then(() => {
+                window.location.href = "/onas";
+            });
+
     };
 
     return (
         <div className="h-screen w-full bg-black flex items-center justify-center text-white relative overflow-hidden">
             <div className='bg-red-600 display-flex justify-center mt-[30%] z-40'>
-                <ButtonContainer link={link}/>
+                <button onClick={handleClick}>Test</button>
             </div>
             <div className="item absolute top-0 left-0 w-full h-full flex items-center justify-center">
                 <div className="content absolute z-20 top-0 left-0 w-full h-full flex items-center justify-center text-8xl font-bold">

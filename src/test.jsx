@@ -171,7 +171,7 @@ function Test({ link }) {
                     </div>
                 </div>
                 <div className="imgs relative w-3/5 pt-[60%]">
-                    <div className="grid absolute top-0 left-0 w-full h-full grid-cols-12 grid-rows-12 gap-4 transform rotate-[-20deg] opacity-65">
+                    <div className="grid absolute top-0 left-0 w-full h-full grid-cols-12 grid-rows-10 gap-2 transform rotate-[-20deg] opacity-65">
                         {itemsData[0].imgs.map((img, imgIndex) => (
                             <div key={imgIndex} className={`img absolute w-full h-full ${imgIndex === 0 ? 'col-span-4 row-span-6' : imgIndex === 1 ? 'col-start-5 col-span-8 row-span-5' : imgIndex === 2 ? 'col-span-8 row-start-7 row-span-5' : 'col-start-9 col-span-4 row-span-6'}`}>
                                 <img src={img} alt="" className="absolute top-0 w-full h-full object-cover filter brightness-110 contrast-110 saturate-130 mix-blend-screen" />

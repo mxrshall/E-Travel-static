@@ -25,6 +25,7 @@ function Homepage() {
             /\S/g,
             "<span class='letter'>$&</span>"
         );
+        const container = document.querySelector('.container');
 
         // Initial animation trigger
         const initialText = item.querySelectorAll('.content .letter');
@@ -85,13 +86,20 @@ function Homepage() {
                     easing: 'easeOutCubic',
                 },
                 '-=' + imgOffset
-            );
+            )
+            .add({
+                targets: container,
+                opacity: [0, 1],
+                easing: 'easeOutQuint',
+                duration: 500,
+            });
     }, []);
 
     const handleClick = (value) => () => {
         const item = document.querySelector('.item');
         const text = item.querySelectorAll('.content .letter');
         const imgs = item.querySelectorAll('.img');
+        const container = document.querySelector('.container');
 
         const t = 500;
         const imgOffset = t * 0.8;
@@ -104,6 +112,12 @@ function Homepage() {
                 easing: 'easeInQuint',
                 duration: t,
                 delay: (el, i) => 10 * (i + 1),
+            })
+            .add({
+                targets: container,
+                opacity: [1, 0],
+                easing: 'easeOutQuint',
+                duration: t * 1,
             })
             .add(
                 {
@@ -157,7 +171,7 @@ function Homepage() {
 
     return (
         <div className="h-screen w-full bg-black flex items-center justify-center text-white relative overflow-hidden">
-            <div className='display-flex justify-center mt-[30%] z-40'>
+            <div className='container flex justify-center items-center mt-[30%] z-40'>
                 <button onClick={handleClick("onas")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">O nás</button>
                 <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 mx-5 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
                 <button onClick={handleClick("info")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Zobraziť lokácie</button>

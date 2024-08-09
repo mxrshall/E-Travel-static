@@ -2,21 +2,13 @@ import onas from "../../public/images/header/onas.png"
 import Navbar from "../Navbar/Navbar"
 import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"
-import ButtonContainer from "../UniversalComponents/ButtonContainer"
 import { motion } from "framer-motion";
 
-const link = [
-    {
-        title: "Prejsť na katalóg",
-        link: "katalog",
-    },
-    {
-        title: "Zobraziť lokácie",
-        link: "info",
-    },
-]
-
 function Onas() {
+
+    const handleClick = (value) => () => {
+        window.location.href = `/${value}`;
+    };
 
     return (
         <>
@@ -31,7 +23,10 @@ function Onas() {
                 <Description description="Vitajte v Cestovnej agentúre E-Travel Vaša brána do sveta nezabudnuteľných dobrodružstiev a relaxu. Sme tu, aby sme vám pomohli naplniť vaše cestovateľské sny, či už túžite po dobrodružstve v exotických destináciách alebo po relaxácii na najkrajších horách sveta. S nami môžete jednoducho a rýchlo rezervovať svoju dovolenku z pohodlia vášho domova alebo kancelárie.
                     Nech už túžite po výlete do prírody, alebo po objavovaní kultúrnych skvostov, ponúkame vám široký výber destinácií po celom svete, aby sme uspokojili vaše cestovateľské túžby."
                 />
-                <ButtonContainer link={link}/>
+                <div className="w-full flex pt-[3%]">
+                    <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                    <button onClick={handleClick("info")} className="font-mont text-base font-medium px-2 mx-5 text-white border-2 border-white hover:bg-white hover:text-black">Zobraziť lokácie</button>
+                </div>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0 }} 

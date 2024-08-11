@@ -1,13 +1,18 @@
-import onas from "../../public/images/header/onas.png"
-import Navbar from "../Navbar/Navbar"
-import Title from "../UniversalComponents/Title"
-import Description from "../UniversalComponents/Description"
+import onas from "../../public/images/header/onas.png";
+import Navbar from "../Navbar/Navbar";
+import Title from "../UniversalComponents/Title";
+import Description from "../UniversalComponents/Description";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 function Onas() {
+    const [isExit, setIsExit] = useState(false);
 
     const handleClick = (value) => () => {
-        window.location.href = `/${value}`;
+        setIsExit(true);
+        setTimeout(() => {
+            window.location.href = `/${value}`;
+        }, 1000);
     };
 
     return (
@@ -15,8 +20,8 @@ function Onas() {
             <Navbar/>
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 1 }}
+                animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
+                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }}
                 className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black absolute z-10"
             >
                 <Title title="E-Travel"/>
@@ -30,15 +35,15 @@ function Onas() {
             </motion.div>
             <motion.div
                 initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ duration: 0.5, delay: 0.5 }}
+                animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
+                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
                 className="w-full h-[100vh] bg-cover bg-center" 
                 style={{ backgroundImage: `url(${onas})`}}
             >
                 <div className="absolute inset-0 bg-black opacity-60"></div>
             </motion.div>
         </>
-    )
-  }
-  
-  export default Onas
+    );
+}
+
+export default Onas;

@@ -36,7 +36,7 @@ function Onas() {
             <motion.div
                 initial={{ opacity: 0 }} 
                 animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
-                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
+                transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }}
                 className="w-full h-[100vh] bg-cover bg-center" 
                 style={{ backgroundImage: `url(${onas})`}}
             >

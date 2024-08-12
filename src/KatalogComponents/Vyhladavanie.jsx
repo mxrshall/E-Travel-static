@@ -20,7 +20,7 @@ function Vyhladavanie({ sendData }) {
     return (
         <form onSubmit={handleSubmit} className="mt-10">
             <div className="flex">
-                <div className="px-5">
+                <div className="px-8">
                     <div className="my-2">
                         <input name="korea" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
                         <label className="text-base text-white font-normal font-mont">Južná Kórea</label>
@@ -38,7 +38,7 @@ function Vyhladavanie({ sendData }) {
                         <label className="text-base text-white font-normal font-mont" >Afrika</label>
                     </div>
                 </div>
-                <div className="px-5 border-l-2 border-r-2 border-white">
+                <div className="px-8 border-l-2 border-r-2 border-white">
                     <div className="my-2">
                         <input name="priroda" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
                         <label className="text-base text-white font-normal font-mont" >Príroda</label>
@@ -52,7 +52,7 @@ function Vyhladavanie({ sendData }) {
                         <label className="text-base text-white font-normal font-mont" >Mesto</label>
                     </div>
                 </div>
-                <div className="px-5">
+                <div className="px-8">
                     <div className="my-2">
                         <input name="tropicka" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
                         <label className="text-base text-white font-normal font-mont" >Tropické</label>
@@ -63,8 +63,8 @@ function Vyhladavanie({ sendData }) {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center">
-                <input type="submit" value="Vyhľadať" className="text-base text-white font-normal font-mont" />
+            <div className="flex justify-center items-center mt-5">
+                <input type="submit" value="Vyhľadať" className="text-base text-white font-normal font-mont"/>
             </div>
         </form>
     );

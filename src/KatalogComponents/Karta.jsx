@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Karta({title, background, description, photo}) {
+function Karta({title, background, description, photo, time}) {
     const [hovered, setHovered] = useState(false);
     const [data, setData] = useState({
         title: title,
@@ -13,7 +13,14 @@ function Karta({title, background, description, photo}) {
     });
 
     return (
-        <div className="w-[18%] h-[50vh] my-5 mx-[1%] rounded-xl" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: time }}
+            className="w-[18%] h-[50vh] my-5 mx-[1%] rounded-xl" 
+            onMouseEnter={() => setHovered(true)} 
+            onMouseLeave={() => setHovered(false)}
+        >
             <Link to="/pamiatka" state={{ data: data }}>
                 <motion.div initial={{ y: 0 }} animate={{ y: hovered ? -20 : 0 }} transition={{ duration: 0.3 }} className="w-full h-full flex flex-col bg-cover bg-center rounded-xl p-5" style={{ backgroundImage: `url(${background})`}}>
                     <div className="w-full h-1/2 hover:none">
@@ -26,7 +33,7 @@ function Karta({title, background, description, photo}) {
                     )}
                 </motion.div>
             </Link>
-        </div>
+        </motion.div>
     )
   }
   

@@ -30,7 +30,7 @@ function Katalog({ slider }) {
         <>
             <Navbar />
             <div className="w-full h-[100vh] bg-black absolute">
-                <div className="w-full h-1/4 flex justify-center items-center">
+                <div className="w-full h-2/5 flex justify-center items-center">
                     <Vyhladavanie sendData={sendData} />
                 </div>
                 <div className="bg-black flex flex-wrap">
@@ -41,6 +41,7 @@ function Katalog({ slider }) {
                             background={item.background}
                             description={item.description}
                             photo={item.photo}
+                            time={0.1 * index}
                         />
                     ))}
                 </div>

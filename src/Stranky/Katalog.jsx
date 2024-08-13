@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Karta from "../KatalogComponents/Karta";
 import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
 import Navbar from "../Navbar/Navbar";
@@ -30,9 +31,14 @@ function Katalog({ slider }) {
         <>
             <Navbar />
             <div className="w-full h-[100vh] bg-black absolute">
-                <div className="w-full h-2/5 flex justify-center items-center">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.5 }}
+                    className="w-full h-2/5 flex justify-center items-center"
+                >
                     <Vyhladavanie sendData={sendData} />
-                </div>
+                </motion.div>
                 <div className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
                         <Karta
@@ -41,7 +47,7 @@ function Katalog({ slider }) {
                             background={item.background}
                             description={item.description}
                             photo={item.photo}
-                            time={0.1 * index}
+                            time={0.8 + 0.1 * index}
                         />
                     ))}
                 </div>

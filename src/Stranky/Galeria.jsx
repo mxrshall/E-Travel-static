@@ -46,6 +46,7 @@ function Galeria({ slider }) {
                             key={index}
                             background={photo}
                             sendFotka={sendFotka}
+                            time={0.4 + 0.1 * index}
                         />
                     ))}
                 </div>

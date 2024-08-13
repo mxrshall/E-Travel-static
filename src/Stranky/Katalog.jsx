@@ -6,14 +6,15 @@ import Navbar from "../Navbar/Navbar";
 
 function Katalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
+    const [resetIndex, setResetIndex] = useState(0);
 
     const sendData = (data) => {
         if (data.length === 0) {
             setFilter(["all"]);
         } else {
-            console.log(data);
             setFilter(data);
         }
+        setResetIndex(prev => prev + 1);
     };
 
     const filteredSlider = slider.filter(item => {
@@ -42,12 +43,12 @@ function Katalog({ slider }) {
                 <div className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
                         <Karta
-                            key={index}
+                            key={`${resetIndex}-${index}`}
                             title={item.title}
                             background={item.background}
                             description={item.description}
                             photo={item.photo}
-                            time={0.8 + 0.1 * index}
+                            time={0.5 + 0.1 * index}
                         />
                     ))}
                 </div>

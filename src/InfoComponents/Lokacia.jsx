@@ -22,6 +22,15 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
   
     return (
       <div className="w-full h-[100vh] flex">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isExit ? { opacity: 0 } : { opacity: 1 }}
+          transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }}
+          className="w-full h-[100vh] bg-cover bg-center absolute"
+          style={{ backgroundImage: `url(${background})` }}
+        >
+          <div className="w-full h-[100vh] bg-black opacity-50"></div>
+        </motion.div>
         <div className="flex absolute z-10">
         {left && (
           <>
@@ -78,8 +87,6 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
           </>
         )}
         </div>
-        <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
-        <motion.div initial={{ opacity: 0 }} animate={isExit ? { opacity: 0 } : { opacity: 1 }} transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }} className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})`}}></motion.div>
       </div>
     )
   }

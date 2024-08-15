@@ -11,8 +11,10 @@ import { useState } from "react"
 
 function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
+    const [isExit, setIsExit] = useState(false);
 
     const handleClick = (value) => () => {
+      setIsExit(true);
       setTimeout(() => {
           window.location.href = `/${value}`;
       }, 1000);
@@ -24,9 +26,9 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
         {left && (
           <>
             <motion.div 
-              initial={{ opacity: 0, x: -20 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.3, delay: 0.5 }} 
+              initial={{ opacity: 0, x: -50 }}
+              animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
+              transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
               className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black"
             >
               <div className="flex">
@@ -38,20 +40,30 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
                 <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
+              transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
+              className="w-5/12 h-[100vh] flex justify-center items-center"
+            >
               <Slider slider={slider} tag={tag}/>
             </motion.div>
           </>
         )}
         {!left && (
           <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
+              transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }}
+              className="w-5/12 h-[100vh] flex justify-center items-center"
+            >
               <Slider slider={slider} tag={tag}/>
             </motion.div>
             <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.3, delay: 0.5 }} 
+              initial={{ opacity: 0, x: 50 }}
+              animate={isExit ? { opacity: 0, x: 50 } : { opacity: 1, x: 0 }}
+              transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }}
               className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black"
             >
               <div className="flex">
@@ -67,7 +79,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
         )}
         </div>
         <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
-        <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})`}}></div>
+        <motion.div initial={{ opacity: 0 }} animate={isExit ? { opacity: 0 } : { opacity: 1 }} transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }} className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})`}}></motion.div>
       </div>
     )
   }

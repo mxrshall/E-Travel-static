@@ -19,14 +19,15 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
     };
   
     return (
-      <>
+      <div className="w-full h-[100vh] flex">
+        <div className="flex absolute z-10">
         {left && (
           <>
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
               animate={{ opacity: 1, x: 0 }} 
               transition={{ duration: 0.3, delay: 0.5 }} 
-              className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black absolute z-10"
+              className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black"
             >
               <div className="flex">
                 <Title title={title}/>
@@ -34,35 +35,40 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
               </div>
               <Description description={description}/>
               <div className="w-full flex pt-[3%]">
-                    <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="w-full h-[100vh] bg-cover bg-center" 
-              style={{ backgroundImage: `url(${background})`}}
-            >
-              <div className="absolute inset-0 bg-black opacity-40"></div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
+              <Slider slider={slider} tag={tag}/>
             </motion.div>
           </>
         )}
         {!left && (
           <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="w-5/12 h-[100vh] flex justify-center items-center">
               <Slider slider={slider} tag={tag}/>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.3, delay: 0.5 }} 
+              className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black"
+            >
               <div className="flex">
                 <Title title={title}/>
                 <InfoFlag flag={flag}/>
               </div>
               <Description description={description}/>
+              <div className="w-full flex pt-[3%]">
+                <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+              </div>
             </motion.div>
           </>
         )}
-      </>
+        </div>
+        <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
+        <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})`}}></div>
+      </div>
     )
   }
   

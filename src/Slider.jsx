@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const slidersettings = {
@@ -76,7 +78,7 @@ const Slider = ({slider, tag}) => {
                 onClick={next}
                 className="w-1/12"
             >
-                ᐊ
+                <MdKeyboardArrowLeft size="20" color="white"/>
             </motion.button>
             <div className="w-full h-[50vh] bg-cover">
                 <Link to="/pamiatka" state={{ data: data }}>
@@ -112,7 +114,7 @@ const Slider = ({slider, tag}) => {
                 onClick={prev}
                 className="w-1/12"
             >
-                ᐅ
+                <MdKeyboardArrowRight size="20" color="white"/>
             </motion.button>
         </div>
     );

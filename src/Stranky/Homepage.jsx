@@ -101,7 +101,7 @@ function Homepage() {
         const imgs = item.querySelectorAll('.img');
         const container = document.querySelector('.container');
 
-        const t = 500;
+        const t = 400;
         const imgOffset = t * 0.8;
 
         anime.timeline({ easing: 'easeInOutQuint', duration: t })

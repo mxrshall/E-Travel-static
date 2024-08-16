@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../Navbar/Navbar"
+import { motion } from "framer-motion";
+import Navbar from "../Navbar/Navbar";
 import Title from "../UniversalComponents/Title";
-import PamiatkaInfo from "../PamiatkaComponents/PamiatkaInfo"
+import PamiatkaInfo from "../PamiatkaComponents/PamiatkaInfo";
 import OverlayFotka from "../GaleriaComponents/OverlayFotka";
 
 import { useLocation } from "react-router-dom";
@@ -24,14 +25,21 @@ function Pamiatka() {
 
     return (
         <>
-            <Navbar/>
-            <div className="w-full h-[100vh] flex justify-center items-center absolute z-10">
-                <Title title={data.title}/>
+            <Navbar />
+            <div className="w-full h-[100vh] flex justify-center items-center relative z-20">
+                <Title title={data.title} />
             </div>
-            <div className="w-full h-[100vh] bg-black opacity-60 absolute"></div>
-            <div className="w-full h-[100vh] bg-cover bg-center" style={{ backgroundImage: `url(${data.background})`}}></div>
-            <div className="w-full h-[100vh] flex justify-center items-center bg-black relative z-20">
-                <PamiatkaInfo description={data.description} photo={data.photo} sendFotka={sendFotka}/>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="w-full h-[100vh] absolute top-0 left-0 bg-cover bg-center z-10"
+                style={{ backgroundImage: `url(${data.background})` }}
+            >
+                <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
+            </motion.div>
+            <div className="w-full h-[100vh] flex justify-center items-center bg-black relative z-30">
+                <PamiatkaInfo description={data.description} photo={data.photo} sendFotka={sendFotka} />
             </div>
             {open && (
                 <OverlayFotka
@@ -40,7 +48,8 @@ function Pamiatka() {
                 />
             )}
         </>
-    )
-  }
-  
-  export default Pamiatka
+    );
+}
+
+export default Pamiatka;
+

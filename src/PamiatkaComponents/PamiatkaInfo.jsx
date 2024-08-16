@@ -1,8 +1,13 @@
-import Button from "../Button"
 import PamiatkaFotka from "./PamiatkaFotka"
 
 function PamiatkaInfo({ description, photo, sendFotka }) {
     const veta = description.split('. ');
+
+    const handleClick = (value) => () => {
+      setTimeout(() => {
+          window.location.href = `/${value}`;
+      }, 1000);
+    };
 
     const odstavec = [];
     for (let i = 0; i < veta.length; i += 3) {
@@ -19,7 +24,7 @@ function PamiatkaInfo({ description, photo, sendFotka }) {
                         <br/>
                     </span>
                 ))}
-                <Button text="Prejsť na katalóg" link="katalog"/>
+                <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
                 {photo.map((item) => (

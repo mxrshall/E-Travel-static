@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Karta from "../KatalogComponents/Karta";
 import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
 import Navbar from "../Navbar/Navbar";
@@ -7,6 +8,7 @@ import Navbar from "../Navbar/Navbar";
 function Katalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
     const [resetIndex, setResetIndex] = useState(0);
+    const navigate = useNavigate();
 
     const sendData = (data) => {
         if (data.length === 0) {
@@ -27,6 +29,12 @@ function Katalog({ slider }) {
         }
         return false;
     });
+
+    const handleCardClick = (data) => {
+        setTimeout(() => {
+            navigate("/pamiatka", { state: data });
+        }, 1000);
+    };
 
     return (
         <>
@@ -49,6 +57,7 @@ function Katalog({ slider }) {
                             description={item.description}
                             photo={item.photo}
                             time={0.5 + 0.1 * index}
+                            onClick={handleCardClick}
                         />
                     ))}
                 </div>

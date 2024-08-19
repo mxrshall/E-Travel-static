@@ -8,6 +8,7 @@ import Navbar from "../Navbar/Navbar";
 function Katalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
     const [resetIndex, setResetIndex] = useState(0);
+    const [isExit, setIsExit] = useState(false);
     const navigate = useNavigate();
 
     const sendData = (data) => {
@@ -31,6 +32,7 @@ function Katalog({ slider }) {
     });
 
     const handleCardClick = (data) => {
+        setIsExit(true);
         setTimeout(() => {
             navigate("/pamiatka", { state: data });
         }, 1000);
@@ -42,13 +44,16 @@ function Katalog({ slider }) {
             <div className="w-full h-[100vh] bg-black absolute">
                 <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
+                    animate={isExit ? { opacity: 0 } : {opacity: 1}}
+                    transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.3, delay: 0.5 }}
                     className="w-full h-2/5 flex justify-center items-center"
                 >
                     <Vyhladavanie sendData={sendData} />
                 </motion.div>
-                <div className="bg-black flex flex-wrap">
+                <motion.div 
+                    animate={isExit ? { opacity: 0 } : {}}
+                    transition={isExit ? { duration: 0.3, delay: 0.2 } : {}}
+                    className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
                         <Karta
                             key={`${resetIndex}-${index}`}
@@ -60,7 +65,7 @@ function Katalog({ slider }) {
                             onClick={handleCardClick}
                         />
                     ))}
-                </div>
+                </motion.div>
             </div>
         </>
     );

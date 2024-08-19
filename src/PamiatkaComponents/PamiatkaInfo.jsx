@@ -1,12 +1,10 @@
 import PamiatkaFotka from "./PamiatkaFotka"
 
-function PamiatkaInfo({ description, photo, sendFotka }) {
+function PamiatkaInfo({ description, photo, sendFotka, onClick }) {
     const veta = description.split('. ');
 
-    const handleClick = (value) => () => {
-      setTimeout(() => {
-          window.location.href = `/${value}`;
-      }, 1000);
+    const handleClick = () => {
+        onClick("katalog");
     };
 
     const odstavec = [];
@@ -24,7 +22,7 @@ function PamiatkaInfo({ description, photo, sendFotka }) {
                         <br/>
                     </span>
                 ))}
-                <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                <button onClick={handleClick} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
                 {photo.map((item) => (

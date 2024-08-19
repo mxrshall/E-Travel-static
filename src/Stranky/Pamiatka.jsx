@@ -13,7 +13,12 @@ function Pamiatka() {
 
     const [open, setOpen] = useState(false);
     const [selectedFotka, setSelectedFotka] = useState(null);
-    console.log(state)
+
+    const handleButtonClick = (value) => {
+        setTimeout(() => {
+            window.location.href = `/${value}`;
+        }, 1000);
+    };
 
     const sendData = (data) => {
         setOpen(data);
@@ -48,7 +53,7 @@ function Pamiatka() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="w-full h-[100vh] flex justify-center items-center bg-black relative z-30">
-                <PamiatkaInfo description={state.description} photo={state.photo} sendFotka={sendFotka} />
+                <PamiatkaInfo description={state.description} photo={state.photo} sendFotka={sendFotka} onClick={handleButtonClick}/>
             </motion.div>
             {open && (
                 <OverlayFotka

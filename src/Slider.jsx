@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom";
 
 const sliderSettings = {
     initial: (direction) => ({
@@ -26,7 +25,7 @@ const sliderSettings = {
     }),
 };
 
-const Slider = ({slider, tag}) => {
+const Slider = ({slider, tag, onClick}) => {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [hovered, setHovered] = useState(false);
@@ -71,6 +70,10 @@ const Slider = ({slider, tag}) => {
         });
     };
 
+    const handleClick = () => {
+        onClick(data);
+    };
+
     return (
         <div className="w-5/12 h-[50vh] flex">
             <motion.button
@@ -83,31 +86,30 @@ const Slider = ({slider, tag}) => {
                 <MdKeyboardArrowLeft size="20" color="white"/>
             </motion.button>
             <div className="w-full h-[50vh] bg-cover">
-                <Link to="/pamiatka" state={{ data: data }}>
-                    <motion.div
-                        className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
-                        variants={sliderSettings}
-                        animate="animate"
-                        initial="initial"
-                        exit="exit"
-                        key={filteredSlider[index].background}
-                        custom={direction}
-                        style={{
-                            backgroundImage: `url(${filteredSlider[index].background})`,
-                        }}
-                        onMouseEnter={() => setHovered(true)}
-                        onMouseLeave={() => setHovered(false)}
-                    >
-                        <div className="w-full h-1/2">
-                            {filteredSlider[index].title}
+                <motion.div
+                    className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
+                    variants={sliderSettings}
+                    animate="animate"
+                    initial="initial"
+                    exit="exit"
+                    key={filteredSlider[index].background}
+                    custom={direction}
+                    style={{
+                        backgroundImage: `url(${filteredSlider[index].background})`,
+                    }}
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                    onClick={handleClick}
+                >
+                    <div className="w-full h-1/2">
+                        {filteredSlider[index].title}
+                    </div>
+                    {hovered && (
+                        <div className="w-full h-1/2 flex justify-end items-end hover:none">
+                            <IoIosArrowUp size="30" color="white"/>
                         </div>
-                        {hovered && (
-                            <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                                <IoIosArrowUp size="30" color="white"/>
-                            </div>
-                        )}
-                    </motion.div>
-                </Link>
+                    )}
+                </motion.div>
             </div>
             <motion.button
                 animate={{ x: 0, opacity: 1 }}

@@ -1,8 +1,7 @@
 import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"
-import ButtonContainer from "../UniversalComponents/ButtonContainer"
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 import InfoFlag from "./InfoFlag"
 import Slider from "../Slider"
 
@@ -12,11 +11,19 @@ import { useState } from "react"
 function Lokacia({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
     const [isExit, setIsExit] = useState(false);
+    const navigate = useNavigate();
 
     const handleClick = (value) => () => {
       setIsExit(true);
       setTimeout(() => {
           window.location.href = `/${value}`;
+      }, 1000);
+    };
+    
+    const handleSliderClick = (data) => {
+      setIsExit(true);
+      setTimeout(() => {
+          navigate("/pamiatka", { state: data });
       }, 1000);
     };
   
@@ -55,7 +62,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
               transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
               className="w-5/12 h-[100vh] flex justify-center items-center"
             >
-              <Slider slider={slider} tag={tag}/>
+              <Slider slider={slider} tag={tag} onClick={handleSliderClick}/>
             </motion.div>
           </>
         )}
@@ -67,7 +74,7 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
               transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }}
               className="w-5/12 h-[100vh] flex justify-center items-center"
             >
-              <Slider slider={slider} tag={tag}/>
+              <Slider slider={slider} tag={tag} onClick={handleSliderClick}/>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, x: 50 }}

@@ -19,16 +19,16 @@ function Homepage() {
                 style={{ backgroundImage: `url(${image1})` }}
               ></div>
             </ParallaxLayer>
+            <ParallaxLayer offset={0} speed={0.3}>
+              <div className="w-full h-full flex justify-center items-center">
+                <h1 className="text-white text-8xl font-bold">E-Travel</h1>
+              </div>
+            </ParallaxLayer>
             <ParallaxLayer offset={0} speed={0.5}>
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image3})` }}
               ></div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.3}>
-              <div className="w-full h-full flex justify-center items-center">
-                <h1 className="text-white text-8xl font-bold">E-Travel</h1>
-              </div>
             </ParallaxLayer>
             <ParallaxLayer offset={0} speed={0.7}>
               <div 

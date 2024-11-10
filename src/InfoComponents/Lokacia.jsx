@@ -3,7 +3,7 @@ import Description from "../UniversalComponents/Description"
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import InfoFlag from "./InfoFlag"
-import Slider from "../Slider"
+import Slider from "../UniversalComponents/Slider"
 
 import { useState } from "react"
 

@@ -4,6 +4,7 @@ import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
+import map from "../../public/images/map.png";
 
 function Homepage() {
     return (
@@ -71,7 +72,12 @@ function Homepage() {
                 </span>
               </div>
             </div>
-            <div className='w-full h-[25%] bg-red-600'>
+            <div className='w-full h-[25%] flex justify-center items-center'>
+              <div
+                className="w-1/2 h-2/3 overflow-hidden bg-cover bg-center flex justify-center items-center relative"
+                style={{ backgroundImage: `url(${map})` }}
+              >
+              </div>
             </div>
           </Parallax>
     );

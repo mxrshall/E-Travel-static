@@ -1,10 +1,12 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import { motion } from 'framer-motion';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
+import MapMarker from './MapMarker';
 
 function Homepage() {
     return (
@@ -41,8 +43,7 @@ function Homepage() {
             <ParallaxLayer offset={0} speed={0.7}>
               <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%]"></div>
             </ParallaxLayer>
-            <div className='w-full h-[25%]'>
-            </div>
+            <div className='w-full h-[25%]'/>
             <div className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center relative">
               <video
                 className="absolute inset-0 w-full h-full object-cover"
@@ -58,7 +59,7 @@ function Homepage() {
               <div
                 className="absolute inset-0 z-0 flex justify-center items-center"
                 style={{
-                  background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
+                  background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
                 }}
               />
               <div className="w-2/3 flex justify-center items-center">
@@ -74,9 +75,13 @@ function Homepage() {
             </div>
             <div className='w-full h-[25%] flex justify-center items-center'>
               <div
-                className="w-1/2 h-2/3 overflow-hidden bg-cover bg-center flex justify-center items-center relative"
+                className="w-1/2 h-2/3 overflow-hidden bg-cover bg-center relative"
                 style={{ backgroundImage: `url(${map})` }}
               >
+                <MapMarker x="80" y="35" title="Južná Kórea"/>
+                <MapMarker x="43" y="30" title="Švajčiarsko"/>
+                <MapMarker x="13" y="15" title="Kanada"/>
+                <MapMarker x="53" y="58" title="Afrika"/>
               </div>
             </div>
           </Parallax>

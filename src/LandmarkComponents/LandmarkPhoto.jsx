@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function PamiatkaFotka({background, sendFotka}) {
+function LandmarkPhoto({background, sendFotka}) {
     
     const handleClick = () => {
         sendFotka(background);
@@ -13,4 +13,4 @@ function PamiatkaFotka({background, sendFotka}) {
     )
   }
   
-  export default PamiatkaFotka
+  export default LandmarkPhoto;

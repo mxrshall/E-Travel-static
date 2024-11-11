@@ -1,9 +1,8 @@
-import Homepage from "./Stranky/Homepage";
-import Info from "./Stranky/Info";
-import Katalog from "./Stranky/Katalog";
-import Pamiatka from "./Stranky/Pamiatka";
-import Onas from "./Stranky/Onas";
-import Galeria from "./Stranky/Galeria";
+import Homepage from "./Pages/Homepage";
+import Info from "./Pages/Info";
+import Catalog from "./Pages/Catalog";
+import Landmark from "./Pages/Landmark";
+import Gallery from "./Pages/Gallery";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import header1 from "../public/images/header/header1.jpg"
@@ -191,11 +190,10 @@ function App() {
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="/home" element={<Homepage />} />
-        <Route path="/onas" element={<Onas />} />
         <Route path="/info" element={<Info slider={slider} list={list} />} />
-        <Route path="/pamiatka" element={<Pamiatka />} /> 
-        <Route path="/katalog" element={<Katalog slider={slider}/>} />
-        <Route path="/galeria" element={<Galeria slider={slider}/>} />
+        <Route path="/pamiatka" element={<Landmark />} /> 
+        <Route path="/katalog" element={<Catalog slider={slider}/>} />
+        <Route path="/galeria" element={<Gallery slider={slider}/>} />
       </Routes>
     </BrowserRouter>
   );

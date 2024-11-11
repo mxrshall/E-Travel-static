@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import Karta from "../KatalogComponents/Karta";
-import Vyhladavanie from "../KatalogComponents/Vyhladavanie";
+import Card from "../CatalogComponents/Card";
+import Search from "../CatalogComponents/Search";
 import Navbar from "../Navbar/Navbar";
 
-function Katalog({ slider }) {
+function Catalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
     const [resetIndex, setResetIndex] = useState(0);
     const [isExit, setIsExit] = useState(false);
@@ -48,14 +48,14 @@ function Katalog({ slider }) {
                     transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.3, delay: 0.5 }}
                     className="w-full h-2/5 flex justify-center items-center"
                 >
-                    <Vyhladavanie sendData={sendData} />
+                    <Search sendData={sendData} />
                 </motion.div>
                 <motion.div 
                     animate={isExit ? { opacity: 0 } : {}}
                     transition={isExit ? { duration: 0.3, delay: 0.2 } : {}}
                     className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
-                        <Karta
+                        <Card
                             key={`${resetIndex}-${index}`}
                             title={item.title}
                             background={item.background}
@@ -71,4 +71,4 @@ function Katalog({ slider }) {
     );
 }
 
-export default Katalog;
+export default Catalog;

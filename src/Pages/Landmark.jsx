@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
 import Title from "../UniversalComponents/Title";
-import PamiatkaInfo from "../PamiatkaComponents/PamiatkaInfo";
-import OverlayFotka from "../GaleriaComponents/OverlayFotka";
+import LandmarkInfo from "../LandmarkComponents/LandmarkInfo";
+import OverlayFotka from "../GalleryComponents/OverlayFotka";
 import { useLocation } from "react-router-dom";
 
-function Pamiatka() {
+function Landmark() {
     const [isExit, setIsExit] = useState(false);
     const location = useLocation();
     const { state } = location || {};
@@ -54,7 +54,7 @@ function Pamiatka() {
                 animate={isExit ? { opacity: 0 } : { opacity: 1 }}
                 transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
                 className="w-full h-[100vh] flex justify-center items-center bg-black relative z-30">
-                <PamiatkaInfo description={state.description} photo={state.photo} sendFotka={sendFotka} onClick={handleButtonClick}/>
+                <LandmarkInfo description={state.description} photo={state.photo} sendFotka={sendFotka} onClick={handleButtonClick}/>
             </motion.div>
             {open && (
                 <OverlayFotka
@@ -66,5 +66,5 @@ function Pamiatka() {
     );
 }
 
-export default Pamiatka;
+export default Landmark;
 

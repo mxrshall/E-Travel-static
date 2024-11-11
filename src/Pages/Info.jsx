@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar"
-import Lokacia from "../InfoComponents/Lokacia"
+import Location from "../InfoComponents/Location"
 
 function Info({slider, list}) {
 
@@ -7,7 +7,7 @@ function Info({slider, list}) {
         <>
             <Navbar/>
             {list.map((item) => (
-                <Lokacia
+                <Location
                     key={item.id}
                     id={item.id}
                     title={item.title}

@@ -1,6 +1,6 @@
-import PamiatkaFotka from "./PamiatkaFotka"
+import LandmarkPhoto from "./LandmarkPhoto"
 
-function PamiatkaInfo({ description, photo, sendFotka, onClick }) {
+function LandInfo({ description, photo, sendFotka, onClick }) {
     const veta = description.split('. ');
 
     const handleClick = () => {
@@ -26,7 +26,7 @@ function PamiatkaInfo({ description, photo, sendFotka, onClick }) {
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
                 {photo.map((item) => (
-                    <PamiatkaFotka
+                    <LandmarkPhoto
                         key={item}
                         background={item}
                         sendFotka={sendFotka}
@@ -37,4 +37,4 @@ function PamiatkaInfo({ description, photo, sendFotka, onClick }) {
     )
   }
   
-  export default PamiatkaInfo
+  export default LandInfo

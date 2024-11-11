@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function GaleriaFotka({background, sendFotka, time}) {
+function GalleryPhoto({background, sendFotka, time}) {
   
     const handleClick = () => {
         sendFotka(background);
@@ -21,4 +21,4 @@ function GaleriaFotka({background, sendFotka, time}) {
     )
   }
   
-  export default GaleriaFotka
+  export default GalleryPhoto;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Vyhladavanie({ sendData }) {
+function Search({ sendData }) {
     const [selectedNames, setSelectedNames] = useState([]);
 
     const handleCheckboxChange = (e) => {
@@ -70,4 +70,4 @@ function Vyhladavanie({ sendData }) {
     );
 }
 
-export default Vyhladavanie;
+export default Search;

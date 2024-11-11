@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import GaleriaFotka from "../GaleriaComponents/GaleriaFotka";
+import GalleryPhoto from "../GalleryComponents/GalleryPhoto";
 import Navbar from "../Navbar/Navbar";
-import OverlayFotka from "../GaleriaComponents/OverlayFotka";
+import OverlayFotka from "../GalleryComponents/OverlayFotka";
 
-function Galeria({ slider }) {
+function Gallery({ slider }) {
     const [open, setOpen] = useState(false);
     const [selectedFotka, setSelectedFotka] = useState(null);
     const [allPhotos, setAllPhotos] = useState([]);
@@ -42,7 +42,7 @@ function Galeria({ slider }) {
                 <div className="w-full h-1/4 flex justify-center items-center"></div>
                 <div className="bg-black flex flex-wrap">
                     {allPhotos.map((photo, index) => (
-                        <GaleriaFotka
+                        <GalleryPhoto
                             key={index}
                             background={photo}
                             sendFotka={sendFotka}
@@ -61,4 +61,4 @@ function Galeria({ slider }) {
     );
 }
 
-export default Galeria;
+export default Gallery;

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Karta({title, background, description, photo, time, onClick}) {
+function Card({title, background, description, photo, time, onClick}) {
     const [hovered, setHovered] = useState(false);
     const [data, setData] = useState({
         title: title,
@@ -39,4 +39,4 @@ function Karta({title, background, description, photo, time, onClick}) {
     )
   }
   
-  export default Karta
+  export default Card;

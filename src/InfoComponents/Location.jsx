@@ -8,7 +8,7 @@ import Slider from "../UniversalComponents/Slider"
 import { useState } from "react"
 
 
-function Lokacia({id, title, description, background, flag, tag, slider}) {
+function Location({id, title, description, background, flag, tag, slider}) {
     const [left, setLeft] = useState(id % 2 === 0);
     const [isExit, setIsExit] = useState(false);
     const navigate = useNavigate();
@@ -98,4 +98,4 @@ function Lokacia({id, title, description, background, flag, tag, slider}) {
     )
   }
   
-  export default Lokacia
+  export default Location

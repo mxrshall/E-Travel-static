@@ -1,14 +1,24 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const MapMarker = ({ x, y, title }) => {
+const MapMarker = ({ x, y, title, description, onHover }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    onHover({ title, description });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    onHover({ title: '', description: '' });
+  };
 
   return (
     <>
       <motion.svg
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         whileHover={{ y: -5 }}
         transition={{ type: 'spring', stiffness: 300 }}
         width="50px"

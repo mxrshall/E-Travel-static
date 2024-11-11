@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import { motion } from 'framer-motion';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
@@ -9,6 +8,15 @@ import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
 
 function Homepage() {
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleHover = (data) => {
+    setTitle(data.title);
+    setDescription(data.description);
+  };
+
     return (
           <Parallax pages={4} className="relative">
             {/* Background Layers */}
@@ -73,15 +81,71 @@ function Homepage() {
                 </span>
               </div>
             </div>
-            <div className='w-full h-[25%] flex justify-center items-center'>
-              <div
-                className="w-1/2 h-2/3 overflow-hidden bg-cover bg-center relative"
-                style={{ backgroundImage: `url(${map})` }}
-              >
-                <MapMarker x="80" y="35" title="Južná Kórea"/>
-                <MapMarker x="43" y="30" title="Švajčiarsko"/>
-                <MapMarker x="13" y="15" title="Kanada"/>
-                <MapMarker x="53" y="58" title="Afrika"/>
+            <div className='w-full h-[25%] flex'>
+              <div className="w-1/4 py-14 px-5">
+                <h1 className="text-white text-7xl font-bold">
+                  {title}
+                </h1>
+              </div>
+              <div className="w-2/4 flex items-center">
+                <div
+                  className="w-full h-2/3 overflow-hidden bg-cover bg-center relative"
+                  style={{ backgroundImage: `url(${map})` }}
+                >
+                  <MapMarker 
+                    x="80" 
+                    y="35" 
+                    title="Južná Kórea" 
+                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                    Aldus PageMaker including versions of Lorem Ipsum."
+                    onHover={handleHover}
+                  />
+                  <MapMarker 
+                    x="43" 
+                    y="30" 
+                    title="Švajčiarsko"
+                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                    Aldus PageMaker including versions of Lorem Ipsum."
+                    onHover={handleHover}
+                  />
+                  <MapMarker 
+                    x="13" 
+                    y="15" 
+                    title="Kanada"
+                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                    Aldus PageMaker including versions of Lorem Ipsum."
+                    onHover={handleHover}
+                  />
+                  <MapMarker 
+                    x="53" 
+                    y="58" 
+                    title="Afrika"
+                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                    Aldus PageMaker including versions of Lorem Ipsum."
+                    onHover={handleHover}
+                  />
+                </div>
+              </div>
+              <div className="w-1/4 flex items-end py-14 px-5">
+                <span className="text-base text-white font-normal font-mont">
+                  {description}
+                </span>
               </div>
             </div>
           </Parallax>

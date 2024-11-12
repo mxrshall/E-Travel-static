@@ -8,7 +8,7 @@ import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
 
-function Homepage() {
+function Homepage({ slider, list }) {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -83,15 +83,14 @@ function Homepage() {
               </div>
             </div>
             <div className='w-full h-[25%] flex'>
-              <div className="w-1/4 py-14 px-5">
+              <div className="w-1/4 py-10 pl-10">
                 <AnimatePresence>
                   <motion.h1 
                     key={title}
                     className="text-white text-7xl font-bold"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
                   >
                     {title}
                   </motion.h1>
@@ -102,65 +101,30 @@ function Homepage() {
                   className="w-full h-2/3 overflow-hidden bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${map})` }}
                 >
-                  <MapMarker 
-                    x="80" 
-                    y="35" 
-                    title="Južná Kórea" 
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                    Aldus PageMaker including versions of Lorem Ipsum."
-                    onHover={handleHover}
-                  />
-                  <MapMarker 
-                    x="43" 
-                    y="30" 
-                    title="Švajčiarsko"
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                    Aldus PageMaker including versions of Lorem Ipsum."
-                    onHover={handleHover}
-                  />
-                  <MapMarker 
-                    x="13" 
-                    y="15" 
-                    title="Kanada"
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                    Aldus PageMaker including versions of Lorem Ipsum."
-                    onHover={handleHover}
-                  />
-                  <MapMarker 
-                    x="53" 
-                    y="58" 
-                    title="Afrika"
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                    the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                    Aldus PageMaker including versions of Lorem Ipsum."
-                    onHover={handleHover}
-                  />
+                  {list.map((item) => (
+                    <MapMarker 
+                      id={item.id}
+                      title={item.title}
+                      description={item.description}
+                      background={item.background}
+                      x={item.x}
+                      y={item.y}
+                      flag={item.flag}
+                      tag={item.tag}
+                      slider={slider}
+                      onHover={handleHover}
+                    />
+                  ))}
                 </div>
               </div>
-              <div className="w-1/4 flex items-end py-14 px-5">
+              <div className="w-1/4 flex items-end py-10 px-5">
                 <AnimatePresence>
                   <motion.span 
                     key={description}
                     className="text-base text-white font-normal font-mont"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
                   >
                     {description}
                   </motion.span>

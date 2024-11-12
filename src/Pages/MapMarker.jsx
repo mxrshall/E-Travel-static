@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const MapMarker = ({ x, y, title, description, onHover }) => {
+const MapMarker = ({ id, title, description, background, x, y, flag, tag, slider, onHover }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {

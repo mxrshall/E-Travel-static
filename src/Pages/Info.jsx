@@ -2,7 +2,6 @@ import Navbar from "../Navbar/Navbar"
 import Location from "../InfoComponents/Location"
 
 function Info({slider, list}) {
-
     return (
         <>
             <Navbar/>

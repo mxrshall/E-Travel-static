@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
@@ -83,9 +84,18 @@ function Homepage() {
             </div>
             <div className='w-full h-[25%] flex'>
               <div className="w-1/4 py-14 px-5">
-                <h1 className="text-white text-7xl font-bold">
-                  {title}
-                </h1>
+                <AnimatePresence>
+                  <motion.h1 
+                    key={title}
+                    className="text-white text-7xl font-bold"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {title}
+                  </motion.h1>
+                </AnimatePresence>
               </div>
               <div className="w-2/4 flex items-center">
                 <div
@@ -143,9 +153,18 @@ function Homepage() {
                 </div>
               </div>
               <div className="w-1/4 flex items-end py-14 px-5">
-                <span className="text-base text-white font-normal font-mont">
-                  {description}
-                </span>
+                <AnimatePresence>
+                  <motion.span 
+                    key={description}
+                    className="text-base text-white font-normal font-mont"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {description}
+                  </motion.span>
+                </AnimatePresence>
               </div>
             </div>
           </Parallax>

@@ -53,6 +53,7 @@ const MapMarker = ({ x, y, title, description, onHover }) => {
             padding: '5px 10px',
             borderRadius: '4px',
             whiteSpace: 'nowrap',
+            cursor: 'pointer',
           }}
         >
           {title}

@@ -1,5 +1,5 @@
 import Homepage from "./Pages/Homepage";
-import Info from "./Pages/Info";
+import Location from "./InfoComponents/Location";
 import Catalog from "./Pages/Catalog";
 import Landmark from "./Pages/Landmark";
 import Gallery from "./Pages/Gallery";
@@ -197,7 +197,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage slider={slider} list={list} />} />
-        <Route path="/pamiatka" element={<Landmark />} /> 
+        <Route path="/pamiatka" element={<Landmark />} />
+        <Route path="/lokacia" element={<Location />} />
         <Route path="/katalog" element={<Catalog slider={slider}/>} />
         <Route path="/galeria" element={<Gallery slider={slider}/>} />
       </Routes>

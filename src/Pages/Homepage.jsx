@@ -100,15 +100,12 @@ function Homepage({ slider, list }) {
                 >
                   {list.map((item) => (
                     <MapMarker 
-                      id={item.id}
                       title={item.title}
                       description={item.description}
-                      background={item.background}
                       x={item.x}
                       y={item.y}
-                      flag={item.flag}
-                      tag={item.tag}
                       slider={slider}
+                      list={list[item.id]}
                       onHover={handleHover}
                     />
                   ))}

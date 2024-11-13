@@ -1,5 +1,5 @@
-import Logo from "./NavbarComponents/Logo"
-import Navigation from "./NavbarComponents/Navigation"
+import Logo from "./Logo"
+import Navigation from "./Navigation"
 import { motion } from "framer-motion";
 
 function Navbar() {

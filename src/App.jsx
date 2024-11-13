@@ -1,5 +1,5 @@
 import Homepage from "./Pages/Homepage";
-import Location from "./InfoComponents/Location";
+import Location from "./Pages/Location";
 import Catalog from "./Pages/Catalog";
 import Landmark from "./Pages/Landmark";
 import Gallery from "./Pages/Gallery";

@@ -7,6 +7,7 @@ import image3 from "../../public/images/Vrstva2.png";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
+import Navbar from '../Navbar/Navbar';
 
 function Homepage({ slider, list }) {
 
@@ -18,7 +19,9 @@ function Homepage({ slider, list }) {
     setDescription(data.description);
   };
 
-    return (
+  return (
+    <>
+      <Navbar />
           <Parallax pages={4} className="relative">
             {/* Background Layers */}
             <ParallaxLayer offset={0} speed={0.2}>
@@ -77,7 +80,7 @@ function Homepage({ slider, list }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <span className="text-base text-white font-normal font-mont text-center z-10">
+                <span className="text-lg text-white font-normal font-mont text-center z-10">
                   Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
                   V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
                   Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
@@ -125,8 +128,9 @@ function Homepage({ slider, list }) {
                 </motion.span>
               </div>
             </div>
-          </Parallax>
-    );
+      </Parallax>
+    </>
+  );
 };
 
 export default Homepage;

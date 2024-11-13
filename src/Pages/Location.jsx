@@ -2,10 +2,11 @@ import Title from "../UniversalComponents/Title"
 import Description from "../UniversalComponents/Description"
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
-import InfoFlag from "./InfoFlag"
+import InfoFlag from "../LocationComponents/LocationFlag"
 import Slider from "../UniversalComponents/Slider"
 
 import { useState } from "react"
+import Navbar from "../Navbar/Navbar";
 
 
 function Location() {
@@ -29,6 +30,8 @@ function Location() {
     };
   
     return (
+      <>
+      <Navbar />
       <div className="w-full h-[100vh] flex">
         <motion.div
           initial={{ opacity: 0 }}
@@ -67,6 +70,7 @@ function Location() {
           </>
         </div>
       </div>
+      </>
     )
   }
   

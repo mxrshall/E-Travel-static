@@ -61,6 +61,7 @@ import AbuSimbel from "../public/images/photos/AbuSimbel/AbuSimbel.webp"
 import AbuSimbel1 from "../public/images/photos/AbuSimbel/AbuSimbel1.webp"
 import AbuSimbel2 from "../public/images/photos/AbuSimbel/AbuSimbel2.webp"
 import AbuSimbel3 from "../public/images/photos/AbuSimbel/AbuSimbel3.webp"
+import { delay } from "framer-motion";
 
 function App() {
   const list = [
@@ -69,8 +70,11 @@ function App() {
         title: "Južná Kórea",
         description: "Južná Kórea je krajina, kde sa stretáva moderná technológia s bohatou tradíciou. Hlavné mesto Soul je plné inovatívnej architektúry, rušných trhov a historických pamiatok, zatiaľ čo mestá ako Busan ponúkajú nádherné pláže a scenérie. Južná Kórea je známa svojou jedinečnou kultúrou, chutnou kuchyňou a krásnymi chrámami zasadenými do hôr. Ideálna destinácia pre tých, ktorí chcú zažiť spojenie tradície a modernosti.",
         background: header1,
-        x: "80", 
-        y: "35",
+        marker: {
+          x: "80", 
+          y: "35",
+          delay: "0.2",
+        },
         flag: korea,
         tag: "korea",
     },
@@ -79,8 +83,11 @@ function App() {
         title: "Švajčiarsko",
         description: "Švajčiarsko je malebná krajina v srdci Európy, známa svojimi nádhernými Alpami, čistými jazerami a malebnými dedinkami. Mestá ako Zürich, Ženeva a Bern kombinujú modernú eleganciu s bohatou históriou a špičkovou kvalitou života. Švajčiarsko je rajom pre lyžiarov, turistov a milovníkov prírody, ktorí ocenia jeho pokojné prostredie a krásne výhľady.",
         background: header2,
-        x: "43", 
-        y: "30",
+        marker: {
+          x: "43", 
+          y: "30",
+          delay: "0.7",
+        },
         flag: svajciarsko,
         tag: "svajciarsko",
     },
@@ -89,8 +96,11 @@ function App() {
         title: "Kanada",
         description: "Kanada je rozľahlá krajina s nádhernou prírodou a rozmanitou kultúrou. Ponúka úchvatné scenérie od majestátnych skalnatých hôr až po malebné jazerá a nekonečné lesy. Kanada je ideálna destinácia pre milovníkov prírody, zimných športov, turistiky aj kultúrnych zážitkov.",
         background: header3,
-        x: "13", 
-        y: "15", 
+        marker: {
+          x: "13", 
+          y: "15",
+          delay: "0.3",
+        },
         flag: kanada,
         tag: "kanada",
     },
@@ -99,8 +109,11 @@ function App() {
         title: "Afrika",
         description: "Afrika je kontinent plný kontrastov, kultúrneho bohatstva a rozmanitej prírody. Od púští Sahary až po bujné dažďové pralesy a savany plné divokej zveri. Afrika je ideálna pre cestovateľov, ktorí hľadajú autentické zážitky a stretnutia s krásnou a nedotknutou prírodou.",
         background: header4,
-        x: "53", 
-        y: "58",
+        marker: {
+          x: "53", 
+          y: "58",
+          delay: "0.5",
+        },
         flag: afrika,
         tag: "afrika",
     },

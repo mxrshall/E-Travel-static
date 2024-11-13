@@ -45,7 +45,7 @@ function Homepage({ slider, list }) {
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image2})` }}
               ></div>
-              <div className='w-screen h-[25vh] bg-black'></div>
+              <div className='w-screen h-[20vh] bg-black'></div>
             </ParallaxLayer>
             
             {/* Gradient Overlay */}
@@ -74,8 +74,8 @@ function Homepage({ slider, list }) {
               <motion.div 
                 className="w-1/2 flex justify-center items-center"
                 initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <span className="text-base text-white font-normal font-mont text-center z-10">
                   Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
@@ -86,7 +86,6 @@ function Homepage({ slider, list }) {
             </div>
             <div className='w-full h-[25%] flex'>
               <div className="w-1/4 py-10 pl-10">
-                <AnimatePresence>
                   <motion.h1 
                     key={title}
                     className="text-white text-8xl font-bold"
@@ -96,7 +95,6 @@ function Homepage({ slider, list }) {
                   >
                     {title}
                   </motion.h1>
-                </AnimatePresence>
               </div>
               <div className="w-2/4 flex items-center">
                 <div
@@ -107,8 +105,7 @@ function Homepage({ slider, list }) {
                     <MapMarker 
                       title={item.title}
                       description={item.description}
-                      x={item.x}
-                      y={item.y}
+                      marker={item.marker}
                       slider={slider}
                       list={list[item.id]}
                       onHover={handleHover}
@@ -117,12 +114,15 @@ function Homepage({ slider, list }) {
                 </div>
               </div>
               <div className="w-1/4 flex items-end py-10 px-5">
-                <span 
+                <motion.span 
                   key={description}
                   className="text-base text-white font-normal font-mont"
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
                   {description}
-                </span>
+                </motion.span>
               </div>
             </div>
           </Parallax>

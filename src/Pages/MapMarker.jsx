@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const MapMarker = ({ title, description, x, y, list, slider, onHover }) => {
+const MapMarker = ({ title, description, list, slider, onHover, marker }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +17,12 @@ const MapMarker = ({ title, description, x, y, list, slider, onHover }) => {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, delay: `${marker.delay}` }}
+    >
       <motion.svg
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -31,8 +36,8 @@ const MapMarker = ({ title, description, x, y, list, slider, onHover }) => {
         fill="#000000"
         style={{
           position: 'absolute',
-          top: `${y}%`,
-          left: `${x}%`,
+          top: `${marker.y}%`,
+          left: `${marker.x}%`,
         }}
         onClick={() => navigate("/lokacia", { state: { state1: list, state2: slider } })}
       >
@@ -48,8 +53,8 @@ const MapMarker = ({ title, description, x, y, list, slider, onHover }) => {
           transition={{ type: 'spring', stiffness: 300 }}
           style={{
             position: 'absolute',
-            top: `${y - 5}%`,
-            left: `${x}%`,
+            top: `${marker.y - 5}%`,
+            left: `${marker.x}%`,
             transform: 'translateX(-50%)',
             backgroundColor: 'rgba(0, 0, 0, 0.7)',
             color: '#fff',
@@ -62,7 +67,7 @@ const MapMarker = ({ title, description, x, y, list, slider, onHover }) => {
           {title}
         </motion.div>
       )}
-    </>
+    </motion.div>
   );
 };
 

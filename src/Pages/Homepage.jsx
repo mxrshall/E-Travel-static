@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView, useAnimation } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
@@ -29,7 +29,7 @@ function Homepage({ slider, list }) {
             </ParallaxLayer>
             <ParallaxLayer offset={0} speed={0.3}>
               <div className="w-full h-full flex justify-center items-center">
-                <h1 className="text-white text-9xl font-bold">
+                <h1 className="text-white text-9xl font-bold mb-32">
                   E-Travel
                 </h1>
               </div>
@@ -45,7 +45,7 @@ function Homepage({ slider, list }) {
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image2})` }}
               ></div>
-              <div className='w-screen h-[20vh] bg-black'></div>
+              <div className='w-screen h-[25vh] bg-black'></div>
             </ParallaxLayer>
             
             {/* Gradient Overlay */}
@@ -53,7 +53,7 @@ function Homepage({ slider, list }) {
               <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%]"></div>
             </ParallaxLayer>
             <div className='w-full h-[25%]'/>
-            <div className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center relative">
+            <div className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center relative" >
               <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay
@@ -71,13 +71,18 @@ function Homepage({ slider, list }) {
                   background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
                 }}
               />
-              <div className="w-1/2 flex justify-center items-center">
+              <motion.div 
+                className="w-1/2 flex justify-center items-center"
+                initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <span className="text-base text-white font-normal font-mont text-center z-10">
                   Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
                   V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
                   Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
                 </span>
-              </div>
+              </motion.div>
             </div>
             <div className='w-full h-[25%] flex'>
               <div className="w-1/4 py-10 pl-10">
@@ -112,17 +117,12 @@ function Homepage({ slider, list }) {
                 </div>
               </div>
               <div className="w-1/4 flex items-end py-10 px-5">
-                <AnimatePresence>
-                  <motion.span 
-                    key={description}
-                    className="text-base text-white font-normal font-mont"
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {description}
-                  </motion.span>
-                </AnimatePresence>
+                <span 
+                  key={description}
+                  className="text-base text-white font-normal font-mont"
+                >
+                  {description}
+                </span>
               </div>
             </div>
           </Parallax>

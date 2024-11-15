@@ -73,7 +73,7 @@ function App() {
         marker: {
           x: "80", 
           y: "35",
-          delay: "0.2",
+          delay: "0.3",
         },
         flag: korea,
         tag: "korea",
@@ -86,7 +86,7 @@ function App() {
         marker: {
           x: "43", 
           y: "30",
-          delay: "0.7",
+          delay: "0.8",
         },
         flag: svajciarsko,
         tag: "svajciarsko",
@@ -99,7 +99,7 @@ function App() {
         marker: {
           x: "13", 
           y: "15",
-          delay: "0.3",
+          delay: "0.4",
         },
         flag: kanada,
         tag: "kanada",
@@ -112,7 +112,7 @@ function App() {
         marker: {
           x: "53", 
           y: "58",
-          delay: "0.5",
+          delay: "0.6",
         },
         flag: afrika,
         tag: "afrika",

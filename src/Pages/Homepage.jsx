@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView, useAnimation } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
@@ -10,19 +10,51 @@ import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';
 
 function Homepage({ slider, list }) {
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const parallaxRef = useRef(null); // Ref for controlling the Parallax instance
+  const [currentPage, setCurrentPage] = useState(0); // Track the current page index
 
   const handleHover = (data) => {
     setTitle(data.title);
     setDescription(data.description);
   };
 
+  const scrollToPage = (page) => {
+    if (parallaxRef.current) {
+      parallaxRef.current.scrollTo(page);
+    }
+  };
+
+  const handleWheel = (e) => {
+    e.preventDefault(); // Prevent default scrolling behavior
+    const delta = e.deltaY;
+    
+    if (delta > 0 && currentPage < 4) {
+      setCurrentPage((prevPage) => prevPage + 1); // Scroll down
+    } else if (delta < 0 && currentPage > 0) {
+      setCurrentPage((prevPage) => prevPage - 1); // Scroll up
+    }
+  };
+
+  useEffect(() => {
+    if (parallaxRef.current) {
+      scrollToPage(currentPage);
+    }
+  }, [currentPage]);
+
+  useEffect(() => {
+    window.addEventListener('wheel', handleWheel, { passive: false }); // Attach wheel listener
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel); // Clean up listener on unmount
+    };
+  }, [currentPage]);
+
   return (
     <>
       <Navbar />
-          <Parallax pages={4} className="relative">
+          <Parallax pages={4} className="relative" ref={parallaxRef}>
             {/* Background Layers */}
             <ParallaxLayer offset={0} speed={0.2}>
               <div 

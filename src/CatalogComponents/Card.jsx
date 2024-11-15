@@ -25,15 +25,26 @@ function Card({title, background, description, photo, time, onClick}) {
             onMouseLeave={() => setHovered(false)}
             onClick={handleClick}
         >
-            <motion.div initial={{ y: 0 }} animate={{ y: hovered ? -20 : 0 }} transition={{ duration: 0.3 }} className="w-full h-full flex flex-col bg-cover bg-center rounded-xl p-5" style={{ backgroundImage: `url(${background})`}}>
-                <div className="w-full h-1/2 hover:none">
-                    <p className="text-xl text-white font-bold font-mont">{title}</p>
-                </div>
-                {hovered && (
-                    <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                        <IoIosArrowUp size="30" color="white"/>
+            <motion.div initial={{ y: 0 }} animate={{ y: hovered ? -20 : 0 }} transition={{ duration: 0.3 }} className="w-full h-full flex flex-col bg-cover bg-center rounded-xl" style={{ backgroundImage: `url(${background})`}}>
+            {hovered && (
+                <motion.div
+                    className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex flex-col justify-end p-5 rounded-xl"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className="w-full h-full flex flex-col justify-center items-center text-center">
+                        <p className="text-2xl text-white font-bold font-mont">
+                            {title}
+                        </p>
+                        <IoIosArrowUp
+                            size="25"
+                            color="white"
+                            className="absolute bottom-4 right-4"
+                        />
                     </div>
-                )}
+                </motion.div>
+            )}
             </motion.div>
         </motion.div>
     )

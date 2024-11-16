@@ -4,6 +4,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
+import image4 from "../../public/images/Vrstva3.png";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
@@ -60,6 +61,12 @@ function Homepage({ slider, list }) {
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image1})` }}
+              ></div>
+            </ParallaxLayer>
+            <ParallaxLayer offset={0} speed={1}>
+              <div 
+                className="w-full h-full bg-cover bg-center flex justify-center items-center"
+                style={{ backgroundImage: `url(${image4})` }}
               ></div>
             </ParallaxLayer>
             <ParallaxLayer offset={0} speed={0.3}>

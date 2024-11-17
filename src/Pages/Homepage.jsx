@@ -5,11 +5,13 @@ import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import image4 from "../../public/images/Vrstva3.png";
-import background from "../../public/images/photos/Seoul/Seoul.webp";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';
+import background1 from "../../public/images/photos/AbuSimbel/AbuSimbel.webp";
+import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
+import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
 
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
@@ -64,7 +66,7 @@ function Homepage({ slider, list }) {
                 style={{ backgroundImage: `url(${image1})` }}
               ></div>
             </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={1}>
+            <ParallaxLayer offset={0} speed={0.5}>
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image4})` }}
@@ -96,7 +98,58 @@ function Homepage({ slider, list }) {
               <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%]"></div>
             </ParallaxLayer>
             <div className='w-full h-[25%]'/>
-            <div className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center relative" >
+            <div 
+              className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" 
+            >
+              <div 
+                className='w-2/3 h-full flex justify-center items-right gap-10'
+                style={{
+                  clipPath: 'polygon(0% 25%, 100% 0%, 100% 100%, 0% 80%)'
+                }}
+              >
+                <motion.div 
+                  className='w-1/4 h-full bg-red-600 bg-cover bg-center relative'
+                  style={{ backgroundImage: `url(${background1})` }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.2, duration: 0.5 }}
+                >
+                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                </motion.div>
+                <motion.div 
+                  className='w-2/6 h-full bg-cover bg-center relative'
+                  style={{ backgroundImage: `url(${background2})` }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9, duration: 0.5 }}
+                >
+                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                </motion.div>
+                <motion.div
+                  className='w-3/6 h-full bg-cover bg-center relative'
+                  style={{ backgroundImage: `url(${background3})` }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                >
+                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                </motion.div>
+              </div>
+              <div className='absolute w-2/3 flex flex-col z-10'>
+                <h1 className="text-white text-8xl font-bold mb-5">
+                  Cestovný katalóg
+                </h1>
+                <span className="w-1/2 text-base text-white font-normal font-mont">
+                  Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
+                  V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
+                  Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
+                </span>
+              </div>
+            </div>
+            <div className='w-full h-[25%] flex overflow-hidden bg-cover bg-center relative'>
               <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay
@@ -114,21 +167,7 @@ function Homepage({ slider, list }) {
                   background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
                 }}
               />
-              <motion.div 
-                className="w-1/2 flex justify-center items-center"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <span className="text-lg text-white font-normal font-mont text-center z-10">
-                  Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
-                  V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
-                  Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
-                </span>
-              </motion.div>
-            </div>
-            <div className='w-full h-[25%] flex'>
-              <div className="w-1/4 py-10 pl-10">
+              <div className="w-1/4 py-10 pl-10 z-10">
                   <motion.h1 
                     key={title}
                     className="text-white text-8xl font-bold"
@@ -156,7 +195,7 @@ function Homepage({ slider, list }) {
                   ))}
                 </div>
               </div>
-              <div className="w-1/4 flex items-end py-10 px-5">
+              <div className="w-1/4 flex items-end py-10 px-5 z-10">
                 <motion.span 
                   key={description}
                   className="text-base text-white font-normal font-mont"
@@ -166,41 +205,6 @@ function Homepage({ slider, list }) {
                 >
                   {description}
                 </motion.span>
-              </div>
-            </div>
-            <div className='w-full h-[25%] flex flex-col justify-center items-center'>
-              <div className='w-3/4 flex bg-blue-500'>
-                <div className='w-1/2 flex justify-center items-center'>
-                  <div 
-                    className="w-2/3 h-[40vh] bg-contain bg-no-repeat bg-center"
-                    style={{
-                      backgroundImage: `url(${background})`,
-                      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)"
-                    }}
-                  />
-                </div>
-                <div className='w-1/2'>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
-                </div>
-              </div>
-              <div className='w-3/4 flex bg-blue-500'>
-              <div className='w-1/2'>
-                  <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
-                </div>
-                <div className='w-1/2 flex justify-center items-center'>
-                <div 
-                  className="w-3/4 h-[40vh] bg-contain bg-no-repeat bg-center"
-                  style={{
-                    backgroundImage: `url(${background})`,
-                    clipPath: "polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%)"
-                  }}
-                />
-
-                </div>
               </div>
             </div>
       </Parallax>

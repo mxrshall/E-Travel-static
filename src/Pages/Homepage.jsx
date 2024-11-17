@@ -5,6 +5,7 @@ import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import image4 from "../../public/images/Vrstva3.png";
+import background from "../../public/images/photos/Seoul/Seoul.webp";
 import backgroundVideo from "../../public/images/backgroundVideo.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
@@ -165,6 +166,41 @@ function Homepage({ slider, list }) {
                 >
                   {description}
                 </motion.span>
+              </div>
+            </div>
+            <div className='w-full h-[25%] flex flex-col justify-center items-center'>
+              <div className='w-3/4 flex bg-blue-500'>
+                <div className='w-1/2 flex justify-center items-center'>
+                  <div 
+                    className="w-2/3 h-[40vh] bg-contain bg-no-repeat bg-center"
+                    style={{
+                      backgroundImage: `url(${background})`,
+                      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%)"
+                    }}
+                  />
+                </div>
+                <div className='w-1/2'>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                </div>
+              </div>
+              <div className='w-3/4 flex bg-blue-500'>
+              <div className='w-1/2'>
+                  <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                </div>
+                <div className='w-1/2 flex justify-center items-center'>
+                <div 
+                  className="w-3/4 h-[40vh] bg-contain bg-no-repeat bg-center"
+                  style={{
+                    backgroundImage: `url(${background})`,
+                    clipPath: "polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%)"
+                  }}
+                />
+
+                </div>
               </div>
             </div>
       </Parallax>

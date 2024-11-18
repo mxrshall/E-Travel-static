@@ -58,6 +58,17 @@ function Homepage({ slider, list }) {
   return (
     <>
       <Navbar />
+      <div className="absolute top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div
+            key={index}
+            className={`w-4 h-4 rounded-full border-2 ${
+              index === currentPage ? 'bg-white' : 'bg-transparent'
+            } transition-all duration-300`}
+            onClick={() => setCurrentPage(index)}
+          />
+        ))}
+      </div>
           <Parallax pages={4} className="relative" ref={parallaxRef}>
             {/* Background Layers */}
             <ParallaxLayer offset={0} speed={0.2}>

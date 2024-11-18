@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
@@ -30,29 +30,40 @@ function Homepage({ slider, list }) {
     }
   };
 
-  const handleWheel = (e) => {
-    e.preventDefault(); // Prevent default scrolling behavior
-    const delta = e.deltaY;
-    
-    if (delta > 0 && currentPage < 4) {
-      setCurrentPage((prevPage) => prevPage + 1); // Scroll down
-    } else if (delta < 0 && currentPage > 0) {
-      setCurrentPage((prevPage) => prevPage - 1); // Scroll up
+  const handleWheel = useCallback(
+    (e) => {
+      e.preventDefault(); // Prevent default scrolling behavior
+
+      const delta = e.deltaY;
+
+      setCurrentPage((prevPage) => {
+        if (delta > 0 && prevPage < 3) {
+          // Scroll down
+          return prevPage + 1;
+        } else if (delta < 0 && prevPage > 0) {
+          // Scroll up
+          return prevPage - 1;
+        }
+        return prevPage; // No change
+      });
+    },
+    [] // Ensure stable reference
+  );
+
+  useEffect(() => {
+    const parallax = parallaxRef.current;
+    if (parallax) {
+      parallax.container.current.addEventListener('wheel', handleWheel);
+      return () => {
+        parallax.container.current.removeEventListener('wheel', handleWheel);
+      };
     }
-  };
+  }, [handleWheel]);
 
   useEffect(() => {
     if (parallaxRef.current) {
-      scrollToPage(currentPage);
+      parallaxRef.current.scrollTo(currentPage);
     }
-  }, [currentPage]);
-
-  useEffect(() => {
-    window.addEventListener('wheel', handleWheel, { passive: false }); // Attach wheel listener
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel); // Clean up listener on unmount
-    };
   }, [currentPage]);
 
   return (

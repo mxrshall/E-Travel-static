@@ -5,7 +5,7 @@ import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import image4 from "../../public/images/Vrstva3.png";
-import backgroundVideo from "../../public/images/backgroundVideo.mp4";
+import backgroundVideo from "../../public/images/video.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';
@@ -16,18 +16,14 @@ import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeCh
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [background, setBackground] = useState(null);
   const parallaxRef = useRef(null); // Ref for controlling the Parallax instance
   const [currentPage, setCurrentPage] = useState(0); // Track the current page index
 
   const handleHover = (data) => {
     setTitle(data.title);
     setDescription(data.description);
-  };
-
-  const scrollToPage = (page) => {
-    if (parallaxRef.current) {
-      parallaxRef.current.scrollTo(page);
-    }
+    setBackground(data.background);
   };
 
   const handleWheel = useCallback(
@@ -52,12 +48,16 @@ function Homepage({ slider, list }) {
 
   useEffect(() => {
     const parallax = parallaxRef.current;
+  
     if (parallax) {
       parallax.container.current.addEventListener('wheel', handleWheel);
-      return () => {
-        parallax.container.current.removeEventListener('wheel', handleWheel);
-      };
     }
+  
+    return () => {
+      if (parallax && parallax.container.current) {
+        parallax.container.current.removeEventListener('wheel', handleWheel);
+      }
+    };
   }, [handleWheel]);
 
   useEffect(() => {
@@ -172,17 +172,15 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className='w-full h-[25%] flex overflow-hidden bg-cover bg-center relative'>
-              <video
-                className="absolute inset-0 w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{ zIndex: -1 }}
-              >
-                <source src={backgroundVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {background && (
+                <motion.div
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ backgroundImage: `url(${background})` }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                />
+              )}
               <div
                 className="absolute inset-0 z-0 flex justify-center items-center"
                 style={{
@@ -209,8 +207,10 @@ function Homepage({ slider, list }) {
                     <MapMarker 
                       title={item.title}
                       description={item.description}
+                      background={item.background}
                       marker={item.marker}
                       slider={slider}
+                      video={item.video}
                       list={list[item.id]}
                       onHover={handleHover}
                     />

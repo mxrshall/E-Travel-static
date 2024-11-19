@@ -61,7 +61,6 @@ import AbuSimbel from "../public/images/photos/AbuSimbel/AbuSimbel.webp"
 import AbuSimbel1 from "../public/images/photos/AbuSimbel/AbuSimbel1.webp"
 import AbuSimbel2 from "../public/images/photos/AbuSimbel/AbuSimbel2.webp"
 import AbuSimbel3 from "../public/images/photos/AbuSimbel/AbuSimbel3.webp"
-import { delay } from "framer-motion";
 
 function App() {
   const list = [

@@ -34,20 +34,16 @@ function Landmark() {
         <>
             <Navbar />
             <motion.div
-                initial={{ opacity: 0, y: 10}}
-                animate={isExit ? { opacity: 0, y: 0} : { opacity: 1, y: 0}}
+                initial={{ opacity: 0, y: 10 }}
+                animate={isExit ? { opacity: 0, y: 0 } : { opacity: 1, y: 0 }}
                 transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.2 }}
-                className="w-full h-[100vh] flex justify-center items-center relative z-20">
-                <Title title={state.title} />
-            </motion.div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={isExit ? { opacity: 0 } : { opacity: 1 }}
-                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
-                className="w-full h-[100vh] absolute top-0 left-0 bg-cover bg-center z-10"
+                className="w-full h-[100vh] flex justify-center items-center bg-cover bg-center"
                 style={{ backgroundImage: `url(${state.background})` }}
             >
-                <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
+                <div className="absolute inset-0 bg-black opacity-60 z-10" />
+                <div className="relative z-20">
+                    <Title title={state.title} />
+                </div>
             </motion.div>
             <motion.div 
                 initial={{ opacity: 0 }}

@@ -5,7 +5,6 @@ import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import image4 from "../../public/images/Vrstva3.png";
-import backgroundVideo from "../../public/images/video.mp4";
 import map from "../../public/images/map.png";
 import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';

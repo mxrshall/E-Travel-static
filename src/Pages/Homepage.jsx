@@ -11,6 +11,7 @@ import Navbar from '../Navbar/Navbar';
 import background1 from "../../public/images/photos/AbuSimbel/AbuSimbel.webp";
 import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
 import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
+import Footer from '../Footer/Footer';
 
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
@@ -227,6 +228,9 @@ function Homepage({ slider, list }) {
                   {description}
                 </motion.span>
               </div>
+            </div>
+            <div className='w-full h-[25%]'>
+                  <Footer />
             </div>
       </Parallax>
     </>

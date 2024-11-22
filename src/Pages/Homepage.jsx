@@ -1,4 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import { motion } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
@@ -13,12 +17,47 @@ import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
 import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
 import Footer from '../Footer/Footer';
 
+import swiperImage1 from "../../public/images/photos/QuebecCity/QuebecCity2.webp";
+import swiperImage2 from "../../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp";
+import swiperImage3 from "../../public/images/photos/Seoul/Seoul3.webp";
+import swiperImage4 from "../../public/images/photos/VictoriaFalls/VictoriaFalls2.webp";
+import swiperImage5 from "../../public/images/photos/AbuSimbel/AbuSimbel2.webp";
+
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [background, setBackground] = useState(null);
   const parallaxRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
+
+  const swipeSlider = [
+    {
+      id: 0,
+      image: swiperImage1,
+    },
+    {
+      id: 1,
+      image: swiperImage2,
+    },
+    {
+      id: 2,
+      image: swiperImage3,
+    },
+    {
+      id: 3,
+      image: swiperImage4,
+    },
+    {
+      id: 4,
+      image: swiperImage5,
+    },
+  ];
+
+  const swiperStyles = {
+    '--swiper-navigation-color': '#fff',
+    '--swiper-pagination-color': '#269DFF',
+    '--swiper-navigation-size': '15px',
+  }
 
   const handleHover = (data) => {
     setTitle(data.title);
@@ -214,7 +253,26 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className='w-full h-[25%]'>
-                  <Footer />
+              <Swiper
+                style={swiperStyles}
+                className="w-full h-full flex justify-center items-center custom-swiper"
+                modules={[Pagination, Navigation]}
+                slidesPerView={4}
+                loop={true}
+                autoplay={{ delay: 2000 }}
+              >
+                {swipeSlider.map((item) => (
+                  <SwiperSlide key={item.id} className="w-1/4 h-2/3 flex justify-center items-center">
+                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
+                      <div 
+                        className="w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <Footer />
             </div>
       </Parallax>
     </>

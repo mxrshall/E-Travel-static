@@ -17,8 +17,8 @@ function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [background, setBackground] = useState(null);
-  const parallaxRef = useRef(null); // Ref for controlling the Parallax instance
-  const [currentPage, setCurrentPage] = useState(0); // Track the current page index
+  const parallaxRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleHover = (data) => {
     setTitle(data.title);
@@ -26,61 +26,45 @@ function Homepage({ slider, list }) {
     setBackground(data.background);
   };
 
-  const handleWheel = useCallback(
-    (e) => {
-      e.preventDefault(); // Prevent default scrolling behavior
+  const handleScroll = () => {
+    if (parallaxRef.current) {
+      const currentOffset = parallaxRef.current.current / parallaxRef.current.space;
+      setCurrentPage(Math.round(currentOffset));
+    }
+  };
 
-      const delta = e.deltaY;
-
-      setCurrentPage((prevPage) => {
-        if (delta > 0 && prevPage < 3) {
-          // Scroll down
-          return prevPage + 1;
-        } else if (delta < 0 && prevPage > 0) {
-          // Scroll up
-          return prevPage - 1;
-        }
-        return prevPage; // No change
-      });
-    },
-    [] // Ensure stable reference
-  );
+  const handlePageClick = (page) => {
+    if (parallaxRef.current) {
+      parallaxRef.current.scrollTo(page);
+      setCurrentPage(page);
+    }
+  };
 
   useEffect(() => {
     const parallax = parallaxRef.current;
-  
     if (parallax) {
-      parallax.container.current.addEventListener('wheel', handleWheel);
+      parallax.container.current.addEventListener('scroll', handleScroll);
+      return () => {
+        parallax.container.current.removeEventListener('scroll', handleScroll);
+      };
     }
-  
-    return () => {
-      if (parallax && parallax.container.current) {
-        parallax.container.current.removeEventListener('wheel', handleWheel);
-      }
-    };
-  }, [handleWheel]);
-
-  useEffect(() => {
-    if (parallaxRef.current) {
-      parallaxRef.current.scrollTo(currentPage);
-    }
-  }, [currentPage]);
+  }, []);
 
   return (
     <>
       <Navbar />
-      <div className="absolute top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
-        {Array.from({ length: 4 }).map((_, index) => (
-          <div
-            key={index}
-            className={`w-4 h-4 rounded-full border-2 ${
-              index === currentPage ? 'bg-white' : 'bg-transparent'
-            } transition-all duration-300`}
-            onClick={() => setCurrentPage(index)}
-          />
-        ))}
-      </div>
-          <Parallax pages={4} className="relative" ref={parallaxRef}>
+        <div className="absolute top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div
+              key={index}
+              className={`w-4 h-4 rounded-full border-2 ${
+                index === currentPage ? 'bg-white' : 'bg-transparent'
+              } transition-all duration-300`}
+              onClick={() => handlePageClick(index)}
+            />
+          ))}
+        </div>
+          <Parallax pages={4} ref={parallaxRef} className="relative">
             {/* Background Layers */}
             <ParallaxLayer offset={0} speed={0.2}>
               <div 

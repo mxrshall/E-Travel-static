@@ -3,7 +3,7 @@ import { FiGithub } from "react-icons/fi";
 
 function Footer() {
   return (
-    <footer className="w-full h-16 flex px-16 absolute bottom-[0%]">
+    <footer className="w-full h-16 flex px-16 absolute bottom-[0%] z-30">
         <div className="w-1/6"/>
         <div className="w-4/6 h-full flex justify-center items-center text-white font-light">
             <h1>

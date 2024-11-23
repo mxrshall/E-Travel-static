@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { motion } from 'framer-motion';
@@ -249,28 +249,34 @@ function Homepage({ slider, list }) {
                 </motion.span>
               </div>
             </div>
-            <div className='w-full h-[25%]'>
-              <Swiper
-                style={swiperStyles}
-                className="w-full h-full flex justify-center items-center custom-swiper"
-                modules={[Pagination, Navigation]}
-                slidesPerView={4}
-                loop={true}
-                autoplay={{ delay: 2000 }}
-              >
-                {swipeSlider.map((item) => (
-                  <SwiperSlide key={item.id} className="w-1/4 h-2/3 flex justify-center items-center">
-                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
-                      <div 
-                        className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url(${item.image})` }}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <Footer />
-            </div>
+            <div className="w-full h-[25%] relative flex justify-center items-center">
+            <Swiper
+              style={swiperStyles}
+              className="w-full h-full flex justify-center items-center custom-swiper"
+              modules={[Autoplay]}
+              slidesPerView={4}
+              loop={true}
+              autoplay={{ delay: 2000 }}
+              speed={500}
+            >
+              {swipeSlider.map((item) => (
+                <SwiperSlide
+                  key={item.id}
+                  className="w-1/4 h-full flex justify-center items-center px-2"
+                >
+                  <div className="w-full h-3/4 overflow-hidden flex justify-center items-center">
+                    <div
+                      className="w-full h-full bg-cover bg-center"
+                      style={{ backgroundImage: `url(${item.image})` }}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="absolute top-0 w-full h-[25%] bg-black rounded-b-[50%] z-10" />
+            <div className="absolute bottom-0 w-full h-[25%] bg-black rounded-t-[50%] z-10" />
+            <Footer />
+          </div>
       </Parallax>
     </>
   );

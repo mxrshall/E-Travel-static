@@ -253,25 +253,7 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className='w-full h-[25%]'>
-              <Swiper
-                style={swiperStyles}
-                className="w-full h-full flex justify-center items-center custom-swiper"
-                modules={[Pagination, Navigation]}
-                slidesPerView={4}
-                loop={true}
-                autoplay={{ delay: 2000 }}
-              >
-                {swipeSlider.map((item) => (
-                  <SwiperSlide key={item.id} className="w-1/4 h-2/3 flex justify-center items-center">
-                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
-                      <div 
-                        className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url(${item.image})` }}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              
               <Footer />
             </div>
       </Parallax>

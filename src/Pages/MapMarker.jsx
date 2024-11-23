@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const MapMarker = ({ title, description, background, list, slider, video, onHover, marker }) => {
+const MapMarker = ({ title, description, background, list, slider, onHover, marker }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 

@@ -153,11 +153,10 @@ function Homepage({ slider, list }) {
                 }}
               >
                 <motion.div 
-                  className='w-1/4 h-full bg-red-600 bg-cover bg-center relative'
+                  className='w-1/4 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background1})` }}
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -166,8 +165,7 @@ function Homepage({ slider, list }) {
                   className='w-2/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background2})` }}
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.9, duration: 0.5 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -176,8 +174,7 @@ function Homepage({ slider, list }) {
                   className='w-3/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background3})` }}
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -253,7 +250,25 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className='w-full h-[25%]'>
-              
+              <Swiper
+                style={swiperStyles}
+                className="w-full h-full flex justify-center items-center custom-swiper"
+                modules={[Pagination, Navigation]}
+                slidesPerView={4}
+                loop={true}
+                autoplay={{ delay: 2000 }}
+              >
+                {swipeSlider.map((item) => (
+                  <SwiperSlide key={item.id} className="w-1/4 h-2/3 flex justify-center items-center">
+                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
+                      <div 
+                        className="w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               <Footer />
             </div>
       </Parallax>

@@ -250,31 +250,67 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className="w-full h-[25%] relative flex justify-center items-center">
-            <Swiper
-              style={swiperStyles}
-              className="w-full h-full flex justify-center items-center custom-swiper"
-              modules={[Autoplay]}
-              slidesPerView={4}
-              loop={true}
-              autoplay={{ delay: 2000 }}
-              speed={500}
-            >
-              {swipeSlider.map((item) => (
-                <SwiperSlide
-                  key={item.id}
-                  className="w-1/4 h-full flex justify-center items-center px-2"
-                >
-                  <div className="w-full h-3/4 overflow-hidden flex justify-center items-center">
-                    <div
-                      className="w-full h-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="absolute top-0 w-full h-[25%] bg-black rounded-b-[50%] z-10" />
-            <div className="absolute bottom-0 w-full h-[25%] bg-black rounded-t-[50%] z-10" />
+            <div className='w-2/5 h-full flex flex-col justify-center items-center'>
+              <h1 className="text-white text-8xl font-bold mb-5">
+                Galéria
+              </h1>
+              <span className="w-1/2 text-base text-white font-normal font-mont">
+                Navštívte gálériu a prezrite si fotografie jednotlivých lokácii
+              </span>
+            </div>
+            <div className='w-3/5 h-full flex flex-col relative'>
+            <div
+                className="absolute inset-0 z-30 flex justify-center items-center"
+                style={{
+                  background: "radial-gradient(circle, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
+                }}
+              />
+              <Swiper
+                className="w-full h-1/2 flex flex-col justify-center items-center custom-swiper pb-2"
+                modules={[Autoplay]}
+                slidesPerView={3}
+                loop={true}
+                autoplay={{ delay: 2000 }}
+                speed={500}
+              >
+                {swipeSlider.map((item) => (
+                  <SwiperSlide
+                    key={item.id}
+                    className="w-1/4 h-full flex justify-center items-center px-2"
+                  >
+                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
+                      <div
+                        className="w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <Swiper
+                style={swiperStyles}
+                className="w-full h-1/2 flex flex-col justify-center items-center custom-swiper pt-2"
+                modules={[Autoplay]}
+                slidesPerView={2}
+                loop={true}
+                autoplay={{ delay: 2000, reverseDirection: true }}
+                speed={500}
+              >
+                {swipeSlider.map((item) => (
+                  <SwiperSlide
+                    key={item.id}
+                    className="w-1/4 h-full flex justify-center items-center px-2"
+                  >
+                    <div className="w-full h-full overflow-hidden flex justify-center items-center">
+                      <div
+                        className="w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
             <Footer />
           </div>
       </Parallax>

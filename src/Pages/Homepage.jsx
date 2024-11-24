@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import { motion } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
@@ -29,6 +28,8 @@ function Homepage({ slider, list }) {
   const [background, setBackground] = useState(null);
   const parallaxRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [hasAnimated1, setHasAnimated1] = useState(false);
+  const [hasAnimated3, setHasAnimated3] = useState(false);
 
   const swipeSlider = [
     {
@@ -53,10 +54,10 @@ function Homepage({ slider, list }) {
     },
   ];
 
-  const swiperStyles = {
-    '--swiper-navigation-color': '#fff',
-    '--swiper-pagination-color': '#269DFF',
-    '--swiper-navigation-size': '15px',
+  if (currentPage === 1 && !hasAnimated1) {
+    setHasAnimated1(true);
+  }else if (currentPage === 3 && !hasAnimated3) {
+    setHasAnimated3(true);
   }
 
   const handleHover = (data) => {
@@ -81,12 +82,16 @@ function Homepage({ slider, list }) {
 
   useEffect(() => {
     const parallax = parallaxRef.current;
-    if (parallax) {
+  
+    if (parallax && parallax.container.current) {
       parallax.container.current.addEventListener('scroll', handleScroll);
-      return () => {
-        parallax.container.current.removeEventListener('scroll', handleScroll);
-      };
     }
+  
+    return () => {
+      if (parallax && parallax.container.current) {
+        parallax.container.current.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
   return (
@@ -105,7 +110,7 @@ function Homepage({ slider, list }) {
         </div>
           <Parallax pages={4} ref={parallaxRef} className="relative">
             {/* Background Layers */}
-            <ParallaxLayer offset={0} speed={0.2}>
+            <ParallaxLayer offset={0} speed={0.5}>
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image1})` }}
@@ -117,20 +122,20 @@ function Homepage({ slider, list }) {
                 style={{ backgroundImage: `url(${image4})` }}
               ></div>
             </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.3}>
+            <ParallaxLayer offset={0} speed={0.2}>
               <div className="w-full h-full flex justify-center items-center">
                 <h1 className="text-white text-9xl font-bold mb-32">
                   E-Travel
                 </h1>
               </div>
             </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.5}>
+            <ParallaxLayer offset={0} speed={0.6}>
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image3})` }}
               ></div>
             </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.7}>
+            <ParallaxLayer offset={0} speed={0.8}>
               <div 
                 className="w-full h-full bg-cover bg-center flex justify-center items-center"
                 style={{ backgroundImage: `url(${image2})` }}
@@ -156,40 +161,46 @@ function Homepage({ slider, list }) {
                   className='w-1/4 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background1})` }}
                   initial={{ opacity: 0 }}
-                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
+                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
                 >
-                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                  <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
                 <motion.div 
                   className='w-2/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background2})` }}
                   initial={{ opacity: 0 }}
-                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
+                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.9, duration: 0.5 }}
                 >
-                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                  <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
                 <motion.div
                   className='w-3/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background3})` }}
                   initial={{ opacity: 0 }}
-                  animate={currentPage == 1 ? { opacity: 1 } : { opacity: 0 }}
+                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                  <div className="absolute inset-0 bg-black opacity-30"></div>
+                  <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
               </div>
-              <div className='absolute w-2/3 flex flex-col z-10'>
-                <h1 className="text-white text-8xl font-bold mb-5">
+              <motion.div 
+                className='absolute w-2/3 flex flex-col z-10'
+                initial={{ opacity: 0, y: 10 }}
+                animate={hasAnimated1 ? { opacity: 1, y: 0 } : { opacity: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <h1 className="text-white text-8xl font-bold">
                   Cestovný katalóg
                 </h1>
-                <span className="w-1/2 text-base text-white font-normal font-mont">
+                <span className="w-1/2 text-base text-white font-normal font-mont my-5">
                   Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
                   V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
                   Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
                 </span>
-              </div>
+                <button className="w-1/5 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+              </motion.div>
             </div>
             <div className='w-full h-[25%] flex overflow-hidden bg-cover bg-center relative'>
               {background && (
@@ -250,15 +261,28 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className="w-full h-[25%] relative flex justify-center items-center">
-            <div className='w-2/5 h-full flex flex-col justify-center items-center'>
-              <h1 className="text-white text-8xl font-bold mb-5">
-                Galéria
-              </h1>
-              <span className="w-1/2 text-base text-white font-normal font-mont">
-                Navštívte gálériu a prezrite si fotografie jednotlivých lokácii
-              </span>
+            <div className='w-2/5 h-full flex justify-center items-center'>
+              <motion.div
+                className='w-2/3 flex flex-col justify-center items-start'
+                initial={{ opacity: 0, x: -10 }}
+                animate={hasAnimated3 ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+              >
+                <h1 className="text-white text-8xl font-bold">
+                  Galéria
+                </h1>
+                <span className="text-base text-white font-normal font-mont my-5">
+                  Vstúpte do galérie a nechajte sa inšpirovať nádhernými miestami, ktoré čakajú na objavenie. Či už hľadáte pokojné pláže, pulzujúce mestá, alebo dychberúcu prírodu, galéria ponúka jedinečný pohľad na destinácie, ktoré stoja za návštevu. Prezrite si fotografie, ktoré zachytávajú atmosféru a krásu sveta, a nechajte sa unášať fantáziou na svoju ďalšiu cestovateľskú dobrodružstvo.
+                </span>
+                <button className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na galériu</button>
+              </motion.div>
             </div>
-            <div className='w-3/5 h-full flex flex-col relative'>
+            <motion.div 
+              className='w-3/5 h-full flex flex-col relative'
+              initial={{ opacity: 0 }}
+              animate={hasAnimated3 ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
             <div
                 className="absolute inset-0 z-30 flex justify-center items-center"
                 style={{
@@ -270,7 +294,7 @@ function Homepage({ slider, list }) {
                 modules={[Autoplay]}
                 slidesPerView={3}
                 loop={true}
-                autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 1500 }}
                 speed={500}
               >
                 {swipeSlider.map((item) => (
@@ -288,7 +312,6 @@ function Homepage({ slider, list }) {
                 ))}
               </Swiper>
               <Swiper
-                style={swiperStyles}
                 className="w-full h-1/2 flex flex-col justify-center items-center custom-swiper pt-2"
                 modules={[Autoplay]}
                 slidesPerView={2}
@@ -310,7 +333,7 @@ function Homepage({ slider, list }) {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </motion.div>
             <Footer />
           </div>
       </Parallax>

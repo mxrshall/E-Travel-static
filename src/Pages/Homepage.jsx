@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
@@ -26,7 +27,6 @@ function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [background, setBackground] = useState(null);
-  const parallaxRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [hasAnimated1, setHasAnimated1] = useState(false);
   const [hasAnimated3, setHasAnimated3] = useState(false);
@@ -66,91 +66,93 @@ function Homepage({ slider, list }) {
     setBackground(data.background);
   };
 
-  const handleScroll = () => {
-    if (parallaxRef.current) {
-      const currentOffset = parallaxRef.current.current / parallaxRef.current.space;
-      setCurrentPage(Math.round(currentOffset));
-    }
-  };
+  const sectionRefs = useRef([]); // Array to hold references to sections
+  const containerRef = useRef(null); // Reference to the scroll container
 
-  const handlePageClick = (page) => {
-    if (parallaxRef.current) {
-      parallaxRef.current.scrollTo(page);
-      setCurrentPage(page);
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+  });
+
+  // Add sections dynamically to the refs array
+  const addToRefs = (el) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
     }
   };
 
   useEffect(() => {
-    const parallax = parallaxRef.current;
-  
-    if (parallax && parallax.container.current) {
-      parallax.container.current.addEventListener('scroll', handleScroll);
-    }
-  
-    return () => {
-      if (parallax && parallax.container.current) {
-        parallax.container.current.removeEventListener('scroll', handleScroll);
+    const updateCurrentPage = () => {
+      const sectionOffsets = sectionRefs.current.map((section) =>
+        section?.getBoundingClientRect().top + window.scrollY
+      );
+
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      const activeIndex = sectionOffsets.findIndex(
+        (offset, index) =>
+          scrollPosition >= offset &&
+          (index === sectionOffsets.length - 1 || scrollPosition < sectionOffsets[index + 1])
+      );
+
+      if (activeIndex !== currentPage) {
+        setCurrentPage(activeIndex);
       }
     };
-  }, []);
+
+    window.addEventListener('scroll', updateCurrentPage);
+    return () => window.removeEventListener('scroll', updateCurrentPage);
+  }, [currentPage]);
+
+  const handlePageClick = (index) => {
+    if (sectionRefs.current[index]) {
+      sectionRefs.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   return (
     <>
       <Navbar />
-        <div className="absolute top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <div
-              key={index}
-              className={`w-4 h-4 rounded-full border-2 ${
-                index === currentPage ? 'bg-white' : 'bg-transparent'
-              } transition-all duration-300`}
-              onClick={() => handlePageClick(index)}
-            />
-          ))}
+      <div className="fixed top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div
+            key={index}
+            className={`w-4 h-4 rounded-full border-2 ${
+              index === currentPage ? 'bg-white' : 'bg-transparent'
+            } transition-all duration-300`}
+            onClick={() => handlePageClick(index)}
+          />
+        ))}
+      </div>
+      <div className='w-full h-[400vh] flex flex-col'>
+        <div className='w-full h-[100vh] relative' id='0' ref={addToRefs}>
+          <div 
+            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[1]"
+            style={{ backgroundImage: `url(${image1})` }}
+          />
+          <div 
+            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[2]"
+            style={{ backgroundImage: `url(${image4})` }}
+          />
+          <div className="w-full h-full flex justify-center items-center absolute z-[3]">
+            <h1 className="text-white text-9xl font-bold mb-32">
+              E-Travel
+            </h1>
+          </div>
+          <div 
+            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[4]"
+            style={{ backgroundImage: `url(${image3})` }}
+          />
+          <div 
+            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[5]"
+            style={{ backgroundImage: `url(${image2})` }}
+          />
+          <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"/>
         </div>
-          <Parallax pages={4} ref={parallaxRef} className="relative">
-            {/* Background Layers */}
-            <ParallaxLayer offset={0} speed={0.5}>
-              <div 
-                className="w-full h-full bg-cover bg-center flex justify-center items-center"
-                style={{ backgroundImage: `url(${image1})` }}
-              ></div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.5}>
-              <div 
-                className="w-full h-full bg-cover bg-center flex justify-center items-center"
-                style={{ backgroundImage: `url(${image4})` }}
-              ></div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.2}>
-              <div className="w-full h-full flex justify-center items-center">
-                <h1 className="text-white text-9xl font-bold mb-32">
-                  E-Travel
-                </h1>
-              </div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.6}>
-              <div 
-                className="w-full h-full bg-cover bg-center flex justify-center items-center"
-                style={{ backgroundImage: `url(${image3})` }}
-              ></div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.8}>
-              <div 
-                className="w-full h-full bg-cover bg-center flex justify-center items-center"
-                style={{ backgroundImage: `url(${image2})` }}
-              ></div>
-              <div className='w-screen h-[20vh] bg-black'></div>
-            </ParallaxLayer>
-            
-            {/* Gradient Overlay */}
-            <ParallaxLayer offset={0} speed={0.7}>
-              <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%]"></div>
-            </ParallaxLayer>
-            <div className='w-full h-[25%]'/>
-            <div 
-              className="w-full h-[25%] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" 
-            >
+
+        <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" id='1'ref={addToRefs}>
               <div 
                 className='w-2/3 h-full flex justify-center items-right gap-10'
                 style={{
@@ -202,7 +204,7 @@ function Homepage({ slider, list }) {
                 <button className="w-1/5 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
               </motion.div>
             </div>
-            <div className='w-full h-[25%] flex overflow-hidden bg-cover bg-center relative'>
+            <div className='w-full h-[100vh] flex overflow-hidden bg-cover bg-center relative' id='2' ref={addToRefs}>
               {background && (
                 <motion.div
                   className="absolute inset-0 w-full h-full object-cover"
@@ -260,7 +262,7 @@ function Homepage({ slider, list }) {
                 </motion.span>
               </div>
             </div>
-            <div className="w-full h-[25%] relative flex justify-center items-center">
+            <div className="w-full h-[100vh] relative flex justify-center items-center" id='3' ref={addToRefs}>
             <div className='w-2/5 h-full flex justify-center items-center'>
               <motion.div
                 className='w-2/3 flex flex-col justify-center items-start'
@@ -336,7 +338,7 @@ function Homepage({ slider, list }) {
             </motion.div>
             <Footer />
           </div>
-      </Parallax>
+        </div>
     </>
   );
 };

@@ -4,7 +4,6 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { motion, useScroll } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";

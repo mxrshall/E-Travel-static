@@ -1,126 +1,89 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
-import { MdKeyboardArrowLeft } from "react-icons/md";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-const sliderSettings = {
-    initial: (direction) => ({
-        x: direction > 0 ? 100 : -100,
-        opacity: 0,
-    }),
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.4,
-        },
-    },
-    exit: (direction) => ({
-        x: direction > 0 ? -100 : 100,
-        opacity: 0,
-        transition: {
-            duration: 0.4,
-        },
-    }),
-};
+const Slider = ({ slider, tag, onClick }) => {
+    const [hovered, setHovered] = useState(null);
 
-const Slider = ({slider, tag, onClick}) => {
-    const [index, setIndex] = useState(0);
-    const [direction, setDirection] = useState(0);
-    const [hovered, setHovered] = useState(false);
+    // Filter slides based on the tag
+    const filteredSlider = slider.filter((item) =>
+        item.tag.some((t) => t.includes(tag))
+    );
 
-    const filteredSlider = slider.filter(item => {
-        for (let key in item.tag) {
-            if (item.tag[key].includes(tag)) {
-                return true;
-            }
-        }
-        return false;
-    });
-
-    const [data, setData] = useState({
-        title: filteredSlider[index].title,
-        background: filteredSlider[index].background,
-        description: filteredSlider[index].description,
-        photo: filteredSlider[index].photo,
-    });
-
-    const next = () => {
-        setDirection(1);
-        const nextIndex = (index + 1) % filteredSlider.length;
-        setIndex(nextIndex);
-        setData({
-            title: filteredSlider[nextIndex].title,
-            background: filteredSlider[nextIndex].background,
-            description: filteredSlider[nextIndex].description,
-            photo: filteredSlider[nextIndex].photo,
-        });
-    };
-    
-    const prev = () => {
-        setDirection(-1);
-        const prevIndex = (index - 1 + filteredSlider.length) % filteredSlider.length;
-        setIndex(prevIndex);
-        setData({
-            title: filteredSlider[prevIndex].title,
-            background: filteredSlider[prevIndex].background,
-            description: filteredSlider[prevIndex].description,
-            photo: filteredSlider[prevIndex].photo,
-        });
+    const handleClick = (item) => {
+        onClick(item);
     };
 
-    const handleClick = () => {
-        onClick(data);
-    };
+    const swiperStyles = {
+        '--swiper-navigation-color': '#fff',
+        '--swiper-pagination-color': '#269DFF',
+        '--swiper-navigation-size': '10px',
+      }
 
     return (
-        <div className="w-5/12 h-[50vh] flex">
-            <motion.button
-                animate={{ x: 0, opacity: 1 }}
-                initial={{ x: 100, opacity: 0 }}
-                transition={{ delay: 0.8 }}
-                onClick={prev}
-                className="w-1/12"
-            >
-                <MdKeyboardArrowLeft size="20" color="white"/>
-            </motion.button>
-            <div className="w-full h-[50vh] bg-cover">
-                <motion.div
-                    className="w-full h-[50vh] rounded-xl bg-cover px-5 py-5 text-xl text-white font-bold font-mont shadow-2xl shadow-black"
-                    variants={sliderSettings}
-                    animate="animate"
-                    initial="initial"
-                    exit="exit"
-                    key={filteredSlider[index].background}
-                    custom={direction}
-                    style={{
-                        backgroundImage: `url(${filteredSlider[index].background})`,
-                    }}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                    onClick={handleClick}
+        <Swiper
+            style={swiperStyles}
+            className="w-5/12 h-[60vh] flex justify-center items-center"
+            modules={[Navigation]}
+            slidesPerView={1}
+            loop={true}
+            speed={500}
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }}
+        >
+            {filteredSlider.map((item, idx) => (
+                <SwiperSlide
+                    key={item.id}
+                    className="w-full h-full flex justify-center items-center"
                 >
-                    <div className="w-full h-1/2">
-                        {filteredSlider[index].title}
-                    </div>
-                    {hovered && (
-                        <div className="w-full h-1/2 flex justify-end items-end hover:none">
-                            <IoIosArrowUp size="30" color="white"/>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full h-full my-5 rounded-xl relative cursor-pointer"
+                        onMouseEnter={() => setHovered(idx)}
+                        onMouseLeave={() => setHovered(null)}
+                        onClick={() => handleClick(item)}
+                    >
+                        <div
+                            className="w-full h-full flex flex-col bg-cover bg-center rounded-xl"
+                            style={{ backgroundImage: `url(${item.background})` }}
+                        >
+                            <AnimatePresence>
+                                {hovered === idx && (
+                                    <motion.div
+                                        className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-end p-5 rounded-xl"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <div className="w-full h-full flex flex-col justify-center items-center text-center">
+                                            <p className="text-3xl text-white font-bold font-mont cursor-default">
+                                                {item.title}
+                                            </p>
+                                            <IoIosArrowUp
+                                                size="25"
+                                                color="white"
+                                                className="absolute bottom-4 right-4 cursor-pointer"
+                                            />
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
-                    )}
-                </motion.div>
-            </div>
-            <motion.button
-                animate={{ x: 0, opacity: 1 }}
-                initial={{ x: -100, opacity: 0 }}
-                transition={{ delay: 0.8 }}
-                onClick={next}
-                className="w-1/12"
-            >
-                <MdKeyboardArrowRight size="20" color="white"/>
-            </motion.button>
-        </div>
+                    </motion.div>
+                </SwiperSlide>
+            ))}
+            <div className="swiper-button-prev p-4 cursor-pointer" />
+            <div className="swiper-button-next p-4 cursor-pointer" />
+        </Swiper>
     );
 };
 

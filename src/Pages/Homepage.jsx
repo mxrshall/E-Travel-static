@@ -30,6 +30,8 @@ function Homepage({ slider, list }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [hasAnimated1, setHasAnimated1] = useState(false);
   const [hasAnimated3, setHasAnimated3] = useState(false);
+  const sectionRefs = useRef([]); // Array to hold references to sections
+  const containerRef = useRef(null); // Reference to the scroll container
 
   const swipeSlider = [
     {
@@ -54,6 +56,10 @@ function Homepage({ slider, list }) {
     },
   ];
 
+  const lenis = useLenis(({ scroll }) => {
+    // called every scroll
+  })
+
   if (currentPage === 1 && !hasAnimated1) {
     setHasAnimated1(true);
   }else if (currentPage === 3 && !hasAnimated3) {
@@ -65,9 +71,6 @@ function Homepage({ slider, list }) {
     setDescription(data.description);
     setBackground(data.background);
   };
-
-  const sectionRefs = useRef([]); // Array to hold references to sections
-  const containerRef = useRef(null); // Reference to the scroll container
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
@@ -81,34 +84,35 @@ function Homepage({ slider, list }) {
   };
 
   useEffect(() => {
+    if (!lenis) return; // Safeguard if lenis is undefined
+  
     const updateCurrentPage = () => {
+      const scrollPosition = lenis.scroll + window.innerHeight / 2; // Use Lenis's scroll position
+  
       const sectionOffsets = sectionRefs.current.map((section) =>
-        section?.getBoundingClientRect().top + window.scrollY
+        section?.getBoundingClientRect().top + lenis.scroll // Use Lenis's position
       );
-
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-
+  
       const activeIndex = sectionOffsets.findIndex(
         (offset, index) =>
           scrollPosition >= offset &&
           (index === sectionOffsets.length - 1 || scrollPosition < sectionOffsets[index + 1])
       );
-
+  
       if (activeIndex !== currentPage) {
         setCurrentPage(activeIndex);
       }
     };
-
-    window.addEventListener('scroll', updateCurrentPage);
-    return () => window.removeEventListener('scroll', updateCurrentPage);
-  }, [currentPage]);
+  
+    lenis.on('scroll', updateCurrentPage); // Attach Lenis scroll event listener
+    return () => lenis.off('scroll', updateCurrentPage); // Cleanup on unmount
+  }, [currentPage, lenis]);
+  
 
   const handlePageClick = (index) => {
     if (sectionRefs.current[index]) {
-      sectionRefs.current[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      const section = sectionRefs.current[index];
+      lenis.scrollTo(section, { offset: -50 }); // Adjust offset as needed
     }
   };
 
@@ -126,8 +130,9 @@ function Homepage({ slider, list }) {
           />
         ))}
       </div>
+      <ReactLenis root>
       <div className='w-full h-[400vh] flex flex-col'>
-        <div className='w-full h-[100vh] relative' id='0' ref={addToRefs}>
+        <div className='w-full h-[100vh] relative' ref={addToRefs}>
           <div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[1]"
             style={{ backgroundImage: `url(${image1})` }}
@@ -152,7 +157,7 @@ function Homepage({ slider, list }) {
           <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"/>
         </div>
 
-        <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" id='1'ref={addToRefs}>
+        <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" ref={addToRefs}>
               <div 
                 className='w-2/3 h-full flex justify-center items-right gap-10'
                 style={{
@@ -204,7 +209,7 @@ function Homepage({ slider, list }) {
                 <button className="w-1/5 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
               </motion.div>
             </div>
-            <div className='w-full h-[100vh] flex overflow-hidden bg-cover bg-center relative' id='2' ref={addToRefs}>
+            <div className='w-full h-[100vh] flex overflow-hidden bg-cover bg-center relative' ref={addToRefs}>
               {background && (
                 <motion.div
                   className="absolute inset-0 w-full h-full object-cover"
@@ -262,7 +267,7 @@ function Homepage({ slider, list }) {
                 </motion.span>
               </div>
             </div>
-            <div className="w-full h-[100vh] relative flex justify-center items-center" id='3' ref={addToRefs}>
+            <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
             <div className='w-2/5 h-full flex justify-center items-center'>
               <motion.div
                 className='w-2/3 flex flex-col justify-center items-start'
@@ -339,6 +344,7 @@ function Homepage({ slider, list }) {
             <Footer />
           </div>
         </div>
+        </ReactLenis>
     </>
   );
 };

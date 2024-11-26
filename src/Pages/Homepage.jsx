@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
@@ -55,6 +55,16 @@ function Homepage({ slider, list }) {
     },
   ];
 
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+  });
+
+  // Define transforms for parallax layers
+  const layer2Y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const layer3Y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const layer4Y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const layer5Y = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
   const lenis = useLenis(({ scroll }) => {
     // called every scroll
   })
@@ -70,10 +80,6 @@ function Homepage({ slider, list }) {
     setDescription(data.description);
     setBackground(data.background);
   };
-
-  const { scrollYProgress } = useScroll({
-    container: containerRef,
-  });
 
   // Add sections dynamically to the refs array
   const addToRefs = (el) => {
@@ -132,28 +138,34 @@ function Homepage({ slider, list }) {
       <ReactLenis root>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>
-          <div 
+          <motion.div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[1]"
             style={{ backgroundImage: `url(${image1})` }}
           />
-          <div 
+          <motion.div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[2]"
-            style={{ backgroundImage: `url(${image4})` }}
+            style={{ backgroundImage: `url(${image4})`, y: layer2Y }}
           />
-          <div className="w-full h-full flex justify-center items-center absolute z-[3]">
+          <motion.div 
+            className="w-full h-full flex justify-center items-center absolute z-[3]"
+            style={{ y: layer3Y }}
+          >
             <h1 className="text-white text-9xl font-bold mb-32">
               E-Travel
             </h1>
-          </div>
-          <div 
+          </motion.div>
+          <motion.div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[4]"
-            style={{ backgroundImage: `url(${image3})` }}
+            style={{ backgroundImage: `url(${image3})`, y: layer4Y }}
           />
-          <div 
+          <motion.div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[5]"
-            style={{ backgroundImage: `url(${image2})` }}
+            style={{ backgroundImage: `url(${image2})`, y: layer5Y }}
           />
-          <div className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"/>
+          <motion.div 
+            className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"
+            style={{ y: layer5Y }}
+          />
         </div>
 
         <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" ref={addToRefs}>

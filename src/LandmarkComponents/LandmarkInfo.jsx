@@ -1,6 +1,6 @@
 import LandmarkPhoto from "./LandmarkPhoto"
 
-function LandInfo({ description, photo, sendFotka, onClick }) {
+function LandInfo({ description, photo, map, sendFotka, onClick }) {
     const veta = description.split('. ');
 
     const handleClick = () => {
@@ -22,6 +22,10 @@ function LandInfo({ description, photo, sendFotka, onClick }) {
                         <br/>
                     </span>
                 ))}
+                <div 
+                    className="w-1/2 h-[30vh] bg-contain bg-no-repeat bg-center my-10"
+                    style={{ backgroundImage: `url(${map})`}}
+                />
                 <button onClick={handleClick} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
             </div>
             <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">

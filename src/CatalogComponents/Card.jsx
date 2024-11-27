@@ -2,13 +2,14 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Card({title, background, description, photo, time, onClick}) {
+function Card({title, background, description, photo, map, time, onClick}) {
     const [hovered, setHovered] = useState(false);
     const [data, setData] = useState({
         title: title,
         background: background,
         description: description,
         photo: photo,
+        map: map,
     });
 
     const handleClick = () => {

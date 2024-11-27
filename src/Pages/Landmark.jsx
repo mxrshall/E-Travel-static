@@ -50,7 +50,7 @@ function Landmark() {
                 animate={isExit ? { opacity: 0 } : { opacity: 1 }}
                 transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
                 className="w-full h-[100vh] flex justify-center items-center bg-black relative z-30">
-                <LandmarkInfo description={state.description} photo={state.photo} sendFotka={sendFotka} onClick={handleButtonClick}/>
+                <LandmarkInfo description={state.description} photo={state.photo} map={state.map} sendFotka={sendFotka} onClick={handleButtonClick}/>
             </motion.div>
             {open && (
                 <OverlayFotka

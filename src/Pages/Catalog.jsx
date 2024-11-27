@@ -61,6 +61,7 @@ function Catalog({ slider }) {
                             background={item.background}
                             description={item.description}
                             photo={item.photo}
+                            map={item.map}
                             time={0.5 + 0.1 * index}
                             onClick={handleCardClick}
                         />

@@ -58,7 +58,7 @@ import JoffreLakesPark from "../public/images/photos/JoffreLakesPark/JoffreLakes
 import JoffreLakesPark1 from "../public/images/photos/JoffreLakesPark/JoffreLakesPark1.webp"
 import JoffreLakesPark2 from "../public/images/photos/JoffreLakesPark/JoffreLakesPark2.webp"
 import JoffreLakesParkMap from "../public/images/map/JoffreLakesParkMap.png"
-//Afrika
+//Južná Afrika
 import BlydeRiverCanyon from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon.webp"
 import BlydeRiverCanyon1 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp"
 import BlydeRiverCanyon2 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon2.webp"
@@ -114,12 +114,12 @@ function App() {
     },
     {
         id: 3,
-        title: "Afrika",
-        description: "Afrika je kontinent plný kontrastov, kultúrneho bohatstva a rozmanitej prírody. Od púští Sahary až po bujné dažďové pralesy a savany plné divokej zveri. Afrika je ideálna pre cestovateľov, ktorí hľadajú autentické zážitky a stretnutia s krásnou a nedotknutou prírodou.",
+        title: "Južná Afrika",
+        description: "Južná Afrika je krajina na južnom cípe afrického kontinentu, známa svojou rozmanitou krajinou, bohatou kultúrou a históriou. Je domovom ikonických miest ako Kapské Mesto, Stolová hora a národný park Kruger, kde môžete zažiť africké safari. Južná Afrika má tri hlavné mestá - Pretóriu (administratívne), Kapské Mesto (legislatívne) a Bloemfontein (súdne). Hlavným priemyslom je ťažba, poľnohospodárstvo a cestovný ruch. Krajina sa tiež pýši jedinečnou flórou a faunou.",
         background: header4,
         marker: {
-          x: "53", 
-          y: "58",
+          x: "50", 
+          y: "70",
           delay: "0.6",
         },
         flag: afrika,
@@ -208,18 +208,18 @@ function App() {
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
     {
-      title: "Victoria Falls",
+      title: "Kruger National Park",
       background: VictoriaFalls,
-      description: ["Blyde River Canyon je jedným z najkrajších prírodných útvarov v Južnej Afrike a jedným z najväčších kaňonov na svete. Pre turistov a návštevníkov je to fascinujúce miesto, ktoré ponúka úchvatné scenérie, prírodnú krásu a množstvo zážitkov. Blyde River Canyon je ideálnym miestom pre milovníkov aktívneho odpočinku v prírode. Turisti si môžu vychutnať turistiku po rôznych chodníkoch a stezkách, ktoré vedú okolo kaňonu a ponúkajú príležitosti na pozorovanie divokej fauny a flóry. Ďalej môžu návštevníci využiť možnosti rybolovu, raftingu na rieke Blyde River a horských bicyklových výletov.", "Victoria Falls, známe aj ako Dymy Vodopády, sú jednými z najimpresívnejších prírodných divov na svete. Tieto obrovské vodopády sa nachádzajú na rieke Zambezi na hranici medzi Zambiou a Zimbabwe. Pre turistov a návštevníkov sú Victoria Falls fascinujúcou destináciou, ktorá ponúka úchvatné scenérie, dobrodružstvo a jedinečné zážitky. Pre dobrodružne založených návštevníkov ponúkajú Victoria Falls množstvo adrenalínových aktivít. Medzi najobľúbenejšie patria zipline cez kaňon, bungee jumping zo zábradlia mosta Victoria Falls Bridge a plavba na člne po divokej rieke Zambezi.", "Abu Simbel je archeologická lokalita v Egypte, známa predovšetkým svojimi monumentálnymi skalnými chrámami, ktoré sú považované za jedny z najznamenitejších pamiatok starovekého Egypta. Pre turistov a návštevníkov je Abu Simbel fascinujúcou destináciou, ktorá ponúka pohľad do bohatých dejín egyptského kráľovstva a impozantnú architektúru. Hlavnou atrakciou Abu Simbel sú dva veľkolepé chrámy vytesané do skál pri brehoch jazera Nasser. Chrám boha Rá a chrám boha Ptah sú oba vysoké až 30 metrov a zdobené obrovskými sochami faraóna Ramesesa II., bohov a faraónskymi postavami."],
+      description: "Kruger National Park je najväčší a najznámejší národný park v Juhoafrickej republike. Nachádza sa na severovýchode krajiny a rozkladá sa na ploche vyše 19 000 km². Park je domovom Veľkej päťky (lev, slon, nosorožec, byvol a leopard), ako aj stovkám ďalších druhov zvierat a vtákov. Je ideálnym miestom na safari s dobre vybudovanou infraštruktúrou, ktorá zahŕňa cesty, ubytovanie a výlety so sprievodcami. Kruger je považovaný za jednu z najlepších lokalít na pozorovanie divokej prírody v Afrike.",
       photo: [VictoriaFalls1, VictoriaFalls2, VictoriaFalls3],
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
     {
-      title: "Abu Simbel",
+      title: "Table Mountain",
       background: AbuSimbel,
-      description: "Abu Simbel je archeologická lokalita v Egypte, známa predovšetkým svojimi monumentálnymi skalnými chrámami, ktoré sú považované za jedny z najznamenitejších pamiatok starovekého Egypta. Pre turistov a návštevníkov je Abu Simbel fascinujúcou destináciou, ktorá ponúka pohľad do bohatých dejín egyptského kráľovstva a impozantnú architektúru. Hlavnou atrakciou Abu Simbel sú dva veľkolepé chrámy vytesané do skál pri brehoch jazera Nasser. Chrám boha Rá a chrám boha Ptah sú oba vysoké až 30 metrov a zdobené obrovskými sochami faraóna Ramesesa II., bohov a faraónskymi postavami.",
+      description: "Table Mountain je ikonický plochý vrch týčiaci sa nad Kapským Mestom v Juhoafrickej republike. Je jedným z novodobých siedmich prírodných divov sveta a ponúka panoramatické výhľady na mesto, oceán a okolité hory. Vrchol je prístupný lanovkou alebo pešími turistickými trasami. Hora je súčasťou národného parku a je známa bohatou biodiverzitou, vrátane mnohých endemických rastlín. Table Mountain je jedným z najnavštevovanejších miest v Južnej Afrike.",
       photo: [AbuSimbel1, AbuSimbel2, AbuSimbel3],
-      tag: ["all", "afrika", "pamiatka", "tropicka"],
+      tag: ["all", "afrika", "priroda", "tropicka"],
     },
   ];
 

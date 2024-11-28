@@ -62,14 +62,12 @@ import JoffreLakesParkMap from "../public/images/map/JoffreLakesParkMap.png"
 import BlydeRiverCanyon from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon.webp"
 import BlydeRiverCanyon1 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp"
 import BlydeRiverCanyon2 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon2.webp"
-import VictoriaFalls from "../public/images/photos/VictoriaFalls/VictoriaFalls.webp"
-import VictoriaFalls1 from "../public/images/photos/VictoriaFalls/VictoriaFalls1.webp"
-import VictoriaFalls2 from "../public/images/photos/VictoriaFalls/VictoriaFalls2.webp"
-import VictoriaFalls3 from "../public/images/photos/VictoriaFalls/VictoriaFalls3.webp"
-import AbuSimbel from "../public/images/photos/AbuSimbel/AbuSimbel.webp"
-import AbuSimbel1 from "../public/images/photos/AbuSimbel/AbuSimbel1.webp"
-import AbuSimbel2 from "../public/images/photos/AbuSimbel/AbuSimbel2.webp"
-import AbuSimbel3 from "../public/images/photos/AbuSimbel/AbuSimbel3.webp"
+import KrugerNationalPark from "../public/images/photos/KrugerNationalPark/KrugerNationalPark.webp"
+import KrugerNationalPark1 from "../public/images/photos/KrugerNationalPark/KrugerNationalPark1.webp"
+import KrugerNationalPark2 from "../public/images/photos/KrugerNationalPark/KrugerNationalPark2.webp"
+import TableMountain from "../public/images/photos/TableMountain/TableMountain.webp"
+import TableMountain1 from "../public/images/photos/TableMountain/TableMountain1.webp"
+import TableMountain2 from "../public/images/photos/TableMountain/TableMountain2.webp"
 
 function App() {
   const list = [
@@ -209,16 +207,16 @@ function App() {
     },
     {
       title: "Kruger National Park",
-      background: VictoriaFalls,
+      background: KrugerNationalPark,
       description: "Kruger National Park je najväčší a najznámejší národný park v Juhoafrickej republike. Nachádza sa na severovýchode krajiny a rozkladá sa na ploche vyše 19 000 km². Park je domovom Veľkej päťky (lev, slon, nosorožec, byvol a leopard), ako aj stovkám ďalších druhov zvierat a vtákov. Je ideálnym miestom na safari s dobre vybudovanou infraštruktúrou, ktorá zahŕňa cesty, ubytovanie a výlety so sprievodcami. Kruger je považovaný za jednu z najlepších lokalít na pozorovanie divokej prírody v Afrike.",
-      photo: [VictoriaFalls1, VictoriaFalls2, VictoriaFalls3],
+      photo: [KrugerNationalPark, KrugerNationalPark1, KrugerNationalPark2],
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
     {
       title: "Table Mountain",
-      background: AbuSimbel,
+      background: TableMountain,
       description: "Table Mountain je ikonický plochý vrch týčiaci sa nad Kapským Mestom v Juhoafrickej republike. Je jedným z novodobých siedmich prírodných divov sveta a ponúka panoramatické výhľady na mesto, oceán a okolité hory. Vrchol je prístupný lanovkou alebo pešími turistickými trasami. Hora je súčasťou národného parku a je známa bohatou biodiverzitou, vrátane mnohých endemických rastlín. Table Mountain je jedným z najnavštevovanejších miest v Južnej Afrike.",
-      photo: [AbuSimbel1, AbuSimbel2, AbuSimbel3],
+      photo: [TableMountain, TableMountain1, TableMountain2],
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
   ];

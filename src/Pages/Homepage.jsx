@@ -11,7 +11,7 @@ import image4 from "../../public/images/Vrstva3.png";
 import map from "../../public/images/map/map.png";
 import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';
-import background1 from "../../public/images/photos/AbuSimbel/AbuSimbel.webp";
+import background1 from "../../public/images/photos/TableMountain/TableMountain.webp";
 import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
 import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
 import Footer from '../Footer/Footer';
@@ -19,8 +19,8 @@ import Footer from '../Footer/Footer';
 import swiperImage1 from "../../public/images/photos/QuebecCity/QuebecCity2.webp";
 import swiperImage2 from "../../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp";
 import swiperImage3 from "../../public/images/photos/Seoul/Seoul3.webp";
-import swiperImage4 from "../../public/images/photos/VictoriaFalls/VictoriaFalls2.webp";
-import swiperImage5 from "../../public/images/photos/AbuSimbel/AbuSimbel2.webp";
+import swiperImage4 from "../../public/images/photos/Gyeongju/Gyeongju2.webp";
+import swiperImage5 from "../../public/images/photos/KrugerNationalPark/KrugerNationalPark2.webp";
 
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");

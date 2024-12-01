@@ -37,7 +37,7 @@ function Landmark() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={isExit ? { opacity: 0, y: 0 } : { opacity: 1, y: 0 }}
                 transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.2 }}
-                className="w-full h-[100vh] flex justify-center items-center bg-cover bg-center"
+                className="w-full h-[100vh] flex justify-center items-center bg-cover bg-center sticky top-0"
                 style={{ backgroundImage: `url(${state.background})` }}
             >
                 <div className="absolute inset-0 bg-black opacity-60 z-10" />
@@ -48,7 +48,7 @@ function Landmark() {
             <motion.div 
                 initial={{ opacity: 0 }}
                 animate={isExit ? { opacity: 0 } : { opacity: 1 }}
-                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.5 }}
+                transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 0.2 }}
                 className="w-full h-[100vh] flex justify-center items-center bg-black relative z-30">
                 <LandmarkInfo description={state.description} photo={state.photo} map={state.map} sendFotka={sendFotka} onClick={handleButtonClick}/>
             </motion.div>

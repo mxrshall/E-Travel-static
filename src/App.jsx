@@ -62,12 +62,14 @@ import JoffreLakesParkMap from "../public/images/map/JoffreLakesParkMap.png"
 import BlydeRiverCanyon from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon.webp"
 import BlydeRiverCanyon1 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp"
 import BlydeRiverCanyon2 from "../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon2.webp"
+import BlydeRiverCanyonMap from "../public/images/map/BlydeRiverCanyonMap.png"
 import KrugerNationalPark from "../public/images/photos/KrugerNationalPark/KrugerNationalPark.webp"
 import KrugerNationalPark1 from "../public/images/photos/KrugerNationalPark/KrugerNationalPark1.webp"
 import KrugerNationalPark2 from "../public/images/photos/KrugerNationalPark/KrugerNationalPark2.webp"
 import TableMountain from "../public/images/photos/TableMountain/TableMountain.webp"
 import TableMountain1 from "../public/images/photos/TableMountain/TableMountain1.webp"
 import TableMountain2 from "../public/images/photos/TableMountain/TableMountain2.webp"
+import TableMountainMap from "../public/images/map/TableMountainMap.png"
 
 function App() {
   const list = [
@@ -203,6 +205,7 @@ function App() {
       background: BlydeRiverCanyon,
       description: "Blyde River Canyon je jedným z najkrajších prírodných útvarov v Južnej Afrike a jedným z najväčších kaňonov na svete. Pre turistov a návštevníkov je to fascinujúce miesto, ktoré ponúka úchvatné scenérie, prírodnú krásu a množstvo zážitkov. Blyde River Canyon je ideálnym miestom pre milovníkov aktívneho odpočinku v prírode. Turisti si môžu vychutnať turistiku po rôznych chodníkoch a stezkách, ktoré vedú okolo kaňonu a ponúkajú príležitosti na pozorovanie divokej fauny a flóry. Ďalej môžu návštevníci využiť možnosti rybolovu, raftingu na rieke Blyde River a horských bicyklových výletov.",
       photo: [BlydeRiverCanyon, BlydeRiverCanyon1, BlydeRiverCanyon2],
+      map: BlydeRiverCanyonMap,
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
     {
@@ -210,6 +213,7 @@ function App() {
       background: KrugerNationalPark,
       description: "Kruger National Park je najväčší a najznámejší národný park v Juhoafrickej republike. Nachádza sa na severovýchode krajiny a rozkladá sa na ploche vyše 19 000 km². Park je domovom Veľkej päťky (lev, slon, nosorožec, byvol a leopard), ako aj stovkám ďalších druhov zvierat a vtákov. Je ideálnym miestom na safari s dobre vybudovanou infraštruktúrou, ktorá zahŕňa cesty, ubytovanie a výlety so sprievodcami. Kruger je považovaný za jednu z najlepších lokalít na pozorovanie divokej prírody v Afrike.",
       photo: [KrugerNationalPark, KrugerNationalPark1, KrugerNationalPark2],
+      map: BlydeRiverCanyonMap,
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
     {
@@ -217,6 +221,7 @@ function App() {
       background: TableMountain,
       description: "Table Mountain je ikonický plochý vrch týčiaci sa nad Kapským Mestom v Juhoafrickej republike. Je jedným z novodobých siedmich prírodných divov sveta a ponúka panoramatické výhľady na mesto, oceán a okolité hory. Vrchol je prístupný lanovkou alebo pešími turistickými trasami. Hora je súčasťou národného parku a je známa bohatou biodiverzitou, vrátane mnohých endemických rastlín. Table Mountain je jedným z najnavštevovanejších miest v Južnej Afrike.",
       photo: [TableMountain, TableMountain1, TableMountain2],
+      map: TableMountainMap,
       tag: ["all", "afrika", "priroda", "tropicka"],
     },
   ];

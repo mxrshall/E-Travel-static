@@ -48,7 +48,7 @@ function Location() {
               initial={{ opacity: 0, x: -50 }}
               animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
               transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
-              className="w-7/12 h-[100vh] pt-[8%] px-[5%] flex flex-col bg-black"
+              className="w-7/12 h-screen pt-[8%] px-[5%] flex flex-col bg-black"
             >
               <div className="flex">
                 <Title title={state1.title}/>
@@ -63,7 +63,7 @@ function Location() {
               initial={{ opacity: 0 }} 
               animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
               transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
-              className="w-5/12 h-[100vh] flex justify-center items-center"
+              className="w-5/12 h-screen flex justify-center items-center"
             >
               <Slider slider={state2} tag={state1.tag} onClick={handleSliderClick}/>
             </motion.div>

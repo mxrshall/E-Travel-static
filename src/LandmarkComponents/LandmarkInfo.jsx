@@ -34,7 +34,9 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                         className="w-1/2 h-[30vh] bg-contain bg-no-repeat bg-center my-10"
                         style={{ backgroundImage: `url(${map})`}}
                     />
-                    <button onClick={handleClick} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                    <button onClick={handleClick} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">
+                        Prejsť na katalóg
+                    </button>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}

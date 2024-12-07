@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Card from "../CatalogComponents/Card";
@@ -39,7 +40,7 @@ function Catalog({ slider }) {
     };
 
     return (
-        <>
+        <ReactLenis root>
             <Navbar />
             <div className="w-full h-[100vh] bg-black absolute">
                 <motion.div
@@ -68,7 +69,7 @@ function Catalog({ slider }) {
                     ))}
                 </motion.div>
             </div>
-        </>
+        </ReactLenis>
     );
 }
 

@@ -9,11 +9,13 @@ const MapMarker = ({ title, description, background, list, slider, onHover, mark
   const handleMouseEnter = () => {
     setIsHovered(true);
     onHover({ title, description, background });
+    console.log(isHovered)
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
     onHover({ title: '', description: '', background: null});
+    console.log(isHovered)
   };
 
   return (
@@ -61,7 +63,7 @@ const MapMarker = ({ title, description, background, list, slider, onHover, mark
             padding: '5px 10px',
             borderRadius: '4px',
             whiteSpace: 'nowrap',
-            cursor: 'pointer',
+            pointerEvents: 'none',
           }}
         >
           {title}

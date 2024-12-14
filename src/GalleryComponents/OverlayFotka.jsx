@@ -12,7 +12,7 @@ function OverlayFotka({ fotka, sendData }) {
       <div className="absolute top-4 right-4">
         <MdOutlineClose color="white" size="30" onClick={handleClick} />
       </div>
-      <img className="w-1/2 bg-contain bg-no-repeat bg-center m-auto" src={fotka} alt="Overlay" />
+      <img className="w-2/3 bg-contain bg-no-repeat bg-center m-auto md:w-1/2" src={fotka} alt="Overlay" />
     </div>
   );
 }

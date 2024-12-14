@@ -39,7 +39,7 @@ function Gallery({ slider }) {
         <>
             <Navbar />
             <div className="w-full h-[100vh] bg-black absolute">
-                <div className="w-full h-1/4 flex justify-center items-center"></div>
+                <div className="w-full h-1/5 flex justify-center items-center md:h-1/4"></div>
                 <div className="bg-black flex flex-wrap">
                     {allPhotos.map((photo, index) => (
                         <GalleryPhoto

@@ -15,8 +15,7 @@ function GalleryPhoto({background, sendFotka, time}) {
                 className="w-[31%] h-[8vh] bg-contain bg-no-repeat bg-center my-1 mx-[1%] md:w-[18%] md:h-[25vh]" 
                 style={{ backgroundImage: `url(${background})`}} 
                 onClick={handleClick}
-            >
-            </motion.div>
+            />
         </>
     )
   }

@@ -159,7 +159,7 @@ function Homepage({ slider, list }) {
             className="w-full h-full flex justify-center items-center absolute z-[3]"
             style={{ y: layer3Y }}
           >
-            <h1 className="text-white text-9xl font-bold mb-32">
+            <h1 className="text-white text-8xl font-bold mb-32 md:text-9xl">
               E-Travel
             </h1>
           </motion.div>
@@ -179,7 +179,7 @@ function Homepage({ slider, list }) {
 
         <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" ref={addToRefs}>
               <div 
-                className='w-2/3 h-full flex justify-center items-right gap-10'
+                className='w-full h-4/5 flex justify-center items-right gap-10 md:w-2/3 md:h-full'
                 style={{
                   clipPath: 'polygon(0% 25%, 100% 0%, 100% 100%, 0% 80%)'
                 }}
@@ -218,16 +218,16 @@ function Homepage({ slider, list }) {
                 animate={hasAnimated1 ? { opacity: 1, y: 0 } : { opacity: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <h1 className="text-white text-8xl font-bold">
+                <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Cestovný katalóg
                 </h1>
-                <span className="w-1/2 text-base text-white font-normal font-mont my-5">
+                <span className="w-full text-base text-white font-normal font-mont my-5 md:w-1/2">
                   Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
                   V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
                   Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
                 </span>
                 <Link to="/katalog">
-                  <button className="w-1/5 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black" onClick={() => handleButtonClick("katalog")}>Prejsť na katalóg</button>
+                  <button className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black md:w-1/5" onClick={() => handleButtonClick("katalog")}>Prejsť na katalóg</button>
                 </Link>
               </motion.div>
             </div>

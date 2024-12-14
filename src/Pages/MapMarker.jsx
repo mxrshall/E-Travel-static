@@ -9,13 +9,11 @@ const MapMarker = ({ title, description, background, list, slider, onHover, mark
   const handleMouseEnter = () => {
     setIsHovered(true);
     onHover({ title, description, background });
-    console.log(isHovered)
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
     onHover({ title: '', description: '', background: null});
-    console.log(isHovered)
   };
 
   return (

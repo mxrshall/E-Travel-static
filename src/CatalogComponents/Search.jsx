@@ -18,53 +18,53 @@ function Search({ sendData }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-10">
+        <form onSubmit={handleSubmit} className="mt-20 md:mt-10">
             <div className="flex">
-                <div className="px-8">
+                <div className="pr-6 md:px-8">
                     <div className="my-2">
                         <input name="korea" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont">Južná Kórea</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base">Južná Kórea</label>
                     </div>
                     <div className="my-2">
                         <input name="svajciarsko" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont">Švajčiarsko</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base">Švajčiarsko</label>
                     </div>
                     <div className="my-2">
                         <input name="kanada" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Kanada</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Kanada</label>
                     </div>
                     <div className="my-2">
                         <input name="afrika" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Afrika</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Južná Afrika</label>
                     </div>
                 </div>
-                <div className="px-8 border-l-2 border-r-2 border-white">
+                <div className="px-0 border-l-2 border-r-2 border-black md:border-white md:px-8">
                     <div className="my-2">
                         <input name="priroda" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Príroda</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Príroda</label>
                     </div>
                     <div className="my-2">
                         <input name="pamiatka" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Pamiatky</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Pamiatky</label>
                     </div>
                     <div className="my-2">
                         <input name="mesto" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Mesto</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Mesto</label>
                     </div>
                 </div>
-                <div className="px-8">
+                <div className="pl-6 md:px-8">
                     <div className="my-2">
                         <input name="tropicka" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Tropické</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Tropické</label>
                     </div>
                     <div className="my-2">
                         <input name="studena" type="checkbox" onChange={handleCheckboxChange} className="before:content[''] peer relative h-3 w-3 cursor-pointer appearance-none border-2 border-white transition-all checked:border-white checked:bg-white mr-2" />
-                        <label className="text-base text-white font-normal font-mont" >Studené</label>
+                        <label className="text-sm text-white font-normal font-mont md:text-base" >Studené</label>
                     </div>
                 </div>
             </div>
             <div className="flex justify-center items-center mt-5">
-                <input type="submit" value="Vyhľadať" className="text-base text-white font-normal font-mont"/>
+                <input type="submit" value="Vyhľadať" className="text-lg text-white font-normal font-mont md:text-base"/>
             </div>
         </form>
     );

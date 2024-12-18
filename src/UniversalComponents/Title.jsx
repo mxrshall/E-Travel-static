@@ -1,7 +1,7 @@
 function Title({title}) {
 
     return (
-        <div className="text-7xl text-white font-bold font-mont">
+        <div className="text-6xl text-white font-bold font-mont text-center md:text-7xl">
             {title}
         </div>
     )

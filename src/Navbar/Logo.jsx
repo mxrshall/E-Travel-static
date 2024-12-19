@@ -1,15 +1,16 @@
 import logo from "../../public/images/logo.png";
-import { Link } from "react-router-dom";
 
-function Logo() {
+function Logo({ onClick }) {
 
-    return (
-      <div className="w-1/12 flex items-center">
-        <Link to="/">
-          <img src={logo} className="w-[4rem] ml-5"/>
-        </Link>
-      </div>
-    )
-  }
+  const handleClick = () => {
+    onClick("");
+  };
+
+  return (
+    <div className="w-1/12 flex items-center">
+        <img src={logo} className="w-[4rem] ml-5" onClick={handleClick}/>
+    </div>
+  )
+}
   
-  export default Logo
+export default Logo

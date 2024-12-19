@@ -31,7 +31,7 @@ function Location() {
   
     return (
       <>
-      <Navbar />
+      <Navbar onClick={() => setIsExit(true)} />
       <div className="w-full h-[100vh] flex">
         <motion.div
           initial={{ opacity: 0 }}

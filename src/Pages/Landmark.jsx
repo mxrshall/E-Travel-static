@@ -32,7 +32,7 @@ function Landmark() {
 
     return (
         <>
-            <Navbar />
+            <Navbar onClick={() => setIsExit(true)} />
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={isExit ? { opacity: 0, y: 0 } : { opacity: 1, y: 0 }}

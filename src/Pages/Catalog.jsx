@@ -41,7 +41,7 @@ function Catalog({ slider }) {
 
     return (
         <ReactLenis root>
-            <Navbar />
+            <Navbar onClick={() => setIsExit(true)}/>
             <div className="w-full h-[100vh] bg-black absolute">
                 <motion.div
                     initial={{ opacity: 0 }}

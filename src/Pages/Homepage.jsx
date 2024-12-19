@@ -132,7 +132,7 @@ function Homepage({ slider, list }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar onClick={() => setIsExit(true)} />
       <div className="fixed top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
         {Array.from({ length: 4 }).map((_, index) => (
           <div

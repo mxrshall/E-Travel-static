@@ -10,6 +10,7 @@ function Catalog({ slider }) {
     const [filter, setFilter] = useState(["all"]);
     const [resetIndex, setResetIndex] = useState(0);
     const [isExit, setIsExit] = useState(false);
+    const [signal, setSignal] = useState(false);
     const navigate = useNavigate();
 
     const sendData = (data) => {
@@ -34,6 +35,7 @@ function Catalog({ slider }) {
 
     const handleCardClick = (data) => {
         setIsExit(true);
+        setSignal(true);
         setTimeout(() => {
             navigate("/pamiatka", { state: data });
         }, 1000);
@@ -41,7 +43,7 @@ function Catalog({ slider }) {
 
     return (
         <ReactLenis root>
-            <Navbar onClick={() => setIsExit(true)}/>
+            <Navbar onClick={() => setIsExit(true)} signal={signal}/>
             <div className="w-full h-[100vh] bg-black absolute">
                 <motion.div
                     initial={{ opacity: 0 }}

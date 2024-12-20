@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "./Logo"
 import Navigation from "./Navigation"
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function Navbar({ onClick }) {
+function Navbar({ onClick, signal }) {
   const navigate = useNavigate();
   const [isExit, setIsExit] = useState(false);
+
+  useEffect(() => {
+    if (signal) {
+      setIsExit(true);
+      setTimeout(() => {
+        navigate(`/${data}`);
+      }, 800);
+    }
+  }, [signal]);
 
   const handleClick = (data) => {
     onClick();

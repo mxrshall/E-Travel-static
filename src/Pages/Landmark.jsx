@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 
 function Landmark() {
     const [isExit, setIsExit] = useState(false);
+    const [signal, setSignal] = useState(false);
     const location = useLocation();
     const { state } = location || {};
 
@@ -16,6 +17,7 @@ function Landmark() {
 
     const handleButtonClick = (value) => {
         setIsExit(true);
+        setSignal(true);
         setTimeout(() => {
             window.location.href = `/${value}`;
         }, 1000);
@@ -32,7 +34,7 @@ function Landmark() {
 
     return (
         <>
-            <Navbar onClick={() => setIsExit(true)} />
+            <Navbar onClick={() => setIsExit(true)} signal={signal} />
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={isExit ? { opacity: 0, y: 0 } : { opacity: 1, y: 0 }}

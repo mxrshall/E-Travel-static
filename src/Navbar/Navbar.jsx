@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import Logo from "./Logo"
 import Navigation from "./Navigation"
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Navbar({ onClick, signal }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isExit, setIsExit] = useState(false);
+
+  const currentPath = location.pathname.split("/").pop();
 
   useEffect(() => {
     if (signal) {
@@ -18,11 +21,13 @@ function Navbar({ onClick, signal }) {
   }, [signal]);
 
   const handleClick = (data) => {
-    onClick();
-    setIsExit(true);
-    setTimeout(() => {
+    if (currentPath != data) {
+      onClick();
+      setIsExit(true);
+      setTimeout(() => {
         navigate(`/${data}`);
-    }, 800);
+      }, 800);
+    }
   };
 
     return (

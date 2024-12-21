@@ -26,6 +26,7 @@ function Location() {
     
     const handleSliderClick = (data) => {
       setIsExit(true);
+      setSignal(true);
       setTimeout(() => {
           navigate("/pamiatka", { state: data });
       }, 1000);
@@ -58,7 +59,12 @@ function Location() {
               </div>
               <Description description={state1.description}/>
               <div className="w-full flex pt-[3%]">
-                <button onClick={handleClick("katalog")} className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black">Prejsť na katalóg</button>
+                <button 
+                  onClick={handleClick("katalog")} 
+                  className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
+                >
+                  Prejsť na katalóg
+                </button>
               </div>
             </motion.div>
             <motion.div 

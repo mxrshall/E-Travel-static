@@ -9,6 +9,10 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
         onClick("katalog");
     };
 
+    const handleClickSend = () => {
+        sendFotka(map);
+    };
+
     const odstavec = [];
     for (let i = 0; i < veta.length; i += 3) {
         odstavec.push(veta.slice(i, i + 3).join('. '));
@@ -37,6 +41,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                         transition={{ delay: 0.5, duration: 0.5 }}
                         className="w-1/2 h-[30vh] bg-contain bg-no-repeat bg-center my-10"
                         style={{ backgroundImage: `url(${map})`}}
+                        onClick={handleClickSend}
                     />
                     <motion.button
                         initial={{ opacity: 0, x: -20 }}
@@ -85,6 +90,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                     transition={{ delay: 0.5, duration: 0.5 }}
                     className="w-full h-[30vh] bg-contain bg-no-repeat bg-center"
                     style={{ backgroundImage: `url(${map})`}}
+                    onClick={handleClickSend}
                 />
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}

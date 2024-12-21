@@ -28,6 +28,7 @@ function Homepage({ slider, list }) {
   const [description, setDescription] = useState("");
   const [background, setBackground] = useState(null);
   const [isExit, setIsExit] = useState(false);
+  const [signal, setSignal] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [hasAnimated1, setHasAnimated1] = useState(false);
   const [hasAnimated3, setHasAnimated3] = useState(false);
@@ -85,9 +86,10 @@ function Homepage({ slider, list }) {
 
   const handleButtonClick = (value) => {
     setIsExit(true);
+    setSignal(true);
     setTimeout(() => {
         window.location.href = `/${value}`;
-    }, 1000);
+    }, 800);
 };
 
   // Add sections dynamically to the refs array
@@ -132,7 +134,7 @@ function Homepage({ slider, list }) {
 
   return (
     <>
-      <Navbar onClick={() => setIsExit(true)} />
+      <Navbar onClick={() => setIsExit(true)} signal={signal} />
       <div className="fixed top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
         {Array.from({ length: 4 }).map((_, index) => (
           <div
@@ -226,9 +228,12 @@ function Homepage({ slider, list }) {
                   V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
                   Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
                 </span>
-                <Link to="/katalog">
-                  <button className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black md:w-1/5" onClick={() => handleButtonClick("katalog")}>Prejsť na katalóg</button>
-                </Link>
+                <button
+                  onClick={() => handleButtonClick("katalog")}
+                  className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black md:w-1/5"
+                >
+                  Prejsť na katalóg
+                </button>
               </motion.div>
             </div>
             <div className='w-full h-[100vh] flex overflow-hidden bg-cover bg-center relative' ref={addToRefs}>
@@ -303,9 +308,12 @@ function Homepage({ slider, list }) {
                 <span className="text-base text-white font-normal font-mont my-5">
                   Vstúpte do galérie a nechajte sa inšpirovať nádhernými miestami, ktoré čakajú na objavenie. Či už hľadáte pokojné pláže, pulzujúce mestá, alebo dychberúcu prírodu, galéria ponúka jedinečný pohľad na destinácie, ktoré stoja za návštevu. Prezrite si fotografie, ktoré zachytávajú atmosféru a krásu sveta, a nechajte sa unášať fantáziou na svoju ďalšiu cestovateľskú dobrodružstvo.
                 </span>
-                <Link to="/galeria">
-                  <button className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black" onClick={() => handleButtonClick("galeria")}>Prejsť na galériu</button>
-                </Link>
+                <button 
+                  className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
+                  onClick={() => handleButtonClick("galeria")}
+                >
+                  Prejsť na galériu
+                </button>
               </motion.div>
             </div>
             <motion.div 

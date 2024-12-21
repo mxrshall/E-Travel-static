@@ -11,12 +11,14 @@ import Navbar from "../Navbar/Navbar";
 
 function Location() {
     const [isExit, setIsExit] = useState(false);
+    const [signal, setSignal] = useState(false);
     const location = useLocation();
     const { state1, state2 } = location.state || {};
     const navigate = useNavigate();
 
     const handleClick = (value) => () => {
       setIsExit(true);
+      setSignal(true);
       setTimeout(() => {
           window.location.href = `/${value}`;
       }, 1000);
@@ -31,18 +33,18 @@ function Location() {
   
     return (
       <>
-      <Navbar onClick={() => setIsExit(true)} />
-      <div className="w-full h-[100vh] flex">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isExit ? { opacity: 0 } : { opacity: 1 }}
-          transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }}
-          className="w-full h-[100vh] bg-cover bg-center absolute"
-          style={{ backgroundImage: `url(${state1.background})` }}
-        >
-          <div className="w-full h-[100vh] bg-black opacity-50"></div>
-        </motion.div>
-        <div className="flex absolute z-10">
+        <Navbar onClick={() => setIsExit(true)} signal={signal} />
+        <div className="w-full h-[100vh] flex">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isExit ? { opacity: 0 } : { opacity: 1 }}
+            transition={isExit ? { duration: 0.3, delay: 0.1 } : { duration: 0.5, delay: 0.5 }}
+            className="w-full h-[100vh] bg-cover bg-center absolute"
+            style={{ backgroundImage: `url(${state1.background})` }}
+          >
+            <div className="w-full h-[100vh] bg-black opacity-50"></div>
+          </motion.div>
+          <div className="flex absolute z-10">
           <>
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
@@ -68,8 +70,8 @@ function Location() {
               <Slider slider={state2} tag={state1.tag} onClick={handleSliderClick}/>
             </motion.div>
           </>
+          </div>
         </div>
-      </div>
       </>
     )
   }

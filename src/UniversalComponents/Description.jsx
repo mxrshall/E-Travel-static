@@ -7,7 +7,7 @@ function Description({ description }) {
     }
 
     return (
-        <div className="w-10/12 h-[50vh] mt-[4%] overflow-y-auto scroll-container">
+        <div className="w-full h-[50vh] mt-[4%] overflow-y-auto scroll-container md:w-10/12">
             {odstavec.map((odstavec, index) => (
                 <span key={index} className="text-base text-white font-normal font-mont">
                     {odstavec}

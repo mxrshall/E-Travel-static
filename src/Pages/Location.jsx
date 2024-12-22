@@ -35,7 +35,7 @@ function Location() {
     return (
       <>
         <Navbar onClick={() => setIsExit(true)} signal={signal} />
-        <div className="w-full h-[100vh] flex">
+        <div className="w-full h-[100vh] hidden md:flex">
           <motion.div
             initial={{ opacity: 0 }}
             animate={isExit ? { opacity: 0 } : { opacity: 1 }}
@@ -46,7 +46,6 @@ function Location() {
             <div className="w-full h-[100vh] bg-black opacity-50"></div>
           </motion.div>
           <div className="flex absolute z-10">
-          <>
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
@@ -75,8 +74,37 @@ function Location() {
             >
               <Slider slider={state2} tag={state1.tag} onClick={handleSliderClick}/>
             </motion.div>
-          </>
           </div>
+        </div>
+        <div className="w-full flex flex-col md:hidden">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
+            transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
+            className="w-full h-screen pt-20 px-[5%] flex flex-col"
+          >
+            <div className="flex">
+              <Title title={state1.title}/>
+              <InfoFlag flag={state1.flag}/>
+            </div>
+            <Description description={state1.description}/>
+            <div className="w-full flex pt-[3%]">
+              <button 
+                onClick={handleClick("katalog")} 
+                className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
+              >
+                Prejsť na katalóg
+              </button>
+            </div>
+          </motion.div>
+          <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={isExit ? { opacity: 0 } : { opacity: 1 }} 
+              transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
+              className="w-full flex justify-center items-center mb-10"
+            >
+              <Slider slider={state2} tag={state1.tag} onClick={handleSliderClick}/>
+            </motion.div>
         </div>
       </>
     )

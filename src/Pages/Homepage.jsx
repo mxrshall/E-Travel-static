@@ -135,7 +135,7 @@ function Homepage({ slider, list }) {
   return (
     <>
       <Navbar onClick={() => setIsExit(true)} signal={signal} />
-      <div className="fixed top-[50%] left-5 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2">
+      <div className="fixed top-[50%] left-3 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2 md:left-5">
         {Array.from({ length: 4 }).map((_, index) => (
           <div
             key={index}
@@ -215,7 +215,7 @@ function Homepage({ slider, list }) {
                 </motion.div>
               </div>
               <motion.div 
-                className='absolute w-2/3 flex flex-col z-10'
+                className='absolute w-3/4 flex flex-col z-10 md:w-2/3'
                 initial={{ opacity: 0, y: 10 }}
                 animate={hasAnimated1 ? { opacity: 1, y: 0 } : { opacity: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
@@ -295,14 +295,14 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
-            <div className='w-2/5 h-full flex justify-center items-center'>
+            <div className='w-full h-full flex justify-center items-center absolute z-40 md:w-2/5 md:relative'>
               <motion.div
-                className='w-2/3 flex flex-col justify-center items-start'
+                className='w-3/4 flex flex-col justify-center items-start md:w-2/3'
                 initial={{ opacity: 0, x: -10 }}
                 animate={hasAnimated3 ? { opacity: 1, x: 0 } : { opacity: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
               >
-                <h1 className="text-white text-8xl font-bold">
+                <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Galéria
                 </h1>
                 <span className="text-base text-white font-normal font-mont my-5">
@@ -317,7 +317,7 @@ function Homepage({ slider, list }) {
               </motion.div>
             </div>
             <motion.div 
-              className='w-3/5 h-full flex flex-col relative'
+              className='w-full h-full flex flex-col relative md:w-3/5'
               initial={{ opacity: 0 }}
               animate={hasAnimated3 ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}

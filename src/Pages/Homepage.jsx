@@ -273,35 +273,6 @@ function Homepage({ slider, list }) {
                   {description}
                 </motion.span>
               </div>
-              <Swiper
-                style={{
-                  "--swiper-pagination-color": "white",
-                  "--swiper-pagination-bullet-inactive-color": "#999999",
-                  "--swiper-pagination-bullet-size": "16px",
-                }}
-                className="w-full h-2/3 flex justify-center items-center custom-swiper md:hidden"
-                modules={[Autoplay, Pagination]}
-                slidesPerView={1}
-                pagination={{ clickable: true }}
-                loop={true}
-                autoplay={{ delay: 2000 }}
-              >
-                {list.map((item) => (
-                  <SwiperSlide
-                    key={item.id}
-                    className="w-full h-full flex justify-center items-center bg-cover bg-center"
-                  >
-                    <div
-                      className='w-2/3 h-3/5 flex justify-center items-center text-center'
-                      style={{ backgroundImage: `url(${item.background})` }}
-                    >
-                      <h1 className="text-white text-5xl font-bold">
-                        {item.title}
-                      </h1>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
             <div className='w-full h-full flex justify-center items-center absolute z-40 md:w-2/5 md:relative'>

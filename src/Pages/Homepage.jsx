@@ -261,7 +261,7 @@ function Homepage({ slider, list }) {
                     {title}
                   </motion.h1>
               </div>
-              <Map slider={slider} list={list} />
+              <Map slider={slider} list={list} onHover={handleHover} />
               <div className="w-1/4 md:flex items-end py-10 px-5 z-10 hidden">
                 <motion.span 
                   key={description}

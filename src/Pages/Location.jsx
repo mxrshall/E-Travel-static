@@ -104,7 +104,7 @@ function Location() {
               className="w-full flex justify-center items-center mb-10"
             >
               <Slider slider={state2} tag={state1.tag} onClick={handleSliderClick}/>
-            </motion.div>
+          </motion.div>
         </div>
       </>
     )

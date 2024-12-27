@@ -53,7 +53,7 @@ const MapMarker = ({ title, description, background, list, slider, onHover, mark
           transition={{ type: 'spring', stiffness: 300 }}
           style={{
             position: 'absolute',
-            top: `${marker.y - 5}%`,
+            top: `${marker.y}%`,
             left: `${marker.x}%`,
             transform: 'translateX(-50%)',
             backgroundColor: 'rgba(0, 0, 0, 0.7)',

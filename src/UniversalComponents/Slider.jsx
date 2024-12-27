@@ -19,7 +19,7 @@ const Slider = ({ slider, tag, onClick }) => {
         '--swiper-navigation-color': '#fff',
         '--swiper-pagination-color': '#269DFF',
         '--swiper-navigation-size': '20px',
-      }
+    }
 
     return (
         <Swiper

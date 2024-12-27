@@ -1,16 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import image1 from "../../public/images/Background.png";
 import image2 from "../../public/images/Vrstva1.png";
 import image3 from "../../public/images/Vrstva2.png";
 import image4 from "../../public/images/Vrstva3.png";
-import map from "../../public/images/map/map.png";
-import MapMarker from './MapMarker';
 import Navbar from '../Navbar/Navbar';
 import background1 from "../../public/images/photos/TableMountain/TableMountain.webp";
 import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
@@ -22,6 +19,7 @@ import swiperImage2 from "../../public/images/photos/BlydeRiverCanyon/BlydeRiver
 import swiperImage3 from "../../public/images/photos/Seoul/Seoul3.webp";
 import swiperImage4 from "../../public/images/photos/Gyeongju/Gyeongju2.webp";
 import swiperImage5 from "../../public/images/photos/KrugerNationalPark/KrugerNationalPark2.webp";
+import Map from '../HomepageComponents/Map';
 
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
@@ -236,10 +234,10 @@ function Homepage({ slider, list }) {
                 </button>
               </motion.div>
             </div>
-            <div className='w-full h-[100vh] flex overflow-hidden bg-cover bg-center relative' ref={addToRefs}>
+            <div className='w-full h-[100vh] flex items-center overflow-hidden bg-cover bg-center relative md:items-stretch' ref={addToRefs}>
               {background && (
                 <motion.div
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="hidden inset-0 absolute w-full h-full object-cover md:inline"
                   style={{ backgroundImage: `url(${background})` }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -247,12 +245,12 @@ function Homepage({ slider, list }) {
                 />
               )}
               <div
-                className="absolute inset-0 z-0 flex justify-center items-center"
+                className="absolute inset-0 z-0 hidden justify-center items-center md:flex"
                 style={{
                   background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
                 }}
               />
-              <div className="w-1/4 py-10 pl-10 z-10">
+              <div className="w-1/4 hidden py-10 pl-10 z-10 md:flex">
                   <motion.h1 
                     key={title}
                     className="text-white text-8xl font-bold"
@@ -263,26 +261,8 @@ function Homepage({ slider, list }) {
                     {title}
                   </motion.h1>
               </div>
-              <div className="w-2/4 flex items-center">
-                <div
-                  className="w-full h-2/3 overflow-hidden bg-cover bg-center relative"
-                  style={{ backgroundImage: `url(${map})` }}
-                >
-                  {list.map((item) => (
-                    <MapMarker 
-                      title={item.title}
-                      description={item.description}
-                      background={item.background}
-                      marker={item.marker}
-                      slider={slider}
-                      video={item.video}
-                      list={list[item.id]}
-                      onHover={handleHover}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="w-1/4 flex items-end py-10 px-5 z-10">
+              <Map slider={slider} list={list} />
+              <div className="w-1/4 md:flex items-end py-10 px-5 z-10 hidden">
                 <motion.span 
                   key={description}
                   className="text-base text-white font-normal font-mont"
@@ -293,6 +273,35 @@ function Homepage({ slider, list }) {
                   {description}
                 </motion.span>
               </div>
+              <Swiper
+                style={{
+                  "--swiper-pagination-color": "white",
+                  "--swiper-pagination-bullet-inactive-color": "#999999",
+                  "--swiper-pagination-bullet-size": "16px",
+                }}
+                className="w-full h-2/3 flex justify-center items-center custom-swiper md:hidden"
+                modules={[Autoplay, Pagination]}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                loop={true}
+                autoplay={{ delay: 2000 }}
+              >
+                {list.map((item) => (
+                  <SwiperSlide
+                    key={item.id}
+                    className="w-full h-full flex justify-center items-center bg-cover bg-center"
+                  >
+                    <div
+                      className='w-2/3 h-3/5 flex justify-center items-center text-center'
+                      style={{ backgroundImage: `url(${item.background})` }}
+                    >
+                      <h1 className="text-white text-5xl font-bold">
+                        {item.title}
+                      </h1>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
             <div className='w-full h-full flex justify-center items-center absolute z-40 md:w-2/5 md:relative'>

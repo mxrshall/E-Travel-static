@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from 'framer-motion';
 
 function Search({ sendData }) {
     const [selectedNames, setSelectedNames] = useState([]);
@@ -64,7 +65,15 @@ function Search({ sendData }) {
                 </div>
             </div>
             <div className="flex justify-center items-center mt-5">
-                <input type="submit" value="Vyhľadať" className="text-lg text-white font-normal font-mont md:text-base"/>
+                <motion.input 
+                    type="submit" 
+                    value="Vyhľadať" 
+                    className="text-lg text-white font-normal font-mont md:text-base" 
+                    whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 },
+                    }}
+                />
             </div>
         </form>
     );

@@ -188,8 +188,8 @@ function Homepage({ slider, list }) {
                   className='w-1/4 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background1})` }}
                   initial={{ opacity: 0 }}
-                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
+                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
+                  transition={currentPage === 1 && isExit === false ? { delay: 1.2, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
@@ -197,8 +197,8 @@ function Homepage({ slider, list }) {
                   className='w-2/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background2})` }}
                   initial={{ opacity: 0 }}
-                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ delay: 0.9, duration: 0.5 }}
+                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
+                  transition={currentPage === 1 && isExit === false ? { delay: 0.9, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
@@ -206,8 +206,8 @@ function Homepage({ slider, list }) {
                   className='w-3/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background3})` }}
                   initial={{ opacity: 0 }}
-                  animate={hasAnimated1 ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
+                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
+                  transition={currentPage === 1 && isExit === false ? { delay: 0.6, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
                 </motion.div>
@@ -215,8 +215,8 @@ function Homepage({ slider, list }) {
               <motion.div 
                 className='absolute w-3/4 flex flex-col z-10 md:w-2/3'
                 initial={{ opacity: 0, y: 10 }}
-                animate={hasAnimated1 ? { opacity: 1, y: 0 } : { opacity: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
+                animate={currentPage === 1 && isExit === false ? { opacity: 1, y: 0 } : { opacity: 0 }}
+                transition={currentPage === 1 && isExit === false ? { delay: 0.3, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Cestovný katalóg
@@ -250,19 +250,19 @@ function Homepage({ slider, list }) {
                   background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
                 }}
               />
-              <div className="w-1/4 hidden py-10 pl-10 z-10 md:flex">
-                  <motion.h1 
-                    key={title}
-                    className="text-white text-8xl font-bold"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {title}
-                  </motion.h1>
+              <div className="w-1/4 hidden pl-10 z-10 md:flex">
+                <motion.h1 
+                  key={title}
+                  className="text-white text-8xl font-bold"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {title}
+                </motion.h1>
               </div>
               <Map slider={slider} list={list} onHover={handleHover} />
-              <div className="w-1/4 md:flex items-end py-10 px-5 z-10 hidden">
+              <div className="w-1/4 md:flex items-end pb-20 px-5 z-10 hidden">
                 <motion.span 
                   key={description}
                   className="text-base text-white font-normal font-mont"
@@ -279,8 +279,8 @@ function Homepage({ slider, list }) {
               <motion.div
                 className='w-3/4 flex flex-col justify-center items-start md:w-2/3'
                 initial={{ opacity: 0, x: -10 }}
-                animate={hasAnimated3 ? { opacity: 1, x: 0 } : { opacity: 0 }}
-                transition={{ delay: 1, duration: 0.8 }}
+                animate={currentPage === 3 && isExit === false ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                transition={currentPage === 3 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Galéria
@@ -299,8 +299,8 @@ function Homepage({ slider, list }) {
             <motion.div 
               className='w-full h-full flex flex-col relative md:w-3/5'
               initial={{ opacity: 0 }}
-              animate={hasAnimated3 ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              animate={currentPage === 3 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
+              transition={currentPage === 3 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
             >
             <div
                 className="absolute inset-0 z-30 flex justify-center items-center"

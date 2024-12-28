@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 function Map ({slider, list, onHover}) {
     const navigate = useNavigate();
@@ -13,7 +14,10 @@ function Map ({slider, list, onHover}) {
 
     return (
         <div className="w-full h-full justify-center items-center inline inset-0 z-20 md:w-2/4">
-            <svg version="1.1"
+            <motion.svg version="1.1"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 className="w-full h-full fill-white"
@@ -66,7 +70,7 @@ function Map ({slider, list, onHover}) {
     <path id="bz" d="M191.823,483.228l-0.043,3.154h0.726l2.472-4.615h-1.677L191.823,483.228L191.823,483.228z"/>
     <g 
         id="ca"
-        fill="red" 
+        fill="red"
         onClick={() => navigate("/lokacia", { state: { state1: list[2], state2: slider } })} 
         onMouseEnter={() => handleMouseEnter(2)} 
         onMouseLeave={handleMouseLeave}
@@ -419,7 +423,7 @@ function Map ({slider, list, onHover}) {
     <path id="zm" d="M459.78,571.656l2.739,3.802l4.244,0.261l1.504,0.829l4.443,0.053l3.829-5.367l10.702-4.789l0.934-4.219l-1.244-6.043l-5.584-3.181l-3.727,0.26l-1.857,4.114l0.053,1.876l4.391,2.136l0.26,4.642l-3.775,0.208l-0.935-1.564l-10.495-4.479l-0.311,3.44l-4.962,0.155L459.78,571.656L459.78,571.656z"/>
     <path id="zw" d="M468.52,578.226l7.755,8.757l5.946,1.513l3.984-6.248l-0.312-8.281l-6.465-3.337l-2.431,1.098l-3.62,5.524l-5.014-0.053L468.52,578.226L468.52,578.226z"/>
 </g>
-</svg>
+</motion.svg>
         </div>
     )
 }

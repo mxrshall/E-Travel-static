@@ -38,7 +38,8 @@ function Catalog({ slider }) {
         setSignal(true);
         setTimeout(() => {
             navigate("/pamiatka", { state: data });
-        }, 1000);
+            window.scrollTo(0, 0);
+        }, 800);
     };
 
     return (

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
@@ -14,11 +15,14 @@ import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
 import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
 import Footer from '../Footer/Footer';
 
-import swiperImage1 from "../../public/images/photos/QuebecCity/QuebecCity2.webp";
+import swiperImage1 from "../../public/images/photos/TableMountain/TableMountain.webp";
 import swiperImage2 from "../../public/images/photos/BlydeRiverCanyon/BlydeRiverCanyon1.webp";
 import swiperImage3 from "../../public/images/photos/Seoul/Seoul3.webp";
 import swiperImage4 from "../../public/images/photos/Gyeongju/Gyeongju2.webp";
 import swiperImage5 from "../../public/images/photos/KrugerNationalPark/KrugerNationalPark2.webp";
+import swiperImage6 from "../../public/images/photos/QuebecCity/QuebecCity2.webp";
+import swiperImage7 from "../../public/images/photos/TheMatterhorn/TheMatterhorn1.webp";
+import swiperImage8 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
 import Map from '../HomepageComponents/Map';
 
 function Homepage({ slider, list }) {
@@ -32,8 +36,9 @@ function Homepage({ slider, list }) {
   const [hasAnimated3, setHasAnimated3] = useState(false);
   const sectionRefs = useRef([]); // Array to hold references to sections
   const containerRef = useRef(null); // Reference to the scroll container
+  const navigate = useNavigate();
 
-  const swipeSlider = [
+  const swipeSlider1 = [
     {
       id: 0,
       image: swiperImage1,
@@ -53,6 +58,21 @@ function Homepage({ slider, list }) {
     {
       id: 4,
       image: swiperImage5,
+    },
+  ];
+
+  const swipeSlider2 = [
+    {
+      id: 0,
+      image: swiperImage6,
+    },
+    {
+      id: 1,
+      image: swiperImage7,
+    },
+    {
+      id: 2,
+      image: swiperImage8,
     },
   ];
 
@@ -86,7 +106,8 @@ function Homepage({ slider, list }) {
     setIsExit(true);
     setSignal(true);
     setTimeout(() => {
-        window.location.href = `/${value}`;
+        navigate(`/${value}`);
+        window.scrollTo(0, 0);
     }, 800);
 };
 
@@ -316,7 +337,7 @@ function Homepage({ slider, list }) {
                 autoplay={{ delay: 1500 }}
                 speed={500}
               >
-                {swipeSlider.map((item) => (
+                {swipeSlider1.map((item) => (
                   <SwiperSlide
                     key={item.id}
                     className="w-1/4 h-full flex justify-center items-center px-2"
@@ -338,7 +359,7 @@ function Homepage({ slider, list }) {
                 autoplay={{ delay: 2000, reverseDirection: true }}
                 speed={500}
               >
-                {swipeSlider.map((item) => (
+                {swipeSlider2.map((item) => (
                   <SwiperSlide
                     key={item.id}
                     className="w-1/4 h-full flex justify-center items-center px-2"

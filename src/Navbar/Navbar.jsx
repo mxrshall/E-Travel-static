@@ -26,6 +26,7 @@ function Navbar({ onClick, signal }) {
       setIsExit(true);
       setTimeout(() => {
         navigate(`/${data}`);
+        window.scrollTo(0, 0);
       }, 800);
     }
   };

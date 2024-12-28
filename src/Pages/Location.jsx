@@ -20,8 +20,9 @@ function Location() {
       setIsExit(true);
       setSignal(true);
       setTimeout(() => {
-          window.location.href = `/${value}`;
-      }, 1000);
+          navigate(`/${value}`);
+          window.scrollTo(0, 0);
+      }, 800);
     };
     
     const handleSliderClick = (data) => {
@@ -29,7 +30,8 @@ function Location() {
       setSignal(true);
       setTimeout(() => {
           navigate("/pamiatka", { state: data });
-      }, 1000);
+          window.scrollTo(0, 0);
+      }, 800);
     };
   
     return (

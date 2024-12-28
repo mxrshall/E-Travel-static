@@ -4,12 +4,13 @@ import Navbar from "../Navbar/Navbar";
 import Title from "../UniversalComponents/Title";
 import LandmarkInfo from "../LandmarkComponents/LandmarkInfo";
 import OverlayFotka from "../GalleryComponents/OverlayFotka";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Landmark() {
     const [isExit, setIsExit] = useState(false);
     const [signal, setSignal] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     const { state } = location || {};
 
     const [open, setOpen] = useState(false);
@@ -19,8 +20,9 @@ function Landmark() {
         setIsExit(true);
         setSignal(true);
         setTimeout(() => {
-            window.location.href = `/${value}`;
-        }, 1000);
+            navigate(`/${value}`);
+            window.scrollTo(0, 0);
+        }, 800);
     };
 
     const sendData = (data) => {

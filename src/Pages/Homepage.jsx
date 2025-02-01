@@ -240,18 +240,18 @@ function Homepage({ slider, list }) {
                 transition={currentPage === 1 && isExit === false ? { delay: 0.3, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
-                  Cestovný katalóg
+                  Travel catalog
                 </h1>
                 <span className="w-full text-base text-white font-normal font-mont my-5 md:w-1/2">
-                  Vitajte v mojom cestovnom katalógu. Preskúmajte najfascinujúcejšie destinácie z celého sveta, ktoré som pre vás pripravil. 
-                  V katalógu nájdete informácie o miestach, ktoré stoja za to navštíviť, spolu s nádhernými fotografiami, ktoré vás prenesú priamo do cieľa. 
-                  Nechajte sa inšpirovať a začnite plánovať svoje ďalšie dobrodružstvo.
+                  Welcome to my travel catalog. Explore the most fascinating destinations from around the world that I have prepared for you.
+                  In the catalog, you will find information about places worth visiting, along with stunning photographs that will transport you straight to the destination.
+                  Let yourself be inspired and start planning your next adventure.
                 </span>
                 <button
                   onClick={() => handleButtonClick("katalog")}
                   className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black md:w-1/5"
                 >
-                  Prejsť na katalóg
+                  Go to catalog
                 </button>
               </motion.div>
             </div>
@@ -304,16 +304,16 @@ function Homepage({ slider, list }) {
                 transition={currentPage === 3 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
-                  Galéria
+                  Gallery
                 </h1>
                 <span className="text-base text-white font-normal font-mont my-5">
-                  Vstúpte do galérie a nechajte sa inšpirovať nádhernými miestami, ktoré čakajú na objavenie. Či už hľadáte pokojné pláže, pulzujúce mestá, alebo dychberúcu prírodu, galéria ponúka jedinečný pohľad na destinácie, ktoré stoja za návštevu. Prezrite si fotografie, ktoré zachytávajú atmosféru a krásu sveta, a nechajte sa unášať fantáziou na svoju ďalšiu cestovateľskú dobrodružstvo.
+                  Enter the gallery and be inspired by the stunning places waiting to be discovered. Whether you're looking for serene beaches, vibrant cities, or breathtaking nature, the gallery offers a unique glimpse into destinations worth visiting. Browse through photos that capture the atmosphere and beauty of the world, and let your imagination take you on your next travel adventure.
                 </span>
                 <button 
                   className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
                   onClick={() => handleButtonClick("galeria")}
                 >
-                  Prejsť na galériu
+                  Go to gallery
                 </button>
               </motion.div>
             </div>

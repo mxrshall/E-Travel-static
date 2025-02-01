@@ -11,9 +11,6 @@ function Footer() {
             </h1>
         </div>
         <div className="w-1/6 h-full flex justify-end items-center gap-3 my-2 md:my-0">
-          <a href="https://github.com/mxrshall" target="blank">
-            <FiGithub color="white" size={20} />
-          </a>
           <a href="mailto:2821619@ucm.sk">
             <LuMail color="white" size={20} />
           </a>

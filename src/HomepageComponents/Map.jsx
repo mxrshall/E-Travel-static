@@ -15,7 +15,7 @@ function Map ({slider, list, onHover, onClick}) {
     const handleButtonClick = (value) => {
         onClick();
         setTimeout(() => {
-            navigate("/lokacia", { state: { state1: list[value], state2: slider } });
+            navigate("/lokacia", { state: { state1: list[value], state2: slider }});
             window.scrollTo(0, 0);
         }, 800);
     };

@@ -16,7 +16,7 @@ function Navigation({ onClick }) {
           className="mx-3 cursor-pointer md:mx-6" 
           onClick={() => handleClick("katalog")}
         >
-          Katalóg
+          Catalog
         </motion.p>
         <motion.p
           whileHover={{
@@ -26,7 +26,7 @@ function Navigation({ onClick }) {
           className="mx-3 cursor-pointer md:mx-6" 
           onClick={() => handleClick("galeria")}
         >
-          Galéria
+          Gallery
         </motion.p>
       </div>
   )

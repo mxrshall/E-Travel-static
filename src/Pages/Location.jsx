@@ -64,7 +64,7 @@ function Location() {
                   onClick={handleClick("katalog")} 
                   className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
                 >
-                  Prejsť na katalóg
+                  Go to catalog
                 </button>
               </div>
             </motion.div>
@@ -95,7 +95,7 @@ function Location() {
                 onClick={handleClick("katalog")} 
                 className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
               >
-                Prejsť na katalóg
+                Go to catalog
               </button>
             </div>
           </motion.div>

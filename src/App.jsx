@@ -111,7 +111,7 @@ function App() {
     {
       title: "Seoul",
       background: Seoul,
-      description: "Seoul je pulzujúce mesto, ktoré spája bohatú históriu s modernou urbanitou. Ako hlavné mesto Južnej Kórey, je to dych berúca metropola, ktorá ponúka nespočetné množstvo zážitkov pre návštevníkov z celého sveta. Seoul je domovom bohatej kórejskej kultúry a umenia. Choďte na tradičný kórejsky čaj v jednej z mnohých čajovní alebo si vyskúšajte tradičné kórejské jedlo ako kimchi, bulgogi alebo bibimbap v miestnych reštauráciách. Okrem toho môžete navštíviť nádherné divadlá a galérie, ktoré ponúkajú pohľad na bohaté kultúrne dedičstvo.",
+      description: "Seoul is a vibrant city that blends rich history with modern urban life. As the capital of South Korea, it is a breathtaking metropolis offering countless experiences for visitors from around the world. Seoul is home to a rich Korean culture and arts scene. Enjoy traditional Korean tea in one of the many teahouses or try authentic Korean dishes like kimchi, bulgogi, or bibimbap in local restaurants. Additionally, you can visit stunning theaters and galleries that showcase the country’s rich cultural heritage.",
       photo: [Seoul1, Seoul2, Seoul3],
       map: SeoulMap,
       tag: ["all", "korea", "mesto"],
@@ -119,7 +119,7 @@ function App() {
     {
       title: "Gyeongju",
       background: Gyeongju,
-      description: "Gyeongju je nádherné historické mesto v Južnej Kórei, ktoré je pokladnicou bohatých kultúrnych a historických pokladov. Pre turistov a návštevníkov je to fascinujúce miesto, kde môžu objavovať staroveké pamiatky, krásne prírodné scenérie a jedinečnú kórejskú kultúru. Okrem svojho historického bohatstva ponúka Gyeongju aj nádherné prírodné scenérie. Navštívte úchvatný útes Toham až ktorému sa dá dostať pomocou lanovky a očarí vás panoramatickými výhľadmi na pobrežie. Ďalej môžete navštíviť národný park Namsan s nádhernou prírodou a historickými pamiatkami.",
+      description: "Gyeongju is a beautiful historic city in South Korea, a treasure trove of cultural and historical gems, offering ancient landmarks, stunning natural scenery, and unique Korean culture, including Toham Cliff with panoramic views and Namsan National Park with historical sites.",
       photo: [Gyeongju, Gyeongju1, Gyeongju2],
       map: GyeongjuMap,
       tag: ["all", "korea", "pamiatka", "mesto", "priroda"],
@@ -127,7 +127,7 @@ function App() {
     {
       title: "Bukchon Hanok Village",
       background: BukchonHanokVillage,
-      description: "Bukchon Hanok Village je fascinujúca historická štvrť v centre mesta Seoul v Južnej Kórei, ktorá ponúka jedinečný pohľad na tradičnú kórejskú architektúru a životný štýl. Pre turistov a návštevníkov je to miesto plné kultúrneho bohatstva a historických zážitkov. Prechádzka uličkami Bukchon Hanok Village vás vtiahne do minulosti. Môžete vidieť miestnych obyvateľov, ktorí sa stále držia tradičných kórejských zvykov a remesiel. Niektoré z domov dokonca ponúkajú možnosť navštíviť vnútro a spoznať viac o tradičnom kórejskom živote.",
+      description: "Bukchon Hanok Village is a fascinating historic district in the heart of Seoul, South Korea, offering a unique glimpse into traditional Korean architecture and lifestyle. It is a place rich in culture and history, where walking through its narrow streets feels like stepping back in time. Visitors can see locals preserving traditional Korean customs and crafts, and some houses even offer the opportunity to explore their interiors and learn more about traditional Korean life.",
       photo: [BukchonHanokVillage, BukchonHanokVillage2, BukchonHanokVillage3],
       map: BukchonHanokVillageMap,
       tag: ["all", "korea", "pamiatka"], 
@@ -135,7 +135,7 @@ function App() {
     {
       title: "Rhine Falls",
       background: RhineFalls,
-      description: "Rheinfall, známy aj ako Rhine Falls, je najväčší vodopád v Európe nachádzajúci sa na rieke Rýn v blízkosti mesta Schaffhausen v Švajčiarsku. Pre turistov a návštevníkov je Rheinfall jednou z najpopulárnejších prírodných atrakcií v krajine, ktorá ponúka úchvatné scenérie a nezabudnuteľné zážitky. Rheinfall je ohromujúci pohľad na silné vodné toky padajúce zo skaly do priepasti s hukotom a obklopené úchvatnou prírodou. Jeho impozantná veľkosť a síla robia z Rheinfall nezabudnuteľnú pamiatku pre všetkých návštevníkov.",
+      description: "Rheinfall, also known as Rhine Falls, is the largest waterfall in Europe, located on the Rhine River near Schaffhausen, Switzerland. It is one of the country's most popular natural attractions, offering breathtaking scenery and unforgettable experiences. Rheinfall is a stunning sight, with powerful waters crashing down into the gorge with a thunderous roar, surrounded by magnificent nature. Its impressive size and force make it an unforgettable landmark for all visitors.",
       photo: [RhineFalls, RhineFalls1, RhineFalls2],
       map: RhineFallsMap,
       tag: ["all", "svajciarsko", "priroda"],
@@ -143,7 +143,7 @@ function App() {
     {
       title: "Chateau de Chillon",
       background: ChateaudeChillon,
-      description: "Château de Chillon je nádherný hrad nachádzajúci sa na brehu Ženevského jazera v blízkosti mesta Montreux vo Švajčiarsku. Pre turistov a návštevníkov je to fascinujúca historická pamiatka, ktorá ponúka jedinečný pohľad do minulosti a nádherné scenérie Alp. Château de Chillon ponúka úchvatné výhľady na Ženevské jazero a okolité Alpy. Turisti si môžu vychutnať krásne panoramatické pohľady z hradných okien a veží, čo robí návštevu tohto hradu ešte nezabudnuteľnejšou.",
+      description: "Château de Chillon is a stunning castle located on the shores of Lake Geneva near Montreux, Switzerland. It is a fascinating historical landmark that offers a unique glimpse into the past and breathtaking views of the Alps. Château de Chillon provides magnificent panoramas of Lake Geneva and the surrounding mountains, allowing visitors to enjoy spectacular views from its windows and towers, making the visit truly unforgettable.",
       photo: [ChateaudeChillon1, ChateaudeChillon2, ChateaudeChillon3],
       map: ChateaudeChillonMap,
       tag: ["all", "svajciarsko", "pamiatka", "priroda"],
@@ -151,7 +151,7 @@ function App() {
     {
       title: "The Matterhorn",
       background: TheMatterhorn,
-      description: "Matterhorn je majestátny vrchol nachádzajúci sa v Alpách na pomedzí Švajčiarska a Talianska, a je jedným z najznámejších a najikonickejších vrcholov na svete. Pre turistov a návštevníkov je Matterhorn fascinujúcou destináciou, ktorá ponúka nádherné prírodné scenérie, turistiku a zážitky. Okrem svojej prírodnej krásy je Matterhorn aj súčasťou bohatej kultúrnej dedičstva alpského regiónu. Návštevníci môžu objavovať tradičné horské dediny, miestne festivaly a kultúrne podujatia, ktoré odrážajú život a tradície obyvateľov Alp.",
+      description: "Matterhorn is a majestic peak located in the Alps on the border between Switzerland and Italy, and it is one of the most famous and iconic mountains in the world. It is a fascinating destination for tourists and visitors, offering breathtaking natural scenery, hiking, and unforgettable experiences. Beyond its natural beauty, Matterhorn is also part of the rich cultural heritage of the Alpine region. Visitors can explore traditional mountain villages, local festivals, and cultural events that reflect the life and traditions of the Alpine people.",
       photo: [TheMatterhorn1, TheMatterhorn2, TheMatterhorn3],
       map: TheMatterhornMap,
       tag: ["all", "svajciarsko", "priroda", "studena"],

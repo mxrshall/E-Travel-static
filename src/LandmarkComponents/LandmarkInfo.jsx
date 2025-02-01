@@ -50,7 +50,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                         onClick={handleClick} 
                         className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
                     >
-                        Prejsť na katalóg
+                        Go to catalog
                     </motion.button>
                 </div>
                 <div className="w-5/12 h-[100vh] p-16 flex flex-col justify-center items-center">
@@ -99,7 +99,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                     onClick={handleClick} 
                     className="font-mont text-base font-medium px-2 mt-4 text-white border-2 border-white hover:bg-white hover:text-black"
                 >
-                    Prejsť na katalóg
+                    Go to catalog
                 </motion.button>
             </div>
         </ReactLenis>

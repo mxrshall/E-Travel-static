@@ -154,7 +154,12 @@ function Homepage({ slider, list }) {
   return (
     <>
       <Navbar onClick={() => setIsExit(true)} signal={signal} />
-      <div className="fixed top-[50%] left-3 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2 md:left-5">
+      <motion.div 
+        className="fixed top-[50%] left-3 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2 md:left-5"
+        initial={{ opacity: 0, x: -5 }}
+        animate={isExit === false ? { opacity: 1, x: 0 } : { opacity: 0, x: -5 }}
+        transition={isExit === false ? { delay: 1.2, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
+      >
         {Array.from({ length: 4 }).map((_, index) => (
           <div
             key={index}
@@ -164,7 +169,7 @@ function Homepage({ slider, list }) {
             onClick={() => handlePageClick(index)}
           />
         ))}
-      </div>
+      </motion.div>
       <ReactLenis root>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 
-function Map ({slider, list, onHover, onClick}) {
+function Map ({slider, isExit, currentPage, list, onHover, onClick}) {
     const navigate = useNavigate();
 
     const handleMouseLeave = () => {
@@ -24,8 +24,8 @@ function Map ({slider, list, onHover, onClick}) {
         <div className="w-full h-full justify-center items-center inline inset-0 z-20 md:w-2/4">
             <motion.svg version="1.1"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 1 }}
+                animate={currentPage === 2 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
+                transition={currentPage === 2 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 className="w-full h-full fill-white"

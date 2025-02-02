@@ -159,7 +159,7 @@ function App() {
     {
       title: "Joffre Lakes Park",
       background: JoffreLakesPark,
-      description: "Joffre Lakes Provincial Park je nádherný prírodný park v pohorí Coast Mountains v Britskej Kolumbii, Kanada. Pre turistov a návštevníkov je to fascinujúca destinácia, ktorá ponúka úchvatné scenérie, turistiku, rybolov a príležitosti na relaxáciu v prírode. Hlavnou atrakciou Joffre Lakes Park sú trojica jazier s názvami Lower, Middle a Upper Joffre Lake. Tieto jazerá sú známe svojou jasnou tyrkysovou farbou, ktorá je spôsobená jemnými časticami piesku z ľadovca. Návštevníci môžu vychutnať krásne výhľady na hladinu jazier a okolité horské scenérie.",
+      description: "Joffre Lakes Provincial Park is a stunning natural park in the Coast Mountains of British Columbia, Canada. It is a fascinating destination for tourists and visitors, offering breathtaking scenery, hiking, fishing, and opportunities for relaxation in nature. The park’s main attraction is a trio of lakes—Lower, Middle, and Upper Joffre Lake—famous for their vibrant turquoise color, created by fine glacial silt. Visitors can enjoy spectacular views of the lakes and surrounding mountain landscapes.",
       photo: [JoffreLakesPark, JoffreLakesPark1, JoffreLakesPark2],
       map: JoffreLakesParkMap,
       tag: ["all", "kanada", "priroda", "studena"],
@@ -167,7 +167,7 @@ function App() {
     {
       title: "Torngat Mountains",
       background: TorngatMountains,
-      description: "Torngat Mountains sú národným parkom v severovýchodnej Kanade, ktorý sa nachádza na Labradorskom poloostrove a na ostrove Newfoundland a Labrador. Tento odľahlý a divoký park je domovom nádherných prírodných scenérií, divokých zvierat a kultúrnej dedičstva pôvodných obyvateľov. Pre turistov a návštevníkov je Torngat Mountains zážitkom, ktorý ponúka pohľad do divočiny a nezabudnuteľné prírodné a kultúrne zážitky. Torngat Mountains ponúkajú úchvatné scenérie vrátane strmých skalnatých útesov, mohutných ľadovcov, jazier, vodopádov a divokých riek. Tento odľahlý park je domovom niektorých najpozoruhodnejších prírodných krás v Kanade, ktoré návštevníkom ponúkajú možnosť objaviť jedinečnú a nedotknutú divočinu.",
+      description: "Torngat Mountains is a national park in northeastern Canada, located on the Labrador Peninsula in Newfoundland and Labrador. This remote and wild park is home to stunning natural scenery, diverse wildlife, and the cultural heritage of Indigenous peoples. For tourists and visitors, Torngat Mountains offer an immersive wilderness experience with unforgettable natural and cultural encounters. The park features breathtaking landscapes, including towering cliffs, massive glaciers, lakes, waterfalls, and wild rivers. This isolated park is home to some of Canada’s most remarkable natural wonders, giving visitors the chance to explore a truly pristine wilderness.",
       photo: [TorngatMountains, TorngatMountains1, TorngatMountains2],
       map: TorngatMountainsMap,
       tag: ["all", "kanada", "priroda", "studena"],
@@ -175,7 +175,7 @@ function App() {
     {
       title: "Quebec City",
       background: QuebecCity, 
-      description: "Québec City je jedným z najcharakteristickejších a najkrajších historických miest v Severnej Amerike. Nachádza sa na brehu rieky sv. Vavrinca v kanadskej provincii Québec. Pre turistov a návštevníkov je to fascinujúce mesto s bohatou kultúrnou dedičstvom, úchvatnou architektúrou a jedinečnou atmosférou. Okrem svojej bohatej kultúrnej dedičstva ponúka Quebec City aj úchvatné prírodné krásy. Návštevníci môžu prejsť krásnymi parkami, ako je Plains of Abraham, alebo sa vybrať na výlet na blízke ostrovy Île d'Orléans a Île d'Orléans, kde nájdu malebné vidiecke krajiny a vinice.",
+      description: "Québec City is one of the most distinctive and beautiful historic cities in North America. Located on the banks of the St. Lawrence River in the Canadian province of Québec, it is a fascinating destination with a rich cultural heritage, stunning architecture, and a unique atmosphere. In addition to its historical significance, Québec City offers breathtaking natural beauty. Visitors can stroll through scenic parks like the Plains of Abraham or take a trip to the nearby Île d'Orléans, where they will find picturesque countryside and charming vineyards.",
       photo: [QuebecCity1, QuebecCity2, QuebecCity3],
       map: QuebecCityMap,
       tag: ["all", "kanada", "mesto"],
@@ -183,7 +183,7 @@ function App() {
     {
       title: "Blyde River Canyon",
       background: BlydeRiverCanyon,
-      description: "Blyde River Canyon je jedným z najkrajších prírodných útvarov v Južnej Afrike a jedným z najväčších kaňonov na svete. Pre turistov a návštevníkov je to fascinujúce miesto, ktoré ponúka úchvatné scenérie, prírodnú krásu a množstvo zážitkov. Blyde River Canyon je ideálnym miestom pre milovníkov aktívneho odpočinku v prírode. Turisti si môžu vychutnať turistiku po rôznych chodníkoch a stezkách, ktoré vedú okolo kaňonu a ponúkajú príležitosti na pozorovanie divokej fauny a flóry. Ďalej môžu návštevníci využiť možnosti rybolovu, raftingu na rieke Blyde River a horských bicyklových výletov.",
+      description: "Blyde River Canyon is one of the most beautiful natural formations in South Africa and one of the largest canyons in the world. It is a fascinating destination for tourists and visitors, offering breathtaking scenery, natural beauty, and a variety of experiences. Blyde River Canyon is perfect for outdoor enthusiasts, with hiking trails that provide opportunities for wildlife and flora observation. Visitors can also enjoy fishing, rafting on the Blyde River, and mountain biking adventures.",
       photo: [BlydeRiverCanyon, BlydeRiverCanyon1, BlydeRiverCanyon2],
       map: BlydeRiverCanyonMap,
       tag: ["all", "afrika", "priroda", "tropicka"],
@@ -191,7 +191,7 @@ function App() {
     {
       title: "Kruger National Park",
       background: KrugerNationalPark,
-      description: "Kruger National Park je najväčší a najznámejší národný park v Juhoafrickej republike. Nachádza sa na severovýchode krajiny a rozkladá sa na ploche vyše 19 000 km². Park je domovom Veľkej päťky (lev, slon, nosorožec, byvol a leopard), ako aj stovkám ďalších druhov zvierat a vtákov. Je ideálnym miestom na safari s dobre vybudovanou infraštruktúrou, ktorá zahŕňa cesty, ubytovanie a výlety so sprievodcami. Kruger je považovaný za jednu z najlepších lokalít na pozorovanie divokej prírody v Afrike.",
+      description: "Kruger National Park is the largest and most famous national park in South Africa, located in the northeast of the country, covering over 19,000 km². It is home to the Big Five (lion, elephant, rhino, buffalo, and leopard) as well as hundreds of other animal and bird species. The park is an ideal safari destination with a well-developed infrastructure, including roads, accommodations, and guided tours. Kruger is considered one of the best locations for wildlife viewing in Africa.",
       photo: [KrugerNationalPark, KrugerNationalPark1, KrugerNationalPark2],
       map: BlydeRiverCanyonMap,
       tag: ["all", "afrika", "priroda", "tropicka"],
@@ -199,7 +199,7 @@ function App() {
     {
       title: "Table Mountain",
       background: TableMountain,
-      description: "Table Mountain je ikonický plochý vrch týčiaci sa nad Kapským Mestom v Juhoafrickej republike. Je jedným z novodobých siedmich prírodných divov sveta a ponúka panoramatické výhľady na mesto, oceán a okolité hory. Vrchol je prístupný lanovkou alebo pešími turistickými trasami. Hora je súčasťou národného parku a je známa bohatou biodiverzitou, vrátane mnohých endemických rastlín. Table Mountain je jedným z najnavštevovanejších miest v Južnej Afrike.",
+      description: "Table Mountain is an iconic flat-topped mountain overlooking Cape Town, South Africa. As one of the New Seven Wonders of Nature, it offers panoramic views of the city, ocean, and surrounding mountains. The summit is accessible by cable car or hiking trails. The mountain is part of a national park and is known for its rich biodiversity, including many endemic plant species. Table Mountain is one of the most visited landmarks in South Africa.",
       photo: [TableMountain, TableMountain1, TableMountain2],
       map: TableMountainMap,
       tag: ["all", "afrika", "priroda", "tropicka"],

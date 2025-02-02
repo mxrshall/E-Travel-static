@@ -282,7 +282,7 @@ function Homepage({ slider, list }) {
                   {title}
                 </motion.h1>
               </div>
-              <Map slider={slider} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
+              <Map slider={slider} isExit={isExit} currentPage={currentPage} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
               <div className="w-1/4 md:flex items-end pb-20 px-5 z-10 hidden">
                 <motion.span 
                   key={description}

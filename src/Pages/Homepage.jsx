@@ -261,7 +261,7 @@ function Homepage({ slider, list }) {
               </motion.div>
             </div>
             <div className='w-full h-[100vh] flex items-center overflow-hidden bg-cover bg-center relative md:items-stretch' ref={addToRefs}>
-              {background && (
+              {background && !isExit && (
                 <motion.div
                   className="hidden inset-0 absolute w-full h-full object-cover md:inline"
                   style={{ backgroundImage: `url(${background})` }}
@@ -277,18 +277,21 @@ function Homepage({ slider, list }) {
                 }}
               />
               <div className="w-1/4 hidden pl-10 z-10 md:flex">
-                <motion.h1 
-                  key={title}
-                  className="text-white text-8xl font-bold"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {title}
-                </motion.h1>
+                {!isExit && (
+                  <motion.h1 
+                    key={title}
+                    className="text-white text-8xl font-bold"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {title}
+                  </motion.h1>
+                )}
               </div>
               <Map slider={slider} isExit={isExit} currentPage={currentPage} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
               <div className="w-1/4 md:flex items-end pb-20 px-5 z-10 hidden">
+              {!isExit && ( 
                 <motion.span 
                   key={description}
                   className="text-base text-white font-normal font-mont"
@@ -298,6 +301,7 @@ function Homepage({ slider, list }) {
                 >
                   {description}
                 </motion.span>
+              )}
               </div>
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>

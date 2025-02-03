@@ -201,6 +201,12 @@ function Homepage({ slider, list }) {
             className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"
             style={{ y: layer5Y }}
           />
+          <motion.div 
+            className="w-full h-full bg-black absolute z-[7]"
+            initial={{ opacity: 1 }}
+            animate={isExit === true ? { opacity: 1 } : { opacity: 0 }}
+            transition={isExit === true ? { delay: 0.5, duration: 0.5 } : { duration: 0.8, delay: 0.3 }}
+          />
         </div>
 
         <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" ref={addToRefs}>

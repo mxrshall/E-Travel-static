@@ -24,7 +24,7 @@ const Slider = ({ slider, tag, onClick }) => {
     return (
         <Swiper
             style={swiperStyles}
-            className="w-full h-[60vh] flex justify-center items-center md:w-[60%]"
+            className="w-full h-[55vh] flex justify-center items-center md:w-[55%]"
             modules={[Navigation]}
             slidesPerView={1}
             loop={true}
@@ -43,7 +43,7 @@ const Slider = ({ slider, tag, onClick }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
-                        className="w-3/4 h-full my-5 rounded-xl relative cursor-pointer md:w-3/4"
+                        className="w-3/4 h-full my-5 rounded-xl relative cursor-pointer"
                         onMouseEnter={() => setHovered(idx)}
                         onMouseLeave={() => setHovered(null)}
                         onClick={() => handleClick(item)}

@@ -83,10 +83,12 @@ function Location() {
             initial={{ opacity: 0, x: -50 }}
             animate={isExit ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
             transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.5, delay: 1 }} 
-            className="w-full h-screen pt-20 px-[5%] flex flex-col"
+            className="w-full h-screen pt-36 px-[5%] flex flex-col"
           >
             <div className="flex">
-              <Title title={state1.title}/>
+              <div className="text-5xl text-white font-bold font-mont text-center">
+                {state1.title}
+              </div>
               <InfoFlag flag={state1.flag}/>
             </div>
             <Description description={state1.description}/>

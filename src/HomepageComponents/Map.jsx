@@ -5,11 +5,11 @@ function Map ({slider, isExit, currentPage, list, onHover, onClick}) {
     const navigate = useNavigate();
 
     const handleMouseLeave = () => {
-        onHover({ title: '', description: '', background: null});
+        onHover({ title: '', short_description: '', background: null});
     };
 
     const handleMouseEnter = (index) => {
-        onHover({ title: list[index].title, description: list[index].description, background: list[index].background });
+        onHover({ title: list[index].title, short_description: list[index].short_description, background: list[index].background });
     };
 
     const handleButtonClick = (value) => {

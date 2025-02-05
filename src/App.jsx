@@ -76,7 +76,8 @@ function App() {
     {
         id: 0,
         title: "South Korea",
-        description: "South Korea is a country where modern technology meets rich tradition. The capital, Seoul, is filled with innovative architecture, bustling markets, and historical landmarks, while cities like Busan offer stunning beaches and breathtaking scenery. South Korea is known for its unique culture, delicious cuisine, and beautiful temples nestled in the mountains. An ideal destination for those who want to experience the perfect blend of tradition and modernity.",
+        description: "South Korea is a country where modern technology meets rich tradition. The capital, Seoul, is filled with innovative architecture, bustling markets, and historical landmarks, while cities like Busan offer stunning beaches and breathtaking scenery. South Korea is known for its unique culture, delicious cuisine, and beautiful temples nestled in the mountains. An ideal destination for those who want to experience the perfect blend of tradition and modernity. Visitors can also immerse themselves in the vibrant world of K-pop, Korean dramas, and cutting-edge fashion, making South Korea a truly dynamic and unforgettable destination.",
+        short_description: "South Korea is a country where modern technology meets rich tradition. The capital, Seoul, is filled with innovative architecture, bustling markets, and historical landmarks, while cities like Busan offer stunning beaches and breathtaking scenery.",
         background: header1,
         flag: korea,
         tag: "korea",
@@ -84,7 +85,8 @@ function App() {
     {
         id: 1,
         title: "Switzerland",
-        description: "Switzerland is a picturesque country in the heart of Europe, known for its stunning Alps, pristine lakes, and charming villages. Cities like Zurich, Geneva, and Bern blend modern elegance with rich history and an exceptional quality of life. Switzerland is a paradise for skiers, hikers, and nature lovers who appreciate its peaceful environment and breathtaking views.",
+        description: "Switzerland is a picturesque country in the heart of Europe, known for its stunning Alps, pristine lakes, and charming villages. Cities like Zurich, Geneva, and Bern blend modern elegance with rich history and an exceptional quality of life. Switzerland is a paradise for skiers, hikers, and nature lovers who appreciate its peaceful environment and breathtaking views. The country's world-famous chocolate, cheese, and efficient public transport system add to its charm, making it a dream destination for travelers.",
+        short_description: "Switzerland is a picturesque country in the heart of Europe, known for its stunning Alps, pristine lakes, and charming villages. Cities like Zurich, Geneva, and Bern blend modern elegance with rich history and an exceptional quality of life.",
         background: header2,
         flag: svajciarsko,
         tag: "svajciarsko",
@@ -92,7 +94,8 @@ function App() {
     {
         id: 2,
         title: "Canada",
-        description: "Canada is a vast country with stunning nature and diverse culture. It offers breathtaking landscapes, from majestic Rocky Mountains to picturesque lakes and endless forests. Canada is the ideal destination for nature lovers, winter sports enthusiasts, hikers, and those seeking cultural experiences.",
+        description: "Canada is a vast country with stunning nature and diverse culture. It offers breathtaking landscapes, from majestic Rocky Mountains to picturesque lakes and endless forests. Canada is the ideal destination for nature lovers, winter sports enthusiasts, hikers, and those seeking cultural experiences. Its vibrant cities, like Toronto, Vancouver, and Montreal, offer a unique blend of modernity, multiculturalism, and rich history, making Canada a truly captivating place to explore.",
+        short_description: "Canada is a vast country with stunning nature and diverse culture. It offers breathtaking landscapes, from majestic Rocky Mountains to picturesque lakes and endless forests. Canada is the ideal destination for nature lovers, winter sports enthusiasts, hikers, and those seeking cultural experiences.",
         background: header3,
         flag: kanada,
         tag: "kanada",
@@ -100,7 +103,8 @@ function App() {
     {
         id: 3,
         title: "South Africa",
-        description: "South Africa is a country at the southern tip of the African continent, known for its diverse landscapes, rich culture, and history. It is home to iconic places like Cape Town, Table Mountain, and Kruger National Park, where you can experience an African safari. South Africa has three main capitals—Pretoria (administrative), Cape Town (legislative), and Bloemfontein (judicial). The country's main industries are mining, agriculture, and tourism. South Africa also boasts a unique flora and fauna.",
+        description: "South Africa is a country at the southern tip of the African continent, known for its diverse landscapes, rich culture, and history. It is home to iconic places like Cape Town, Table Mountain, and Kruger National Park, where you can experience an African safari. South Africa has three main capitals—Pretoria (administrative), Cape Town (legislative), and Bloemfontein (judicial). The country's main industries are mining, agriculture, and tourism. South Africa also boasts a unique flora and fauna. With its warm hospitality, vibrant cities, and delicious cuisine, South Africa offers an unforgettable experience for every traveler.",
+        short_description: "South Africa is a country at the southern tip of the African continent, known for its diverse landscapes, rich culture, and history. It is home to iconic places like Cape Town, Table Mountain, and Kruger National Park, where you can experience an African safari.",
         background: header4,
         flag: afrika,
         tag: "afrika",

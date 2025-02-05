@@ -27,7 +27,7 @@ import Map from '../HomepageComponents/Map';
 
 function Homepage({ slider, list }) {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [short_description, setDescription] = useState("");
   const [background, setBackground] = useState(null);
   const [isExit, setIsExit] = useState(false);
   const [signal, setSignal] = useState(false);
@@ -98,7 +98,7 @@ function Homepage({ slider, list }) {
 
   const handleHover = (data) => {
     setTitle(data.title);
-    setDescription(data.description);
+    setDescription(data.short_description);
     setBackground(data.background);
   };
 
@@ -158,7 +158,7 @@ function Homepage({ slider, list }) {
         className="fixed top-[50%] left-3 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2 md:left-5"
         initial={{ opacity: 0, x: -5 }}
         animate={isExit === false ? { opacity: 1, x: 0 } : { opacity: 0, x: -5 }}
-        transition={isExit === false ? { delay: 1.2, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
+        transition={isExit === false ? { delay: 1, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
       >
         {Array.from({ length: 4 }).map((_, index) => (
           <div
@@ -211,7 +211,7 @@ function Homepage({ slider, list }) {
 
         <div className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex justify-center items-center p-10" ref={addToRefs}>
               <div 
-                className='w-full h-4/5 flex justify-center items-right gap-10 md:w-2/3 md:h-full'
+                className='w-full h-5/6 flex justify-center items-right gap-10 md:w-2/3 md:h-full'
                 style={{
                   clipPath: 'polygon(0% 25%, 100% 0%, 100% 100%, 0% 80%)'
                 }}
@@ -296,16 +296,16 @@ function Homepage({ slider, list }) {
                 )}
               </div>
               <Map slider={slider} isExit={isExit} currentPage={currentPage} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
-              <div className="w-1/4 md:flex items-end pb-20 px-5 z-10 hidden">
+              <div className="w-1/4 md:flex items-end pb-20 px-8 z-10 hidden">
               {!isExit && ( 
                 <motion.span 
-                  key={description}
+                  key={short_description}
                   className="text-base text-white font-normal font-mont"
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  {description}
+                  {short_description}
                 </motion.span>
               )}
               </div>

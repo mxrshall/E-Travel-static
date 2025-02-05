@@ -1,6 +1,6 @@
 {
-  "name": "e-travel",
   "homepage": "https://mxrshall.github.io/E-Travel/",
+  "name": "e-travel",
   "private": true,
   "version": "0.0.0",
   "type": "module",

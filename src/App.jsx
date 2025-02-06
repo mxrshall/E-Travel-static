@@ -3,7 +3,7 @@ import Location from "./Pages/Location";
 import Catalog from "./Pages/Catalog";
 import Landmark from "./Pages/Landmark";
 import Gallery from "./Pages/Gallery";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 import header1 from "../public/images/header/header1.jpg"
 import header2 from "../public/images/header/header2.jpg"
@@ -211,15 +211,15 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/E-Travel" element={<Homepage slider={slider} list={list} />} />
-        <Route path="/E-Travel/pamiatka" element={<Landmark />} />
+        <Route path="/" element={<Homepage slider={slider} list={list} />} />
+        <Route path="/pamiatka" element={<Landmark />} />
         <Route path="/lokacia" element={<Location />} />
-        <Route path="/E-Travel/katalog" element={<Catalog slider={slider}/>} />
-        <Route path="/E-Travel/galeria" element={<Gallery slider={slider}/>} />
+        <Route path="/katalog" element={<Catalog slider={slider}/>} />
+        <Route path="/galeria" element={<Gallery slider={slider}/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

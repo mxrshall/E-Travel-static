@@ -214,10 +214,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage slider={slider} list={list} />} />
-        <Route path="/pamiatka" element={<Landmark />} />
+        <Route path="/E-Travel/pamiatka" element={<Landmark />} />
         <Route path="/lokacia" element={<Location />} />
-        <Route path="/katalog" element={<Catalog slider={slider}/>} />
-        <Route path="/galeria" element={<Gallery slider={slider}/>} />
+        <Route path="/E-Travel/katalog" element={<Catalog slider={slider}/>} />
+        <Route path="/E-Travel/galeria" element={<Gallery slider={slider}/>} />
       </Routes>
     </BrowserRouter>
   );

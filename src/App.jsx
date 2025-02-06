@@ -213,7 +213,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Homepage slider={slider} list={list} />} />
+        <Route path="/E-Travel" element={<Homepage slider={slider} list={list} />} />
         <Route path="/E-Travel/pamiatka" element={<Landmark />} />
         <Route path="/lokacia" element={<Location />} />
         <Route path="/E-Travel/katalog" element={<Catalog slider={slider}/>} />

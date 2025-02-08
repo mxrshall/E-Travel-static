@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-function Banner() {
+function Banner({ isExit }) {
 
 const [isVisible, setIsVisible] = useState(false);
 
@@ -19,7 +20,12 @@ const handleAccept = () => {
 if (!isVisible) return null;
 
 return (
-        <div className="w-1/4 h-[25vh] rounded-xl bg-white fixed bottom-0 right-0 z-50 m-10 p-5">
+        <motion.div 
+            className="w-1/4 h-[25vh] rounded-xl bg-white fixed bottom-0 right-0 z-50 m-10 p-5"
+            initial={{ opacity: 0 }}
+            animate={isExit === false ? { opacity: 1 } : { opacity: 0 }}
+            transition={isExit === false ? { duration: 0.3, delay: 1.5 } : { duration: 0.3, delay: 0.5 }}
+        >
             <p className="text-sm font-medium font-mont">
                 This website uses Google Analytics to measure the time spent on the page. The results helps to determine the average time users spend on this site.
             </p>
@@ -29,7 +35,7 @@ return (
             >
                 I understand
             </button>
-        </div>
+        </motion.div>
     )
 }
 

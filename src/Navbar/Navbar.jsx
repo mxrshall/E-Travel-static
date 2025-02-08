@@ -43,7 +43,7 @@ function Navbar({ onClick, signal }) {
           <Logo onClick={handleClick} />
           <Navigation onClick={handleClick} />
         </motion.div>
-        <Banner />
+        <Banner isExit={isExit} />
       </>
     )
   }

@@ -80,12 +80,6 @@ function Homepage({ slider, list }) {
     container: containerRef,
   });
 
-  // Define transforms for parallax layers
-  const layer2Y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-  const layer3Y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const layer4Y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  const layer5Y = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
-
   const lenis = useLenis(({ scroll }) => {
     // called every scroll
   })
@@ -154,11 +148,8 @@ function Homepage({ slider, list }) {
   return (
     <>
       <Navbar onClick={() => setIsExit(true)} signal={signal} />
-      <motion.div 
+      <div 
         className="fixed top-[50%] left-3 z-50 flex flex-col gap-4 items-center transform -translate-y-1/2 md:left-5"
-        initial={{ opacity: 0, x: -5 }}
-        animate={isExit === false ? { opacity: 1, x: 0 } : { opacity: 0, x: -5 }}
-        transition={isExit === false ? { delay: 1, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
       >
         {Array.from({ length: 4 }).map((_, index) => (
           <div
@@ -169,43 +160,35 @@ function Homepage({ slider, list }) {
             onClick={() => handlePageClick(index)}
           />
         ))}
-      </motion.div>
+      </div>
       <ReactLenis root>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>
-          <motion.div 
+          <div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[1]"
             style={{ backgroundImage: `url(${image1})` }}
           />
-          <motion.div 
+          <div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[2]"
-            style={{ backgroundImage: `url(${image4})`, y: layer2Y }}
+            style={{ backgroundImage: `url(${image4})` }}
           />
-          <motion.div 
+          <div 
             className="w-full h-full flex justify-center items-center absolute z-[3]"
-            style={{ y: layer3Y }}
           >
             <h1 className="text-white text-8xl font-bold mb-32 md:text-9xl">
               E-Travel
             </h1>
-          </motion.div>
-          <motion.div 
+          </div>
+          <div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[4]"
-            style={{ backgroundImage: `url(${image3})`, y: layer4Y }}
+            style={{ backgroundImage: `url(${image3})` }}
           />
-          <motion.div 
+          <div 
             className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[5]"
-            style={{ backgroundImage: `url(${image2})`, y: layer5Y }}
+            style={{ backgroundImage: `url(${image2})` }}
           />
-          <motion.div 
+          <div 
             className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"
-            style={{ y: layer5Y }}
-          />
-          <motion.div 
-            className="w-full h-full bg-black absolute z-[7]"
-            initial={{ opacity: 1 }}
-            animate={isExit === true ? { opacity: 1 } : { opacity: 0 }}
-            transition={isExit === true ? { delay: 0.5, duration: 0.5 } : { duration: 0.8, delay: 0.3 }}
           />
         </div>
 
@@ -216,39 +199,27 @@ function Homepage({ slider, list }) {
                   clipPath: 'polygon(0% 25%, 100% 0%, 100% 100%, 0% 80%)'
                 }}
               >
-                <motion.div 
+                <div 
                   className='w-1/4 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background1})` }}
-                  initial={{ opacity: 0 }}
-                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
-                  transition={currentPage === 1 && isExit === false ? { delay: 1.2, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
-                </motion.div>
-                <motion.div 
+                </div>
+                <div 
                   className='w-2/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background2})` }}
-                  initial={{ opacity: 0 }}
-                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
-                  transition={currentPage === 1 && isExit === false ? { delay: 0.9, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
-                </motion.div>
-                <motion.div
+                </div>
+                <div
                   className='w-3/6 h-full bg-cover bg-center relative'
                   style={{ backgroundImage: `url(${background3})` }}
-                  initial={{ opacity: 0 }}
-                  animate={currentPage === 1 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
-                  transition={currentPage === 1 && isExit === false ? { delay: 0.6, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
                 >
                   <div className="absolute inset-0 bg-black opacity-50"/>
-                </motion.div>
+                </div>
               </div>
-              <motion.div 
+              <div 
                 className='absolute w-3/4 flex flex-col z-10 md:w-2/3'
-                initial={{ opacity: 0, y: 10 }}
-                animate={currentPage === 1 && isExit === false ? { opacity: 1, y: 0 } : { opacity: 0 }}
-                transition={currentPage === 1 && isExit === false ? { delay: 0.3, duration: 0.5 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Travel catalog
@@ -264,16 +235,13 @@ function Homepage({ slider, list }) {
                 >
                   Go to catalog
                 </button>
-              </motion.div>
+              </div>
             </div>
             <div className='w-full h-[100vh] flex items-center overflow-hidden bg-cover bg-center relative md:items-stretch' ref={addToRefs}>
               {background && !isExit && (
-                <motion.div
+                <div
                   className="hidden inset-0 absolute w-full h-full object-cover md:inline"
                   style={{ backgroundImage: `url(${background})` }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8 }}
                 />
               )}
               <div
@@ -284,39 +252,30 @@ function Homepage({ slider, list }) {
               />
               <div className="w-1/4 hidden pl-10 z-10 md:flex">
                 {!isExit && (
-                  <motion.h1 
+                  <h1 
                     key={title}
                     className="text-white text-8xl font-bold"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
                   >
                     {title}
-                  </motion.h1>
+                  </h1>
                 )}
               </div>
               <Map slider={slider} isExit={isExit} currentPage={currentPage} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
               <div className="w-1/4 md:flex items-end pb-20 px-8 z-10 hidden">
               {!isExit && ( 
-                <motion.span 
+                <span 
                   key={short_description}
                   className="text-base text-white font-normal font-mont"
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
                 >
                   {short_description}
-                </motion.span>
+                </span>
               )}
               </div>
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
             <div className='w-full h-full flex justify-center items-center absolute z-40 md:w-2/5 md:relative'>
-              <motion.div
+              <div
                 className='w-3/4 flex flex-col justify-center items-start md:w-2/3'
-                initial={{ opacity: 0, x: -10 }}
-                animate={currentPage === 3 && isExit === false ? { opacity: 1, x: 0 } : { opacity: 0 }}
-                transition={currentPage === 3 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-white text-6xl font-bold md:text-8xl">
                   Gallery
@@ -330,13 +289,10 @@ function Homepage({ slider, list }) {
                 >
                   Go to gallery
                 </button>
-              </motion.div>
+              </div>
             </div>
-            <motion.div 
+            <div 
               className='w-full h-full flex flex-col relative md:w-3/5'
-              initial={{ opacity: 0 }}
-              animate={currentPage === 3 && isExit === false ? { opacity: 1 } : { opacity: 0 }}
-              transition={currentPage === 3 && isExit === false ? { delay: 0.5, duration: 0.8 } : { duration: 0.5, delay: 0.2 }}
             >
             <div
                 className="absolute inset-0 z-30 flex justify-center items-center"
@@ -388,7 +344,7 @@ function Homepage({ slider, list }) {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </motion.div>
+            </div>
             <Footer />
           </div>
         </div>

@@ -20,11 +20,8 @@ const handleAccept = () => {
 if (!isVisible) return null;
 
 return (
-        <motion.div 
+        <div 
             className="w-full h-1/5 flex flex-col justify-center items-left rounded-none bg-white fixed bottom-0 right-0 z-50 m-0 p-5 md:rounded-xl md:w-1/4 md:m-10 md:h-1/4"
-            initial={{ opacity: 0 }}
-            animate={isExit === false ? { opacity: 1 } : { opacity: 0 }}
-            transition={isExit === false ? { duration: 0.3, delay: 1.5 } : { duration: 0.3, delay: 0.5 }}
         >
             <p className="text-sm font-medium font-mont">
                 This website uses Google Analytics to measure the time spent on the page. The results help determine the average time users spend on this site.
@@ -35,7 +32,7 @@ return (
             >
                 I understand
             </button>
-        </motion.div>
+        </div>
     )
 }
 

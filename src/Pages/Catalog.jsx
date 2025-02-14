@@ -39,24 +39,17 @@ function Catalog({ slider }) {
         setTimeout(() => {
             navigate("/pamiatka", { state: data });
             window.scrollTo(0, 0);
-        }, 800);
+        }, 0);
     };
 
     return (
         <ReactLenis root>
             <Navbar onClick={() => setIsExit(true)} signal={signal}/>
             <div className="w-full h-[100vh] bg-black absolute">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={isExit ? { opacity: 0 } : {opacity: 1}}
-                    transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.3, delay: 0.5 }}
-                    className="w-full h-2/5 flex justify-center items-center"
-                >
+                <div className="w-full h-2/5 flex justify-center items-center">
                     <Search sendData={sendData} />
-                </motion.div>
-                <motion.div 
-                    animate={isExit ? { opacity: 0 } : {}}
-                    transition={isExit ? { duration: 0.3, delay: 0.2 } : {}}
+                </div>
+                <div
                     className="bg-black flex flex-wrap">
                     {filteredSlider.map((item, index) => (
                         <Card
@@ -66,11 +59,10 @@ function Catalog({ slider }) {
                             description={item.description}
                             photo={item.photo}
                             map={item.map}
-                            time={0.5 + 0.1 * index}
                             onClick={handleCardClick}
                         />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </ReactLenis>
     );

@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
 
 function Map ({slider, isExit, currentPage, list, onHover, onClick}) {
     const navigate = useNavigate();
@@ -17,7 +16,7 @@ function Map ({slider, isExit, currentPage, list, onHover, onClick}) {
         setTimeout(() => {
             navigate("/lokacia", { state: { state1: list[value], state2: slider }});
             window.scrollTo(0, 0);
-        }, 800);
+        }, 0);
     };
 
     return (

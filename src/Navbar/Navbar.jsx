@@ -16,7 +16,7 @@ function Navbar({ onClick, signal }) {
       setIsExit(true);
       setTimeout(() => {
         navigate(`/${data}`);
-      }, 800);
+      }, 0);
     }
   }, [signal]);
 
@@ -27,7 +27,7 @@ function Navbar({ onClick, signal }) {
       setTimeout(() => {
         navigate(`/${data}`);
         window.scrollTo(0, 0);
-      }, 800);
+      }, 0);
     }
   };
 

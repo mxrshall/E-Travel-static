@@ -42,21 +42,15 @@ function Gallery({ slider }) {
             <Navbar onClick={() => setIsExit(true)} />
             <div className="w-full h-[100vh] bg-black absolute">
                 <div className="w-full h-1/5 flex justify-center items-center md:h-1/4"></div>
-                <motion.div
-                    initial={{ opacity: 1 }}
-                    animate={isExit ? { opacity: 0 } : {opacity: 1}}
-                    transition={isExit ? { duration: 0.3, delay: 0.2 } : { duration: 0.3, delay: 0.5 }}
-                    className="bg-black flex flex-wrap"
-                >
+                <div className="bg-black flex flex-wrap">
                     {allPhotos.map((photo, index) => (
                         <GalleryPhoto
                             key={index}
                             background={photo}
                             sendFotka={sendFotka}
-                            time={0.4 + 0.1 * index}
                         />
                     ))}
-                </motion.div>
+                </div>
             </div>
             {open && (
                 <OverlayFotka

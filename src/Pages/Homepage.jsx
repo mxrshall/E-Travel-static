@@ -102,7 +102,7 @@ function Homepage({ slider, list }) {
     setTimeout(() => {
         navigate(`/${value}`);
         window.scrollTo(0, 0);
-    }, 800);
+    }, 0);
   };
 
   // Add sections dynamically to the refs array

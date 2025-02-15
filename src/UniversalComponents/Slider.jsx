@@ -39,10 +39,7 @@ const Slider = ({ slider, tag, onClick }) => {
                     key={item.id}
                     className="w-full h-full flex justify-center items-center"
                 >
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
+                    <div
                         className="w-3/4 h-full my-5 rounded-xl relative cursor-pointer"
                         onMouseEnter={() => setHovered(idx)}
                         onMouseLeave={() => setHovered(null)}
@@ -52,21 +49,15 @@ const Slider = ({ slider, tag, onClick }) => {
                             className="w-full h-full flex flex-col bg-cover bg-center rounded-xl"
                             style={{ backgroundImage: `url(${item.background})` }}
                         >
-                            <motion.div
-                                className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-end p-5 rounded-xl"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                            >
+                            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-end p-5 rounded-xl">
                                 <div className="w-full h-full flex flex-col justify-center items-center text-center">
                                     <p className="text-3xl text-white font-bold font-mont cursor-default">
                                         {item.title}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </SwiperSlide>
             ))}
             <div className="swiper-button-prev p-4 cursor-pointer" />

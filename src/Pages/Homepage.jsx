@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
@@ -231,7 +230,7 @@ function Homepage({ slider, list }) {
                 </span>
                 <button
                   onClick={() => handleButtonClick("katalog")}
-                  className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black md:w-1/5"
+                  className="w-2/3 font-mont text-base font-medium px-2 text-white border-2 border-white md:w-1/5"
                 >
                   Go to catalog
                 </button>
@@ -284,16 +283,14 @@ function Homepage({ slider, list }) {
                   Enter the gallery and be inspired by the stunning places waiting to be discovered. Whether you're looking for serene beaches, vibrant cities, or breathtaking nature, the gallery offers a unique glimpse into destinations worth visiting. Browse through photos that capture the atmosphere and beauty of the world, and let your imagination take you on your next travel adventure.
                 </span>
                 <button 
-                  className="font-mont text-base font-medium px-2 text-white border-2 border-white hover:bg-white hover:text-black"
+                  className="font-mont text-base font-medium px-2 text-white border-2 border-white"
                   onClick={() => handleButtonClick("galeria")}
                 >
                   Go to gallery
                 </button>
               </div>
             </div>
-            <div 
-              className='w-full h-full flex flex-col relative md:w-3/5'
-            >
+            <div className='w-full h-full flex flex-col relative md:w-3/5'>
             <div
                 className="absolute inset-0 z-30 flex justify-center items-center"
                 style={{
@@ -302,11 +299,7 @@ function Homepage({ slider, list }) {
               />
               <Swiper
                 className="w-full h-1/2 flex flex-col justify-center items-center custom-swiper pb-2"
-                modules={[Autoplay]}
                 slidesPerView={3}
-                loop={true}
-                autoplay={{ delay: 1500 }}
-                speed={500}
               >
                 {swipeSlider1.map((item) => (
                   <SwiperSlide
@@ -324,11 +317,7 @@ function Homepage({ slider, list }) {
               </Swiper>
               <Swiper
                 className="w-full h-1/2 flex flex-col justify-center items-center custom-swiper pt-2"
-                modules={[Autoplay]}
                 slidesPerView={2}
-                loop={true}
-                autoplay={{ delay: 2000, reverseDirection: true }}
-                speed={500}
               >
                 {swipeSlider2.map((item) => (
                   <SwiperSlide

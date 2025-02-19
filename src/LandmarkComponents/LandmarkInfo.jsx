@@ -1,6 +1,4 @@
 import LandmarkPhoto from "./LandmarkPhoto"
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { motion } from "framer-motion";
 
 function LandInfo({ description, photo, map, sendFotka, onClick }) {
     const veta = description.split('. ');
@@ -19,7 +17,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
     }
 
     return (
-        <ReactLenis root>
+        <>
             <div className="w-full h-[100vh] hidden bg-black absolute z-20 md:flex">
                 <div className="w-7/12 h-[100vh] pl-16 py-16">
                     {odstavec.map((odstavec, index) => (
@@ -84,7 +82,7 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                     Go to catalog
                 </button>
             </div>
-        </ReactLenis>
+        </>
     )
   }
   

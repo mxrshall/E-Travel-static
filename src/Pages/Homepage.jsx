@@ -160,7 +160,11 @@ function Homepage({ slider, list }) {
           />
         ))}
       </div>
-      <ReactLenis root>
+      <ReactLenis root options={{ 
+        duration: 1,
+        smoothWheel: false,
+        smoothTouch: false,
+      }}>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>
           <div 

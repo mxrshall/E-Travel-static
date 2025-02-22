@@ -6,9 +6,11 @@ function LandmarkPhoto({background, sendFotka}) {
 
     return (
         <>
-            <div
-                className="w-full h-[25vh] bg-contain bg-no-repeat bg-center mb-5" 
-                style={{ backgroundImage: `url(${background})`}} 
+            <img
+                src={background}
+                loading="lazy"
+                alt="Landmark"
+                className="w-full h-[25vh] object-contain mb-5 cursor-pointer"
                 onClick={handleClick}
             />
         </>

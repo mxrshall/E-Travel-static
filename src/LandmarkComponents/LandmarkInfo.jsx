@@ -30,9 +30,11 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                             <br/>
                         </span>
                     ))}
-                    <div
-                        className="w-1/2 h-[30vh] bg-contain bg-no-repeat bg-center my-10"
-                        style={{ backgroundImage: `url(${map})`}}
+                    <img
+                        src={map}
+                        loading="lazy"
+                        alt="Map"
+                        className="w-1/2 h-[30vh] object-contain my-10 cursor-pointer"
                         onClick={handleClickSend}
                     />
                     <button
@@ -70,9 +72,11 @@ function LandInfo({ description, photo, map, sendFotka, onClick }) {
                         sendFotka={sendFotka}
                     />
                 ))}
-                <div
-                    className="w-full h-[30vh] bg-contain bg-no-repeat bg-center"
-                    style={{ backgroundImage: `url(${map})`}}
+                <img
+                    src={map}
+                    loading="lazy"
+                    alt="Map"
+                    className="w-full h-[30vh] object-contain cursor-pointer"
                     onClick={handleClickSend}
                 />
                 <button

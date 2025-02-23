@@ -12,6 +12,7 @@ import Navbar from '../Navbar/Navbar';
 import background1 from "../../public/images/photos/TableMountain/TableMountain.webp";
 import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
 import background3 from "../../public/images/photos/ChateaudeChillon/ChateaudeChillon2.webp";
+import backgroundFull from "../../public/images/backgroundFull.webp";
 import Footer from '../Footer/Footer';
 
 import swiperImage1 from "../../public/images/photos/TableMountain/TableMountain.webp";
@@ -167,31 +168,25 @@ function Homepage({ slider, list }) {
       }}>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>
-          <div 
-            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[1]"
-            style={{ backgroundImage: `url(${image1})` }}
+          <img 
+            className="w-full h-full object-cover absolute z-[1]"
+            src={backgroundFull}
+            loading="eager"
           />
           <div 
-            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[2]"
-            style={{ backgroundImage: `url(${image4})` }}
-          />
-          <div 
-            className="w-full h-full flex justify-center items-center absolute z-[3]"
+            className="w-full h-full flex justify-center items-center absolute z-[2]"
           >
             <h1 className="text-white text-8xl font-bold mb-32 md:text-9xl">
               E-Travel
             </h1>
           </div>
-          <div 
-            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[4]"
-            style={{ backgroundImage: `url(${image3})` }}
+          <img 
+            className="w-full h-full object-cover absolute z-[3]"
+            src={image2}
+            loading="eager"
           />
           <div 
-            className="w-full h-full bg-cover bg-center flex justify-center items-center absolute z-[5]"
-            style={{ backgroundImage: `url(${image2})` }}
-          />
-          <div 
-            className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[6]"
+            className="w-full h-full bg-gradient-to-t from-black/90 via-black/10 to-transparent bg-gradient-[20%] absolute z-[4]"
           />
         </div>
 

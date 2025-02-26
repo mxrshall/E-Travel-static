@@ -156,7 +156,7 @@ function Homepage({ slider, list }) {
             key={index}
             className={`w-4 h-4 rounded-full border-2 ${
               index === currentPage ? 'bg-white' : 'bg-transparent'
-            } transition-all duration-300`}
+            }`}
             onClick={() => handlePageClick(index)}
           />
         ))}

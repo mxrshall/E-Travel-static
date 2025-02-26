@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import image1 from "../../public/images/Background.webp";
 import image2 from "../../public/images/Vrstva1.webp";
-import image3 from "../../public/images/Vrstva2.webp";
-import image4 from "../../public/images/Vrstva3.webp";
 import Navbar from '../Navbar/Navbar';
 import background1 from "../../public/images/photos/TableMountain/TableMountain.webp";
 import background2 from "../../public/images/photos/QuebecCity/QuebecCity.webp";
@@ -168,6 +166,10 @@ function Homepage({ slider, list }) {
       }}>
       <div className='w-full h-[400vh] flex flex-col'>
         <div className='w-full h-[100vh] relative' ref={addToRefs}>
+          <Helmet>
+            <link rel="preload" href={backgroundFull} as="image" />
+            <link rel="preload" href={image2} as="image" />
+          </Helmet>
           <img 
             className="w-full h-full object-cover absolute z-[1]"
             src={backgroundFull}

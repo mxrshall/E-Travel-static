@@ -238,39 +238,9 @@ function Homepage({ slider, list }) {
               </div>
             </div>
             <div className='w-full h-[100vh] flex items-center overflow-hidden bg-cover bg-center relative md:items-stretch' ref={addToRefs}>
-              {background && !isExit && (
-                <div
-                  className="hidden inset-0 absolute w-full h-full object-cover md:inline"
-                  style={{ backgroundImage: `url(${background})` }}
-                />
-              )}
-              <div
-                className="absolute inset-0 z-0 hidden justify-center items-center md:flex"
-                style={{
-                  background: "radial-gradient(circle, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 90%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%)"
-                }}
-              />
-              <div className="w-1/4 hidden pl-10 z-10 md:flex">
-                {!isExit && (
-                  <h1 
-                    key={title}
-                    className="text-white text-8xl font-bold"
-                  >
-                    {title}
-                  </h1>
-                )}
-              </div>
+              <div className="w-1/4 hidden pl-10 z-10 md:flex" />
               <Map slider={slider} isExit={isExit} currentPage={currentPage} list={list} onHover={handleHover} onClick={() => {setIsExit(true); setSignal(true);}}/>
-              <div className="w-1/4 md:flex items-end pb-20 px-8 z-10 hidden">
-              {!isExit && ( 
-                <span 
-                  key={short_description}
-                  className="text-base text-white font-normal font-mont"
-                >
-                  {short_description}
-                </span>
-              )}
-              </div>
+              <div className="w-1/4 md:flex pb-20 z-10 hidden" />
             </div>
             <div className="w-full h-[100vh] relative flex justify-center items-center" ref={addToRefs}>
             <div className='w-full h-full flex justify-center items-center absolute z-40 md:w-2/5 md:relative'>

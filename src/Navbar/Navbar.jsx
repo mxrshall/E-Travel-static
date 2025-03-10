@@ -45,4 +45,3 @@ function Navbar({ onClick, signal }) {
   }
   
   export default Navbar
-  
